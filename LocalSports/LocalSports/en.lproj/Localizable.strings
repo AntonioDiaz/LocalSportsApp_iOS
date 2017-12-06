@@ -1,7 +1,47 @@
-/* 
-  Localizable.strings
-  LocalSports
+/*
+ Localizable.strings
+ LocalSports
+ 
+ Created by Antonio Díaz Arroyo on 3/12/17.
+ Copyright © 2017 cice. All rights reserved.
+ */
+"BACK" = "Back";
+"FUTBOL_11" = "Football 11";
+"BALONCESTO" = "Basketball";
+"VOLEIBOL" = "Volleyball";
+"BALONMANO" = "Handball";
+"UNIHOCKEY" = "Hockey";
 
-  Created by Antonio Díaz Arroyo on 3/12/17.
-  Copyright © 2017 cice. All rights reserved.
-*/
+"HOME_TITLE" = "%@ - Available Towns";
+"HOME_INTERNET_REQUIRED" = "Internet is required to run LocalSports.";
+
+"COMPETITIONS_EMPTY" = "There is no competitions for this sport.";
+"CALENDAR_SHARE_TEXT" = "Weel %d: %@ vs %@, when:%@ where:%@";
+
+"CALENDAR_WEEK" = "Week %d";
+"CALENDAR_ACTION_TITLE" = "Actions with the match";
+"CALENDAR_ACTION_SHARE" = "Share match details";
+"CALENDAR_ACTION_EVENT" = "Add calendar event";
+"CALENDAR_ACTION_ISSUE" = "Send issue";
+"CALENDAR_ACTION_MAP" = "View map";
+"CALENDAR_ACTION_CLOSE" = "Close";
+
+"CALENDAR_EVENT_TITLE" = "Add match to calendar";
+"CALENDAR_EVENT_TEXT" = "Week %d: %@ vs %@";
+"CALENDAR_ACCESS" = "Access to calendar needed.";
+"CALENDAR_ERROR" = "Error when adding calendar";
+"CALENDAR_SUCCESS" = "Match added to calendar";
+
+"ISSUE_TITLE" = "Send issue to server";
+"ISSUE_TEXT_TITLE" = "Week %d: %@ vs %@";
+"ISSUE_DESCRIPTION_REQUIRED" = "Issue description is required";
+"ISSUE_REGISTERED" = "Your issue has been register. We will review it as soon as possible.";
+"ISSUE_SEND_HTTP_ERROR" = "It is not possible to send the issue. HTTP error: %d";
+"ISSUE_SEND_ERROR" = "It is not possible to send the issue. Error: %@";
+
+"MAP_TITLE" = "Sport Center location";
+"CLASSIFICATION_TEAM" = "     Team";
+
+
+
+

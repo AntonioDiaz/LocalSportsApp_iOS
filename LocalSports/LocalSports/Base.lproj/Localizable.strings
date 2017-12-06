@@ -1,46 +1,43 @@
-/* 
-  Localizable.strings
-  LocalSports
-
-  Created by Antonio Díaz Arroyo on 3/12/17.
-  Copyright © 2017 cice. All rights reserved.
-*/
-"BACK" = "Back";
-"FUTBOL_11" = "Football 11";
-"BALONCESTO" = "Basketball";
-"VOLEIBOL" = "Volleyball";
-"BALONMANO" = "Handball";
+/*
+ Localizable.strings
+ LocalSports
+ 
+ Created by Antonio Díaz Arroyo on 3/12/17.
+ Copyright © 2017 cice. All rights reserved.
+ */
+"BACK" = "Volver";
+"FUTBOL_11" = "Fubbol 11";
+"BALONCESTO" = "Baloncesto";
+"VOLEIBOL" = "Voleybol";
+"BALONMANO" = "Balonmano";
 "UNIHOCKEY" = "Hockey";
 
-"HOME_TITLE" = "%@ - Available Towns";
-"HOME_INTERNET_REQUIRED" = "Internet is required to run LocalSports.";
+"HOME_TITLE" = "%@ - Municipios disponibles";
+"HOME_INTERNET_REQUIRED" = "Se necesita internet para que funcione la aplicación.";
 
-"COMPETITIONS_EMPTY" = "There is no competitions for this sport.";
-"CALENDAR_SHARE_TEXT" = "Weel %d: %@ vs %@, when:%@ where:%@";
+"COMPETITIONS_EMPTY" = "No hay competiciones activas para este deporte.";
+"CALENDAR_SHARE_TEXT" = "Jornada %d: %@ contra %@, cuando:%@ donde:%@";
 
-"CALENDAR_WEEK" = "Week %d";
-"CALENDAR_ACTION_TITLE" = "Actions with the match";
-"CALENDAR_ACTION_SHARE" = "Share match details";
-"CALENDAR_ACTION_EVENT" = "Add calendar event";
-"CALENDAR_ACTION_ISSUE" = "Send issue";
-"CALENDAR_ACTION_MAP" = "View map";
-"CALENDAR_ACTION_CLOSE" = "Close";
+"CALENDAR_WEEK" = "Jornada %d";
+"CALENDAR_ACTION_TITLE" = "Acciones sobre el partido";
+"CALENDAR_ACTION_SHARE" = "Compartir detalles";
+"CALENDAR_ACTION_EVENT" = "Añadir evento al calendario";
+"CALENDAR_ACTION_ISSUE" = "Enviar error";
+"CALENDAR_ACTION_MAP" = "Ver mapa";
+"CALENDAR_ACTION_CLOSE" = "Cerrar";
 
-"CALENDAR_EVENT_TITLE" = "Add match to calendar";
-"CALENDAR_EVENT_TEXT" = "Week %d: %@ vs %@";
-"CALENDAR_ACCESS" = "Access to calendar needed.";
-"CALENDAR_ERROR" = "Error when adding calendar";
-"CALENDAR_SUCCESS" = "Match added to calendar";
+"CALENDAR_EVENT_TITLE" = "Añadir evento al calendario";
+"CALENDAR_EVENT_TEXT" = "Jornada %d: %@ contra %@";
+"CALENDAR_ACCESS" = "Se necesita acceder al calendario.";
+"CALENDAR_ERROR" = "Error al añadir el evento al calendario";
+"CALENDAR_SUCCESS" = "Partido añadido al calendario";
 
-"ISSUE_TITLE" = "Send issue to server";
-"ISSUE_TEXT_TITLE" = "Week %d: %@ vs %@";
-"ISSUE_DESCRIPTION_REQUIRED" = "Issue description is required";
-"ISSUE_REGISTERED" = "Your issue has been register. We will review it as soon as possible.";
-"ISSUE_SEND_HTTP_ERROR" = "It is not possible to send the issue. HTTP error: %d";
-"ISSUE_SEND_ERROR" = "It is not possible to send the issue. Error: %@";
+"ISSUE_TITLE" = "Enviar error al servidor";
+"ISSUE_TEXT_TITLE" = "Jornada %d: %@ contra %@";
+"ISSUE_DESCRIPTION_REQUIRED" = "Es necesario indicar una descripción del error.";
+"ISSUE_REGISTERED" = "El error ha sido registrado. En cuanto nos sea posible lo revisaremos.";
+"ISSUE_SEND_HTTP_ERROR" = "No ha podido enviarse el error. HTTP error: %d";
+"ISSUE_SEND_ERROR" = "No ha sido posible enviar el error. Error: %@";
 
-"MAP_TITLE" = "Sport Center location";
-"CLASSIFICATION_TEAM" = "     Team";
-
-
-
+"MAP_TITLE" = "Direción del centro deportivo";
+"CLASSIFICATION_TEAM" = "     Equipo";
