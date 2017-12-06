@@ -145,10 +145,10 @@
                                                   insertNewObjectForEntityForName:CLASSIFICATION_ENTITY
                                                   inManagedObjectContext:context];
     classificationEntry.competition = competition;
-    //classificationEntry.matchesDrawn = (long)[dictionaryClassification objectForKey:@"matchesDrawn"];
-    //classificationEntry.matchesLost = (long)[dictionaryClassification objectForKey:@"matchesLost"];
-    //classificationEntry.matchesPlayed = (long)[dictionaryClassification objectForKey:@"matchesPlayed"];
-    //classificationEntry.matchesWon = (long)[dictionaryClassification objectForKey:@"matchesWon"];
+    classificationEntry.matchesDrawn = (int)[[dictionaryClassification objectForKey:@"matchesDrawn"] integerValue];
+    classificationEntry.matchesLost = (int)[[dictionaryClassification objectForKey:@"matchesLost"] integerValue];
+    classificationEntry.matchesPlayed = (int)[[dictionaryClassification objectForKey:@"matchesPlayed"] integerValue];
+    classificationEntry.matchesWon = (int)[[dictionaryClassification objectForKey:@"matchesWon"] integerValue];
     classificationEntry.points = (int)[[dictionaryClassification objectForKey:@"points"] integerValue];
     classificationEntry.position = (int)[[dictionaryClassification objectForKey:@"position"] integerValue];
     classificationEntry.team = [dictionaryClassification objectForKey:@"team"];
