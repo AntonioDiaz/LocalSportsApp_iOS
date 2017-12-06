@@ -14,9 +14,9 @@
     [[self.textViewDescription layer] setBorderColor:[[UIColor grayColor] CGColor]];
     [[self.textViewDescription layer] setBorderWidth:2];
     [[self.textViewDescription layer] setCornerRadius:5];
-    self.textFieldTitle.text = [NSString stringWithFormat:NSLocalizedString(@"ISSUE_TEXT_TITLE", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
-    self.textFieldDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
-    self.textFieldPlace.text = matchEntity.court.centerName;
+    self.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"ISSUE_TEXT_TITLE", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
+    self.labelDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
+    self.labelSportCenter.text = matchEntity.court.centerName;
     self.textViewDescription.text = @"";
 }
 

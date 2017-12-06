@@ -62,7 +62,7 @@
     if(indexPath.row==0) {
         return 60.0;
     } else {
-        return 80.0;
+        return 65.0;
     }
 }
 

@@ -65,7 +65,6 @@
 }
 
 #pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -82,7 +81,7 @@
     }
     printScreenCount++;
     [userDefaults setObject:[NSString stringWithFormat:@"%d",printScreenCount] forKey:COUNT_PRINTSCREEN_RESULTS];
-    if (self.interstitial.isReady && (printScreenCount%2 == 0)) {
+    if (self.interstitial.isReady && (printScreenCount % 10 == 0)) {
         [self.interstitial presentFromRootViewController:self];
     }
 
