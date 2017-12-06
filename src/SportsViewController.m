@@ -17,6 +17,8 @@
     self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", APP_NAME, townSelected];
     
     UIImage *image = [[UIImage imageNamed:@"menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    image = [Utils imageWithImage:image scaledToSize:CGSizeMake(30, 30)];
     UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showSideMenu:)];
     self.navigationItem.leftBarButtonItem = button;
     

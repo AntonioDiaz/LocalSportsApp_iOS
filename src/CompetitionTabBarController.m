@@ -21,11 +21,11 @@
     //load competitions details on DB.
     UITabBarItem *tabBarItemCalendar = [self.tabBar.items objectAtIndex:0];
     UIImage *imageCalendar = [UIImage imageNamed:@"calendar"];
-    imageCalendar = [self imageWithImage:imageCalendar scaledToSize:CGSizeMake(30, 30)];
+    imageCalendar = [Utils imageWithImage:imageCalendar scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemCalendar setImage:imageCalendar];
     UITabBarItem *tabBarItemClassification = [self.tabBar.items objectAtIndex:1];
     UIImage *imageClassification = [UIImage imageNamed:@"classification"];
-    imageClassification = [self imageWithImage:imageClassification scaledToSize:CGSizeMake(30, 30)];
+    imageClassification = [Utils imageWithImage:imageClassification scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemClassification setImage:imageClassification];
     NSString *idCompetitionServer = [NSString stringWithFormat: @"%f", self.competitionEntity.idCompetitionServer];
     if ([Utils noTengoInterne]) {
@@ -46,15 +46,6 @@
 }
 
 #pragma mark - private methods
-
-- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
-    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
-    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return newImage;
-}
-
 /** Load details (matches and classification) from server and update tables in DB. */
 -(void) loadCompetitionDetails:(NSString *) idCompetition {
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];

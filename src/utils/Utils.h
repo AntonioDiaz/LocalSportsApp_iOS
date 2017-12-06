@@ -47,5 +47,6 @@ typedef NS_ENUM(NSInteger, EnumSports) {
 +(NSDate *) formatDateDoubleToDate:(double) dateDouble;
 +(NSString *) dictionaryToString:(NSDictionary *) dictionary;
 +(BOOL) noTengoInterne;
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
 @end

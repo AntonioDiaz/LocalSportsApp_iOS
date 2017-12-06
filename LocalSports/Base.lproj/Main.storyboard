@@ -857,6 +857,22 @@
             </objects>
             <point key="canvasLocation" x="1261.5999999999999" y="1405.5472263868066"/>
         </scene>
+        <!--teams-->
+        <scene sceneID="UWq-F4-yvK">
+            <objects>
+                <viewController title="Equipos" id="lxO-4S-Lh5" userLabel="teams" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XxW-Wf-9ua">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uqi-0v-7si"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Equipos" id="pHQ-zm-rwh" userLabel="teams"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bs6-pz-6CU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2446" y="1531"/>
+        </scene>
         <!--competition tabBar-->
         <scene sceneID="3hz-J5-BjG">
             <objects>
@@ -869,6 +885,7 @@
                     <connections>
                         <segue destination="52k-Dc-OiE" kind="relationship" relationship="viewControllers" id="ro7-0l-TMM"/>
                         <segue destination="XNz-f2-zvZ" kind="relationship" relationship="viewControllers" id="Mkd-7G-jRn"/>
+                        <segue destination="lxO-4S-Lh5" kind="relationship" relationship="viewControllers" id="cwB-ni-bgc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCh-Qd-ySj" userLabel="First Responder" sceneMemberID="firstResponder"/>
