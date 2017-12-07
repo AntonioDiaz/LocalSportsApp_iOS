@@ -411,85 +411,12 @@
                     <tabBarItem key="tabBarItem" title="calendar" id="ayz-0B-gbb"/>
                     <connections>
                         <segue destination="fOB-Oz-Bjt" kind="show" identifier="segue_event" id="gRD-cd-Qpi"/>
-                        <segue destination="jWm-6b-NR8" kind="show" identifier="segue_map" id="dGd-C8-4Nc"/>
                         <segue destination="ela-zj-yiv" kind="show" identifier="segue_post" id="fxB-Um-hck"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYC-0M-hkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2162" y="-1"/>
-        </scene>
-        <!--Match: show map-->
-        <scene sceneID="J6X-rl-YPU">
-            <objects>
-                <viewController id="jWm-6b-NR8" userLabel="Match: show map" customClass="MatchMapViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qkJ-Gb-hFX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="85u-2h-9F4">
-                                <rect key="frame" x="20" y="84" width="130" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="k83-hQ-VS4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pabellón Europa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53z-HV-RBI">
-                                <rect key="frame" x="160" y="86.5" width="175" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" priority="900" constant="153" id="6BT-bL-4h2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hC-yl-Rv7">
-                                <rect key="frame" x="20" y="148" width="130" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. de Alemania, 2, 28916 Leganés, Madrid" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZR-nJ-YxG">
-                                <rect key="frame" x="160" y="150.5" width="175" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oOB-TJ-8qo">
-                                <rect key="frame" x="0.0" y="212" width="375" height="455"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="QZR-nJ-YxG" firstAttribute="leading" secondItem="53z-HV-RBI" secondAttribute="leading" id="23R-Lh-hbc"/>
-                            <constraint firstItem="53z-HV-RBI" firstAttribute="centerY" secondItem="85u-2h-9F4" secondAttribute="centerY" id="AcF-tM-ixf"/>
-                            <constraint firstItem="0hC-yl-Rv7" firstAttribute="width" secondItem="85u-2h-9F4" secondAttribute="width" id="EPW-M2-TVq"/>
-                            <constraint firstItem="oOB-TJ-8qo" firstAttribute="centerX" secondItem="9ma-Ie-udZ" secondAttribute="centerX" id="MfT-0u-6ui"/>
-                            <constraint firstItem="9ma-Ie-udZ" firstAttribute="trailing" secondItem="53z-HV-RBI" secondAttribute="trailing" constant="40" id="PHk-7B-n4q"/>
-                            <constraint firstItem="0hC-yl-Rv7" firstAttribute="leading" secondItem="85u-2h-9F4" secondAttribute="leading" id="VKf-w2-nkb"/>
-                            <constraint firstItem="QZR-nJ-YxG" firstAttribute="centerY" secondItem="0hC-yl-Rv7" secondAttribute="centerY" id="WpL-rq-k6J"/>
-                            <constraint firstItem="9ma-Ie-udZ" firstAttribute="bottom" secondItem="oOB-TJ-8qo" secondAttribute="bottom" id="YuK-Cg-3i4"/>
-                            <constraint firstItem="85u-2h-9F4" firstAttribute="top" secondItem="9ma-Ie-udZ" secondAttribute="top" constant="20" id="bmg-4Q-hps"/>
-                            <constraint firstItem="oOB-TJ-8qo" firstAttribute="top" secondItem="0hC-yl-Rv7" secondAttribute="bottom" constant="40" id="cr6-r6-c2s"/>
-                            <constraint firstItem="53z-HV-RBI" firstAttribute="leading" secondItem="85u-2h-9F4" secondAttribute="trailing" constant="10" id="dsi-3E-4vz"/>
-                            <constraint firstItem="85u-2h-9F4" firstAttribute="leading" secondItem="9ma-Ie-udZ" secondAttribute="leading" constant="20" id="ftA-oG-6pe"/>
-                            <constraint firstItem="oOB-TJ-8qo" firstAttribute="width" secondItem="qkJ-Gb-hFX" secondAttribute="width" id="kBt-5M-u0n"/>
-                            <constraint firstItem="QZR-nJ-YxG" firstAttribute="trailing" secondItem="53z-HV-RBI" secondAttribute="trailing" id="nqE-xH-mmV"/>
-                            <constraint firstItem="0hC-yl-Rv7" firstAttribute="top" secondItem="85u-2h-9F4" secondAttribute="bottom" constant="40" id="uEx-aW-j5k"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="9ma-Ie-udZ"/>
-                    </view>
-                    <connections>
-                        <outlet property="labelAddress" destination="QZR-nJ-YxG" id="tcY-mB-Zim"/>
-                        <outlet property="labelSportCenterName" destination="53z-HV-RBI" id="HMe-iH-33K"/>
-                        <outlet property="mapView" destination="oOB-TJ-8qo" id="eLC-gW-Rmr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oud-L4-edn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2926" y="760"/>
         </scene>
         <!--Match Send Issue View Controller-->
         <scene sceneID="J6L-xR-uPs">

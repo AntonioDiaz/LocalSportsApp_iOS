@@ -114,7 +114,14 @@
         [alertController addAction:actionSendIssue];
         
         UIAlertAction *actionOpenMap = [UIAlertAction actionWithTitle:strActionOpenMap style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self performSegueWithIdentifier:SEGUE_MAP sender:nil];
+            UIApplication *application = [UIApplication sharedApplication];
+            NSString *courtAddress = [self matchSelectedInList].court.centerAddress;
+            courtAddress = [courtAddress stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+            NSURLComponents *components = [NSURLComponents componentsWithString:@"http://maps.apple.com"];
+            NSURLQueryItem *address = [NSURLQueryItem queryItemWithName:@"address" value:courtAddress];
+            components.queryItems = @[ address];
+            NSURL *url = components.URL;
+            [application openURL:url options:@{} completionHandler:nil];
             [alertController dismissViewControllerAnimated:YES completion:nil];
         }];
         [alertController addAction:actionOpenMap];

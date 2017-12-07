@@ -73,4 +73,6 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
+
+
 @end
