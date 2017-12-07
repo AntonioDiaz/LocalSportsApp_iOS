@@ -1,4 +1,4 @@
-#import "CalendarTableViewController.h"
+#import "CalendarViewController.h"
 #import "MatchEntity+CoreDataProperties.h"
 #import "SportCourtEntity+CoreDataProperties.h"
 #import "MatchDetailTableViewCell.h"
@@ -8,8 +8,9 @@
 #import "MatchMapViewController.h"
 #import "MatchSendIssueViewController.h"
 #import "CalendarHeadingTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
-@implementation CalendarTableViewController
+@implementation CalendarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,17 +21,23 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
+-(void)viewWillAppear:(BOOL)animated {
+    if (competitionEntity!=nil) {
+        self.labelCategory.text = competitionEntity.category;
+    }
+}
+
+#pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [self calculateNumOfWeeks];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-     if ([sectionsExpanded containsIndex:section]) {
-         return numMatchesEachWeek + 1;
-     } else {
-         return 1;
-     }
+    if ([sectionsExpanded containsIndex:section]) {
+        return numMatchesEachWeek + 1;
+    } else {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,11 +67,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row==0) {
-        return 60.0;
+        return 50.0;
     } else {
         return 65.0;
     }
 }
+
 
 #pragma mark - table delegate
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,14 +104,14 @@
             alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         }
         UIAlertAction *actionShare = [UIAlertAction actionWithTitle:strActionShare style:UIAlertActionStyleDefault
-         handler:^(UIAlertAction *action) {
-             [self actionShareMatch:[self matchSelectedInList]];
-             [alertController dismissViewControllerAnimated:YES completion:nil];
-         }];
+                                                            handler:^(UIAlertAction *action) {
+                                                                [self actionShareMatch:[self matchSelectedInList]];
+                                                                [alertController dismissViewControllerAnimated:YES completion:nil];
+                                                            }];
         [alertController addAction:actionShare];
         
         UIAlertAction *actionAddEvent = [UIAlertAction actionWithTitle:strActionAddEvent style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-              [self performSegueWithIdentifier:SEGUE_EVENT sender:nil];
+            [self performSegueWithIdentifier:SEGUE_EVENT sender:nil];
         }];
         [alertController addAction:actionAddEvent];
         
@@ -116,10 +124,12 @@
         UIAlertAction *actionOpenMap = [UIAlertAction actionWithTitle:strActionOpenMap style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             UIApplication *application = [UIApplication sharedApplication];
             NSString *courtAddress = [self matchSelectedInList].court.centerAddress;
+            NSString *centerName = [self matchSelectedInList].court.centerName;
+            courtAddress =  [NSString stringWithFormat:@"%@, %@", centerName, courtAddress];
             courtAddress = [courtAddress stringByReplacingOccurrencesOfString:@" " withString:@"+"];
             NSURLComponents *components = [NSURLComponents componentsWithString:@"http://maps.apple.com"];
             NSURLQueryItem *address = [NSURLQueryItem queryItemWithName:@"address" value:courtAddress];
-            components.queryItems = @[ address];
+            components.queryItems = @[address];
             NSURL *url = components.URL;
             [application openURL:url options:@{} completionHandler:nil];
             [alertController dismissViewControllerAnimated:YES completion:nil];
@@ -128,11 +138,12 @@
         
         UIAlertAction *actionClose = [UIAlertAction actionWithTitle:strActionClose style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             [alertController dismissViewControllerAnimated:YES completion:nil];
-         }];
+        }];
         [alertController addAction:actionClose];
         [self presentViewController:alertController animated:YES completion:nil];
     }
 }
+
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -152,10 +163,9 @@
     }
 }
 
-
 #pragma mark - private methods
 -(MatchEntity *) matchSelectedInList{
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSIndexPath *indexPath = [self.tableViewCalendar indexPathForSelectedRow];
     int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
     return [arrayMatches objectAtIndex:indexInArray];
 }
@@ -187,12 +197,14 @@
 }
 
 -(void) reloadDataTable:(CompetitionEntity *) competition {
+    competitionEntity = competition;
+    self.labelCategory.text = competitionEntity.category;
     arrayMatches = [UtilsDataBase queryMatches:competition];
     if (arrayMatches.count > 0) {
         numOfWeeks = [self calculateNumOfWeeks];
         numMatchesEachWeek = (int)arrayMatches.count / numOfWeeks;
     }
-    [self.tableView reloadData];
+    [self.tableViewCalendar reloadData];
 }
 
 -(int) calculateNumOfWeeks {

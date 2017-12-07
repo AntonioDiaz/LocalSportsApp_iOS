@@ -5,8 +5,9 @@
 #import "AppDelegate.h"
 #import "Utils.h"
 #import "UtilsDataBase.h"
-#import "CalendarTableViewController.h"
 #import "ClassificationTableViewController.h"
+#import "CalendarViewController.h"
+
 
 @implementation CompetitionTabBarController
 
@@ -18,15 +19,22 @@
     self.navigationItem.title = [NSString stringWithFormat:@"%@", self.competitionEntity.name];
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     managedObjectContext = app.persistentContainer.viewContext;
-    //load competitions details on DB.
+    //add calendar image to tabbar
     UITabBarItem *tabBarItemCalendar = [self.tabBar.items objectAtIndex:0];
     UIImage *imageCalendar = [UIImage imageNamed:@"calendar"];
     imageCalendar = [Utils imageWithImage:imageCalendar scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemCalendar setImage:imageCalendar];
+    //add classification image to tabbar
     UITabBarItem *tabBarItemClassification = [self.tabBar.items objectAtIndex:1];
     UIImage *imageClassification = [UIImage imageNamed:@"classification"];
     imageClassification = [Utils imageWithImage:imageClassification scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemClassification setImage:imageClassification];
+    //add classification image to tabbar
+    UITabBarItem *tabBarItemTeam = [self.tabBar.items objectAtIndex:2];
+    UIImage *imageTeam = [UIImage imageNamed:@"team"];
+    imageTeam = [Utils imageWithImage:imageTeam scaledToSize:CGSizeMake(30, 30)];
+    [tabBarItemTeam setImage:imageTeam];
+    //load competitions details on DB.
     NSString *idCompetitionServer = [NSString stringWithFormat: @"%f", self.competitionEntity.idCompetitionServer];
     if ([Utils noTengoInterne]) {
         [self reloadTabsData];
@@ -83,8 +91,8 @@
 }
 
 -(void) reloadTabsData {
-    CalendarTableViewController *calendarTableViewController = self.viewControllers[0];
-    [calendarTableViewController reloadDataTable:self.competitionEntity];
+    CalendarViewController *calendarViewController = self.viewControllers[0];
+    [calendarViewController reloadDataTable:self.competitionEntity];
     ClassificationTableViewController *classificationTableViewController = self.viewControllers[1];
     [classificationTableViewController reloadDataTable:self.competitionEntity];
 }
