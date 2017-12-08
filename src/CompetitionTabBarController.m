@@ -7,7 +7,7 @@
 #import "UtilsDataBase.h"
 #import "ClassificationTableViewController.h"
 #import "CalendarViewController.h"
-
+#import "TeamsViewController.h"
 
 @implementation CompetitionTabBarController
 
@@ -16,7 +16,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //show interstitial
-    self.navigationItem.title = [NSString stringWithFormat:@"%@", self.competitionEntity.name];
+    self.navigationItem.prompt = self.competitionEntity.category;
+    self.navigationItem.title = self.competitionEntity.name;
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     managedObjectContext = app.persistentContainer.viewContext;
     //add calendar image to tabbar
@@ -95,5 +96,7 @@
     [calendarViewController reloadDataTable:self.competitionEntity];
     ClassificationTableViewController *classificationTableViewController = self.viewControllers[1];
     [classificationTableViewController reloadDataTable:self.competitionEntity];
+    TeamsViewController *teamsViewController = self.viewControllers[2];
+    [teamsViewController reloadDataTable:self.competitionEntity];
 }
 @end

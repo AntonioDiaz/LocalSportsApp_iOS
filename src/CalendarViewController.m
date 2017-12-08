@@ -21,12 +21,6 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    if (competitionEntity!=nil) {
-        self.labelCategory.text = competitionEntity.category;
-    }
-}
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [self calculateNumOfWeeks];
