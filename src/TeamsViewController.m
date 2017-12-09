@@ -42,7 +42,13 @@
         MatchEntity *matchEntity = [matches objectAtIndex:indexPath.row -1];
         cell.labelTeamLocal.text = matchEntity.teamLocal;
         cell.labelTeamVisitor.text = matchEntity.teamVisitor;
-        cell.labelResult.text = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
+        NSString *scoreText = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
+        if (matchEntity.state==PENDING) {
+            scoreText = @"-";
+        } else if (matchEntity.state == CANCELED) {
+            scoreText = @"CANC";
+        }
+        cell.labelResult.text = scoreText;
         cell.separatorInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, CGFLOAT_MAX);
         return cell;
     }
@@ -89,6 +95,7 @@
             [arrayTeamMatches addObject:[[NSMutableArray alloc] init]];
         }
     }
+    [arrayTeams sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     for (MatchEntity *matchEntity in arrayMatches) {
         NSUInteger teamLocalPosition = [arrayTeams indexOfObject:matchEntity.teamLocal];
         NSMutableArray *teamAsLocalMatches = [arrayTeamMatches objectAtIndex:teamLocalPosition];

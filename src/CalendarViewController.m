@@ -53,7 +53,13 @@
         cell.labelVisitor.text = matchEntity.teamVisitor;
         cell.labelDate.text = dateStr;
         cell.labelCenter.text = matchEntity.court.centerName;
-        cell.labelScore.text = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
+        NSString *scoreText = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
+        if (matchEntity.state==PENDING) {
+            scoreText = @"-";
+        } else if (matchEntity.state == CANCELED) {
+            scoreText = @"CANC";
+        }
+        cell.labelScore.text = scoreText;
         cell.separatorInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, CGFLOAT_MAX);
         return cell;
     }

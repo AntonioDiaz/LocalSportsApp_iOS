@@ -23,20 +23,24 @@
 #define SEGUE_MAP @"segue_map"
 #define SEGUE_POST @"segue_post"
 
-
 #define UIColorFromRGB(rgbValue) \
     [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
     green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
     blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
     alpha:1.0]
 
-
-typedef NS_ENUM(NSInteger, EnumSports) {
+typedef NS_ENUM (NSInteger, EnumSports) {
     FOOTBALL = 1,
     BASKETBALL,
     VOLLEYBALL,
     HANDBALL,
     HOCKEY
+};
+
+typedef NS_ENUM (NSInteger, EnumStates) {
+    PENDING = 0,
+    PLAYED = 1,
+    CANCELED = 2
 };
 
 +(NSString*) enumSportToString:(EnumSports)enumSport;
