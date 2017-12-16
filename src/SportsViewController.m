@@ -3,6 +3,7 @@
 #import "CompetitionsTableViewController.h"
 #import "CompetitionEntity+CoreDataProperties.h"
 #import "UtilsDataBase.h"
+#import "UIViewController+LGSideMenuController.h"
 
 @implementation SportsViewController
 
@@ -124,10 +125,11 @@
 }
 
 -(void) showSideMenu:(id)sender {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:nil forKey:PREF_TOWN_NAME];
-    [userDefaults setValue:nil forKey:PREF_TOWN_ID];
-    [self.navigationController popViewControllerAnimated:YES];
+    //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    //[userDefaults setValue:nil forKey:PREF_TOWN_NAME];
+    //[userDefaults setValue:nil forKey:PREF_TOWN_ID];
+    //[self.navigationController popViewControllerAnimated:YES];
+    [self.sideMenuController showLeftViewAnimated:YES completionHandler:nil];
 }
 
 -(void) enableSportButtons {

@@ -17,7 +17,7 @@
     NSString *townSelectedStr = [userDefaults objectForKey:PREF_TOWN_NAME];
     if (townSelectedStr.length > 0) {
          self.navigationItem.title = @"";
-        [self performSegueWithIdentifier:@"segueSports" sender:self];
+        [self performSegueWithIdentifier:@"segue_sports" sender:self];
     } else {
         self.navigationItem.title = [NSString stringWithFormat: NSLocalizedString(@"HOME_TITLE", nil), APP_NAME];
         //check for internet conection.
@@ -78,6 +78,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if ([userDefaults objectForKey:PREF_TOWN_NAME]==nil) {
+        [[self navigationController] setNavigationBarHidden:true animated:YES];
         NSIndexPath *indexPath = [self.townsTableView indexPathForSelectedRow];
         NSDictionary *dictionary = [arrayTowns objectAtIndex:indexPath.row];
         NSString *townSelectedString = [dictionary objectForKey:@"name"];
