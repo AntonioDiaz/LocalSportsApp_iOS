@@ -54,7 +54,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="labelTownName" destination="gtZ-XR-h1V" id="gKY-VT-zO1"/>
-                                            <segue destination="ze8-hO-4Go" kind="show" identifier="segue_sports" id="Lgp-we-E9y"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,12 +73,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1090" y="-282"/>
+            <point key="canvasLocation" x="-1023" y="487"/>
         </scene>
         <!--Side Menu Controller-->
         <scene sceneID="XS5-y5-LKm">
             <objects>
-                <viewController id="ze8-hO-4Go" customClass="SideMenuController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SportsNavigationController" id="ze8-hO-4Go" customClass="SideMenuController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W57-fg-FZ7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,9 +160,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="HoN-lv-y0k"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -174,7 +170,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGo-No-PPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-356" y="500.59970014992507"/>
+            <point key="canvasLocation" x="-318" y="488"/>
         </scene>
         <!--Sports-->
         <scene sceneID="DeP-AD-meL">
@@ -874,7 +870,7 @@
         <!--Root-->
         <scene sceneID="eXW-tg-heW">
             <objects>
-                <navigationController id="ETA-qf-dfg" userLabel="Root" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNavigationController" id="ETA-qf-dfg" userLabel="Root" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3zO-Al-Ir1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -885,7 +881,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNr-K5-Q6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2150" y="-230"/>
+            <point key="canvasLocation" x="-1023" y="-282"/>
         </scene>
         <!--CalendarNew-->
         <scene sceneID="fRd-MU-hu5">
@@ -1041,7 +1037,4 @@
         <image name="hockey" width="364" height="364"/>
         <image name="volleyball" width="517" height="517"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="HoN-lv-y0k"/>
-    </inferredMetricsTieBreakers>
 </document>

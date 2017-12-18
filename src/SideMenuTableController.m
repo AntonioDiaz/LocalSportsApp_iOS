@@ -37,6 +37,10 @@
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults setValue:nil forKey:PREF_TOWN_NAME];
         [userDefaults setValue:nil forKey:PREF_TOWN_ID];
+        NSString *storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RootNavigationController"];
+        [self presentViewController:vc animated:YES completion:nil];
     }
 }
 

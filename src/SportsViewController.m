@@ -125,10 +125,6 @@
 }
 
 -(void) showSideMenu:(id)sender {
-    //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    //[userDefaults setValue:nil forKey:PREF_TOWN_NAME];
-    //[userDefaults setValue:nil forKey:PREF_TOWN_ID];
-    //[self.navigationController popViewControllerAnimated:YES];
     [self.sideMenuController showLeftViewAnimated:YES completionHandler:nil];
 }
 
@@ -180,7 +176,10 @@
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil)
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
     CompetitionsTableViewController *viewController = (CompetitionsTableViewController *) segue.destinationViewController;
     viewController.sportSelected = sportSelected;
 }
@@ -195,17 +194,6 @@
 - (IBAction)actionFavorites:(id)sender {
     [Utils showComingSoon];
 }
-
-#pragma mark -
-/*
--(void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didRewardUserWithReward:(GADAdReward *)reward {
-    NSString *rewardMessage =
-    [NSString stringWithFormat:@"Reward received with currency %@ , amount %lf",
-     reward.type,
-     [reward.amount doubleValue]];
-    NSLog(rewardMessage);
-}
-*/
 
 #pragma mark -
 //cuando se carga el anuncio

@@ -16,8 +16,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelectedStr = [userDefaults objectForKey:PREF_TOWN_NAME];
     if (townSelectedStr.length > 0) {
-         self.navigationItem.title = @"";
-        [self performSegueWithIdentifier:@"segue_sports" sender:self];
+        [self navigateToSportsScreen];
     } else {
         self.navigationItem.title = [NSString stringWithFormat: NSLocalizedString(@"HOME_TITLE", nil), APP_NAME];
         //check for internet conection.
@@ -74,6 +73,16 @@
     return 80;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dictionary = [arrayTowns objectAtIndex:indexPath.row];
+    NSString *townSelectedString = [dictionary objectForKey:@"name"];
+    NSString *townSelectedId = [dictionary objectForKey:@"id"];
+    [userDefaults setValue:townSelectedString forKey:PREF_TOWN_NAME];
+    [userDefaults setValue:townSelectedId forKey:PREF_TOWN_ID];
+    [self navigateToSportsScreen];
+}
+
 #pragma mark - segue methods
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -87,4 +96,13 @@
         [userDefaults setValue:townSelectedId forKey:PREF_TOWN_ID];
     }
 }
+
+#pragma mark - private methods
+-(void) navigateToSportsScreen {
+    NSString *storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"SportsNavigationController"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 @end
