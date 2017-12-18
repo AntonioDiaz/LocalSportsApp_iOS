@@ -110,8 +110,6 @@
 		D13FE3401FD1DC5800067C5B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D14397051FD0788100AEF92B /* MatchMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchMapViewController.h; sourceTree = "<group>"; };
 		D14397061FD0788100AEF92B /* MatchMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchMapViewController.m; sourceTree = "<group>"; };
-		D16107671FD7FABE00F77F5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = LocalSports/en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D16107691FD7FC3D00F77F5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D191D2CA1FD4608A00A40804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = LocalSports/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1B9CE511FDA964E00C1937D /* TeamsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamsViewController.h; sourceTree = "<group>"; };
 		D1B9CE521FDA964E00C1937D /* TeamsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamsViewController.m; sourceTree = "<group>"; };
@@ -388,10 +386,9 @@
 			};
 			buildConfigurationList = 094C1D4D1FC83A3F003685DD /* Build configuration list for PBXProject "LocalSports" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = en;
+			developmentRegion = es;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 				es,
 			);
@@ -476,7 +473,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				094C1D5C1FC83A3F003685DD /* Base */,
-				D16107691FD7FC3D00F77F5C /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -485,7 +481,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				D191D2CA1FD4608A00A40804 /* Base */,
-				D16107671FD7FABE00F77F5C /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

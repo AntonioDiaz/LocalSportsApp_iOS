@@ -134,7 +134,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menú" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPf-xJ-ZVa">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menú BASE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPf-xJ-ZVa">
                                             <rect key="frame" x="29" y="11" width="330" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
@@ -587,7 +587,7 @@
             </objects>
             <point key="canvasLocation" x="2961" y="-2"/>
         </scene>
-        <!--classification-->
+        <!--Clasificación-->
         <scene sceneID="c7E-YZ-QAS">
             <objects>
                 <tableViewController id="XNz-f2-zvZ" customClass="ClassificationTableViewController" sceneMemberID="viewController">
@@ -721,7 +721,7 @@
                             <outlet property="delegate" destination="XNz-f2-zvZ" id="njh-Li-GSp"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="classification" id="jzo-Ty-fLL"/>
+                    <tabBarItem key="tabBarItem" title="Clasificación" id="jzo-Ty-fLL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iB-jc-9AM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
