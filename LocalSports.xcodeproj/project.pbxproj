@@ -106,6 +106,8 @@
 		D12A07F01FE5404B0025351A /* SideMenuTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuTableController.m; sourceTree = "<group>"; };
 		D12E74581FCF5AA30054BA52 /* MatchDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchDetailTableViewCell.h; sourceTree = "<group>"; };
 		D12E74591FCF5AA30054BA52 /* MatchDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchDetailTableViewCell.m; sourceTree = "<group>"; };
+		D131B0E11FE7CB4200C6B8B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D131B0E21FE7CB4200C6B8B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = LocalSports/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D13FE33F1FD1DC5800067C5B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		D13FE3401FD1DC5800067C5B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D14397051FD0788100AEF92B /* MatchMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchMapViewController.h; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 			knownRegions = (
 				Base,
 				es,
+				en,
 			);
 			mainGroup = 094C1D491FC83A3F003685DD;
 			productRefGroup = 094C1D531FC83A3F003685DD /* Products */;
@@ -473,6 +476,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				094C1D5C1FC83A3F003685DD /* Base */,
+				D131B0E11FE7CB4200C6B8B0 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -481,6 +485,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D191D2CA1FD4608A00A40804 /* Base */,
+				D131B0E21FE7CB4200C6B8B0 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

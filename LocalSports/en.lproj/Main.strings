@@ -1,24 +1,21 @@
 
-/* Class = "UILabel"; text = "Address"; ObjectID = "0hC-yl-Rv7"; */
-"0hC-yl-Rv7.text" = "Address";
+/* Class = "UILabel"; text = "Cuándo"; ObjectID = "13k-Xv-yQu"; */
+"13k-Xv-yQu.text" = "Cuándo";
 
-/* Class = "UILabel"; text = "Date"; ObjectID = "13k-Xv-yQu"; */
-"13k-Xv-yQu.text" = "Date";
+/* Class = "UILabel"; text = "Descripción"; ObjectID = "2D2-e5-fb6"; */
+"2D2-e5-fb6.text" = "Descripción";
 
-/* Class = "UILabel"; text = "Description"; ObjectID = "2D2-e5-fb6"; */
-"2D2-e5-fb6.text" = "Description";
+/* Class = "UILabel"; text = "12 - 87"; ObjectID = "3a7-hK-ao5"; */
+"3a7-hK-ao5.text" = "12 - 87";
 
-/* Class = "UILabel"; text = "Atletico de madrid"; ObjectID = "2jV-zl-HXu"; */
-"2jV-zl-HXu.text" = "Atletico de madrid";
+/* Class = "UILabel"; text = "Dónde"; ObjectID = "4IK-zN-iFU"; */
+"4IK-zN-iFU.text" = "Dónde";
 
-/* Class = "UILabel"; text = "Place"; ObjectID = "4IK-zN-iFU"; */
-"4IK-zN-iFU.text" = "Place";
+/* Class = "UILabel"; text = "Dónde"; ObjectID = "4QL-Y1-btW"; */
+"4QL-Y1-btW.text" = "Dónde";
 
-/* Class = "UILabel"; text = "Place"; ObjectID = "4QL-Y1-btW"; */
-"4QL-Y1-btW.text" = "Place";
-
-/* Class = "UILabel"; text = "Pabellón Europa"; ObjectID = "53z-HV-RBI"; */
-"53z-HV-RBI.text" = "Pabellón Europa";
+/* Class = "UILabel"; text = "Cambiar municipio"; ObjectID = "5AZ-e1-uGe"; */
+"5AZ-e1-uGe.text" = "Cambiar municipio";
 
 /* Class = "UIViewController"; title = "Sports"; ObjectID = "6Ed-xZ-v4P"; */
 "6Ed-xZ-v4P.title" = "Sports";
@@ -26,29 +23,44 @@
 /* Class = "UILabel"; text = "Pabellon Europa"; ObjectID = "7aX-fw-N3o"; */
 "7aX-fw-N3o.text" = "Pabellon Europa";
 
-/* Class = "UILabel"; text = "Sport center"; ObjectID = "85u-2h-9F4"; */
-"85u-2h-9F4.text" = "Sport center";
-
 /* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "8zl-AL-1RW"; */
 "8zl-AL-1RW.normalTitle" = "Accept";
 
-/* Class = "UILabel"; text = "Rayo de Ciempozuelos"; ObjectID = "Acy-gw-SaL"; */
-"Acy-gw-SaL.text" = "Rayo de Ciempozuelos";
+/* Class = "UILabel"; text = "Rayo de Ciempozuelos"; ObjectID = "9wq-7x-YGK"; */
+"9wq-7x-YGK.text" = "Rayo de Ciempozuelos";
 
-/* Class = "UILabel"; text = "Title"; ObjectID = "BoR-mJ-wMW"; */
-"BoR-mJ-wMW.text" = "Title";
+/* Class = "UITabBarItem"; title = "Calendario"; ObjectID = "ATc-s2-3gc"; */
+"ATc-s2-3gc.title" = "Calendario";
 
-/* Class = "UILabel"; text = "Title"; ObjectID = "F1D-4a-x04"; */
-"F1D-4a-x04.text" = "Title";
+/* Class = "UILabel"; text = "12 - 10"; ObjectID = "Ab4-RS-U5f"; */
+"Ab4-RS-U5f.text" = "12 - 10";
 
-/* Class = "UILabel"; text = "Title"; ObjectID = "H31-RS-iex"; */
-"H31-RS-iex.text" = "Title";
+/* Class = "UILabel"; text = "Title"; ObjectID = "EO5-oZ-epk"; */
+"EO5-oZ-epk.text" = "Title";
+
+/* Class = "UILabel"; text = "Partido"; ObjectID = "F1D-4a-x04"; */
+"F1D-4a-x04.text" = "Partido";
+
+/* Class = "UILabel"; text = "pg"; ObjectID = "G3Y-CE-sqm"; */
+"G3Y-CE-sqm.text" = "pg";
+
+/* Class = "UILabel"; text = "pp"; ObjectID = "IbZ-lG-W2O"; */
+"IbZ-lG-W2O.text" = "pp";
+
+/* Class = "UILabel"; text = "Atletico de Madrid"; ObjectID = "IvT-wc-WWb"; */
+"IvT-wc-WWb.text" = "Atletico de Madrid";
+
+/* Class = "UILabel"; text = "pg"; ObjectID = "JFB-ln-AGT"; */
+"JFB-ln-AGT.text" = "pg";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "KKc-TG-bsN"; */
 "KKc-TG-bsN.text" = "Label";
 
-/* Class = "UILabel"; text = "Title"; ObjectID = "MEC-0f-JiD"; */
-"MEC-0f-JiD.text" = "Title";
+/* Class = "UILabel"; text = "Atletico de madrid"; ObjectID = "Khs-ur-SHV"; */
+"Khs-ur-SHV.text" = "Atletico de madrid";
+
+/* Class = "UILabel"; text = "Partido"; ObjectID = "MEC-0f-JiD"; */
+"MEC-0f-JiD.text" = "Partido";
 
 /* Class = "UILabel"; text = "21/12/2017 21:00 "; ObjectID = "NCM-Of-YBD"; */
 "NCM-Of-YBD.text" = "21/12/2017 21:00 ";
@@ -56,53 +68,62 @@
 /* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "P5T-PH-LN0"; */
 "P5T-PH-LN0.normalTitle" = "Accept";
 
-/* Class = "UILabel"; text = "Av. de Alemania, 2, 28916 Leganés, Madrid"; ObjectID = "QZR-nJ-YxG"; */
-"QZR-nJ-YxG.text" = "Av. de Alemania, 2, 28916 Leganés, Madrid";
+/* Class = "UILabel"; text = "Title"; ObjectID = "QQU-fD-V4V"; */
+"QQU-fD-V4V.text" = "Title";
 
 /* Class = "UILabel"; text = "21/12/2017 21:00 "; ObjectID = "Qpf-Hc-jGQ"; */
 "Qpf-Hc-jGQ.text" = "21/12/2017 21:00 ";
 
-/* Class = "UILabel"; text = "Detail"; ObjectID = "UYc-TB-kdS"; */
-"UYc-TB-kdS.text" = "Detail";
-
 /* Class = "UITextView"; text = "descripcion del error"; ObjectID = "WIP-Rs-qu6"; */
 "WIP-Rs-qu6.text" = "descripcion del error";
 
-/* Class = "UITabBarItem"; title = "calendar"; ObjectID = "ayz-0B-gbb"; */
-"ayz-0B-gbb.title" = "calendar";
+/* Class = "UILabel"; text = "pt"; ObjectID = "YWQ-B4-pDq"; */
+"YWQ-B4-pDq.text" = "pt";
+
+/* Class = "UILabel"; text = "Menú"; ObjectID = "aPf-xJ-ZVa"; */
+"aPf-xJ-ZVa.text" = "Menú";
 
 /* Class = "UILabel"; text = "Pabellon Europa"; ObjectID = "b1C-NX-eql"; */
 "b1C-NX-eql.text" = "Pabellon Europa";
 
+/* Class = "UILabel"; text = "12/12/2017 12:30"; ObjectID = "bbB-Ia-Ue3"; */
+"bbB-Ia-Ue3.text" = "12/12/2017 12:30";
+
 /* Class = "UILabel"; text = "title example"; ObjectID = "evg-Xv-Nvc"; */
 "evg-Xv-Nvc.text" = "title example";
+
+/* Class = "UILabel"; text = "Atletico de Madrid"; ObjectID = "f4C-vW-uaI"; */
+"f4C-vW-uaI.text" = "Atletico de Madrid";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "gtZ-XR-h1V"; */
 "gtZ-XR-h1V.text" = "Label";
 
-/* Class = "UILabel"; text = "12 - 87"; ObjectID = "hwI-Pu-ioM"; */
-"hwI-Pu-ioM.text" = "12 - 87";
+/* Class = "UILabel"; text = "A.D. Leganés"; ObjectID = "hD3-oS-keg"; */
+"hD3-oS-keg.text" = "A.D. Leganés";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "iKa-im-hNm"; */
 "iKa-im-hNm.text" = "Label";
 
-/* Class = "UITabBarItem"; title = "classification"; ObjectID = "jzo-Ty-fLL"; */
-"jzo-Ty-fLL.title" = "classification";
+/* Class = "UITabBarItem"; title = "Clasificación"; ObjectID = "jzo-Ty-fLL"; */
+"jzo-Ty-fLL.title" = "Clasificación";
 
-/* Class = "UILabel"; text = "Pabellon de la paz"; ObjectID = "m7T-1c-hao"; */
-"m7T-1c-hao.text" = "Pabellon de la paz";
+/* Class = "UIViewController"; title = "Equipos"; ObjectID = "lxO-4S-Lh5"; */
+"lxO-4S-Lh5.title" = "Equipos";
+
+/* Class = "UITabBarItem"; title = "Equipos"; ObjectID = "pHQ-zm-rwh"; */
+"pHQ-zm-rwh.title" = "Equipos";
+
+/* Class = "UILabel"; text = "Pabellon de la paz"; ObjectID = "ssz-db-bvt"; */
+"ssz-db-bvt.text" = "Pabellon de la paz";
 
 /* Class = "UILabel"; text = "title example"; ObjectID = "u4c-8E-95p"; */
 "u4c-8E-95p.text" = "title example";
 
-/* Class = "UILabel"; text = "Date"; ObjectID = "wIf-SX-Bta"; */
-"wIf-SX-Bta.text" = "Date";
+/* Class = "UILabel"; text = "pj"; ObjectID = "uEm-lB-Dg2"; */
+"uEm-lB-Dg2.text" = "pj";
+
+/* Class = "UILabel"; text = "Cúando"; ObjectID = "wIf-SX-Bta"; */
+"wIf-SX-Bta.text" = "Cúando";
 
 /* Class = "UITabBarController"; title = "titulo prueba"; ObjectID = "zXi-vt-UEp"; */
 "zXi-vt-UEp.title" = "titulo prueba";
-
-/* Class = "UILabel"; text = "Title"; ObjectID = "zZX-wX-gus"; */
-"zZX-wX-gus.text" = "Title";
-
-/* Class = "UILabel"; text = "12/12/2017 12:30"; ObjectID = "zwn-zi-P6z"; */
-"zwn-zi-P6z.text" = "12/12/2017 12:30";

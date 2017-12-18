@@ -12,7 +12,7 @@
 "BALONMANO" = "Handball";
 "UNIHOCKEY" = "Hockey";
 
-"HOME_TITLE" = "%@ - Available Towns english";
+"HOME_TITLE" = "%@ - Available Towns";
 "HOME_INTERNET_REQUIRED" = "Internet is required to run LocalSports.";
 
 "COMPETITIONS_EMPTY" = "There is no competitions for this sport.";
@@ -41,7 +41,3 @@
 
 "MAP_TITLE" = "Sport Center location";
 "CLASSIFICATION_TEAM" = "Team";
-
-
-
-
