@@ -18,22 +18,24 @@
     //show interstitial
     self.navigationItem.prompt = self.competitionEntity.category;
     self.navigationItem.title = self.competitionEntity.name;
+    /* adding favorites button */
+    [self updateFavoriteImage];
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     managedObjectContext = app.persistentContainer.viewContext;
     //add calendar image to tabbar
     UITabBarItem *tabBarItemCalendar = [self.tabBar.items objectAtIndex:0];
     UIImage *imageCalendar = [UIImage imageNamed:@"calendar"];
-    imageCalendar = [Utils imageWithImage:imageCalendar scaledToSize:CGSizeMake(30, 30)];
+    imageCalendar = [Utils imageWithSize:imageCalendar scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemCalendar setImage:imageCalendar];
     //add classification image to tabbar
     UITabBarItem *tabBarItemClassification = [self.tabBar.items objectAtIndex:1];
     UIImage *imageClassification = [UIImage imageNamed:@"classification"];
-    imageClassification = [Utils imageWithImage:imageClassification scaledToSize:CGSizeMake(30, 30)];
+    imageClassification = [Utils imageWithSize:imageClassification scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemClassification setImage:imageClassification];
     //add classification image to tabbar
     UITabBarItem *tabBarItemTeam = [self.tabBar.items objectAtIndex:2];
     UIImage *imageTeam = [UIImage imageNamed:@"team"];
-    imageTeam = [Utils imageWithImage:imageTeam scaledToSize:CGSizeMake(30, 30)];
+    imageTeam = [Utils imageWithSize:imageTeam scaledToSize:CGSizeMake(30, 30)];
     [tabBarItemTeam setImage:imageTeam];
     //load competitions details on DB.
     NSString *idCompetitionServer = [NSString stringWithFormat: @"%f", self.competitionEntity.idCompetitionServer];
@@ -50,11 +52,33 @@
 
 #pragma mark - navigation
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSString * strBack = NSLocalizedString(NSLocalizedString(@"BACK", nil), nil);
+    NSString *strBack = NSLocalizedString(NSLocalizedString(@"BACK", nil), nil);
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:strBack style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 #pragma mark - private methods
+-(void) updateFavoriteImage {
+    NSString *favoriteImage = @"favorite_unselect";
+    if (competitionEntity.isFavorite) {
+        favoriteImage = @"favorite";
+    }
+    UIImage *image = [[UIImage imageNamed:favoriteImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    image = [Utils imageWithSize:image scaledToSize:CGSizeMake(30, 30)];
+    buttonFavorite = [[UIBarButtonItem alloc]initWithImage:image
+                                                     style:UIBarButtonItemStylePlain
+                                                    target:self
+                                                    action:@selector(switchFavoriteCompetition:)];
+    [buttonFavorite setTintColor:UIColorFromRGB(COLOR_ACCENT)];
+    self.navigationItem.rightBarButtonItem = buttonFavorite;
+}
+
+/** set or unset team as favorite. */
+-(void) switchFavoriteCompetition:(id)sender {
+    competitionEntity.isFavorite = !competitionEntity.isFavorite;
+    [UtilsDataBase markOrUnmarkCompetitionAsFavorite:competitionEntity.idCompetitionServer isFavorite:competitionEntity.isFavorite];
+    [self updateFavoriteImage];
+}
+    
 /** Load details (matches and classification) from server and update tables in DB. */
 -(void) loadCompetitionDetails:(NSString *) idCompetition {
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];

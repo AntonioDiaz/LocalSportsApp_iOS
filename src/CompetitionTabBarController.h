@@ -6,10 +6,9 @@
 {
     CompetitionEntity *competitionEntity;
     NSManagedObjectContext *managedObjectContext;
+    UIBarButtonItem *buttonFavorite;
 }
 
-
 @property CompetitionEntity *competitionEntity;
-
 
 @end

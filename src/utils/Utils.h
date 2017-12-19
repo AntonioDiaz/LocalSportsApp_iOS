@@ -16,6 +16,7 @@
 #define MATCH_ENTITY @"MatchEntity"
 #define CLASSIFICATION_ENTITY @"ClassificationEntity"
 #define COURT_ENTITY @"SportCourtEntity"
+#define TEAM_ENTITY @"TeamEntity"
 
 #define SECONDS_IN_TWO_HOURS 2*60*60
 
@@ -23,6 +24,9 @@
 #define SEGUE_MAP @"segue_map"
 #define SEGUE_POST @"segue_post"
 
+
+#define COLOR_ACCENT 0xff4081
+#define COLOR_PRIMARY 0x0061a8
 #define UIColorFromRGB(rgbValue) \
     [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
     green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
@@ -51,6 +55,6 @@ typedef NS_ENUM (NSInteger, EnumStates) {
 +(NSDate *) formatDateDoubleToDate:(double) dateDouble;
 +(NSString *) dictionaryToString:(NSDictionary *) dictionary;
 +(BOOL) noTengoInterne;
-+ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
++ (UIImage *)imageWithSize:(UIImage *)image scaledToSize:(CGSize)newSize;
 
 @end

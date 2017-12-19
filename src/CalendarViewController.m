@@ -41,8 +41,8 @@
         CalendarHeadingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_heading" forIndexPath:indexPath];
         cell.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.section + 1];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.backgroundColor = UIColorFromRGB(0x0061a8);
-        cell.textLabel.backgroundColor = UIColorFromRGB(0x0061a8);
+        cell.backgroundColor = UIColorFromRGB(COLOR_PRIMARY);
+        cell.textLabel.backgroundColor = UIColorFromRGB(COLOR_PRIMARY);
         return cell;
     } else {
         MatchDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_detail" forIndexPath:indexPath];

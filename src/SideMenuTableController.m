@@ -1,5 +1,6 @@
 #import "SideMenuTableController.h"
 #import "Utils.h"
+#import "UtilsDataBase.h"
 
 @interface SideMenuTableController ()
 
@@ -37,6 +38,8 @@
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults setValue:nil forKey:PREF_TOWN_NAME];
         [userDefaults setValue:nil forKey:PREF_TOWN_ID];
+        [UtilsDataBase deleteAllEntities:COMPETITION_ENTITY];
+        [UtilsDataBase deleteAllEntities:TEAM_ENTITY];
         NSString *storyboardName = @"Main";
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
         UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RootNavigationController"];

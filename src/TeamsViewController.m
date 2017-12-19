@@ -1,6 +1,6 @@
 #import "TeamsViewController.h"
 #import "UtilsDataBase.h"
-#import "CalendarHeadingTableViewCell.h"
+#import "TeamHeadingTableViewCell.h"
 #import "TeamMatchTableViewCell.h"
 #import "Utils.h"
 
@@ -31,10 +31,23 @@
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row==0) {
-        CalendarHeadingTableViewCell *cell = [self.tableViewTeams dequeueReusableCellWithIdentifier:@"cell_team_heading"];
-        cell.labelTitle.text = [arrayTeams objectAtIndex:indexPath.section];
+        TeamHeadingTableViewCell *cell = [self.tableViewTeams dequeueReusableCellWithIdentifier:@"cell_team_heading"];
+        NSString *teamName = [arrayTeams objectAtIndex:indexPath.section];
+        cell.labelTitle.text = teamName;
+        UIImage *image = [UIImage imageNamed:@"favorite_unselect"];
+        if ([UtilsDataBase isTeamFavorite:teamName withCompetition:competitionEntity]) {
+            image = [UIImage imageNamed:@"favorite"];
+        }
+        cell.imageViewFavorite.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [cell.imageViewFavorite setTintColor:[UIColor whiteColor]];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.backgroundColor = UIColorFromRGB(0x0061a8);
+        cell.backgroundColor = UIColorFromRGB(COLOR_PRIMARY);
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
+        tapRecognizer.numberOfTapsRequired = 1;
+        [cell.imageViewFavorite setUserInteractionEnabled:YES];
+        [cell.imageViewFavorite addGestureRecognizer:tapRecognizer];
+        cell.imageViewFavorite.tag = indexPath.section;
+        NSLog(@"tag: %ld", indexPath.section);
         return cell;
     } else {
         TeamMatchTableViewCell *cell = [self.tableViewTeams dequeueReusableCellWithIdentifier:@"cell_team_match"];
@@ -85,6 +98,22 @@
 }
 
 #pragma mark - private methods
+-(void) tapDetected:(UITapGestureRecognizer*)sender {
+    UIImageView *favoriteView = (UIImageView*)sender.view;
+    NSString *teamName = [arrayTeams objectAtIndex:(int)favoriteView.tag];
+    BOOL isFavorite = [UtilsDataBase isTeamFavorite:teamName withCompetition:competitionEntity];
+    NSString *favoriteImage;
+    if (!isFavorite) {
+        favoriteImage = @"favorite";
+    } else {
+        favoriteImage = @"favorite_unselect";
+    }
+    [UtilsDataBase markOrUnmarkTeamAsFavorite:teamName withCompetition:competitionEntity isFavorite:!isFavorite];
+    UIImage *image = [[UIImage imageNamed:favoriteImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    favoriteView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+ 
+}
+
 -(void) reloadDataTable:(CompetitionEntity *) competition {
     arrayTeams = [[NSMutableArray alloc] init];
     arrayTeamMatches = [[NSMutableArray alloc] init];

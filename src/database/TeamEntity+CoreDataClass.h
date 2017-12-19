@@ -1,8 +1,8 @@
 //
-//  FavoriteEntity+CoreDataClass.h
+//  TeamEntity+CoreDataClass.h
 //  LocalSports
 //
-//  Created by Antonio Díaz Arroyo on 28/11/17.
+//  Created by Antonio Díaz Arroyo on 19/12/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //
@@ -14,10 +14,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FavoriteEntity : NSManagedObject
+@interface TeamEntity : NSManagedObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "FavoriteEntity+CoreDataProperties.h"
+#import "TeamEntity+CoreDataProperties.h"

@@ -2,7 +2,7 @@
 //  CompetitionEntity+CoreDataProperties.h
 //  LocalSports
 //
-//  Created by Antonio Díaz Arroyo on 2/12/17.
+//  Created by Antonio Díaz Arroyo on 19/12/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //
@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *lastUpdateServer;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *sport;
+@property (nonatomic) BOOL isFavorite;
 @property (nullable, nonatomic, retain) NSSet<ClassificationEntity *> *classification;
 @property (nullable, nonatomic, retain) NSSet<MatchEntity *> *matches;
 

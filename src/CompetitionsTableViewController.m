@@ -40,7 +40,7 @@
         label.numberOfLines = 4;
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont fontWithName:@"Verdana-Bold" size:22];
-        label.textColor = UIColorFromRGB(0x0061a8);
+        label.textColor = UIColorFromRGB(COLOR_PRIMARY);
         [view addSubview:label];
         self.tableView.backgroundView = view;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -50,7 +50,6 @@
     }
     return arrayCompetitions.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CompetitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_competition_new" forIndexPath:indexPath];
@@ -68,6 +67,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
     CompetitionTabBarController *competitionTabBarController = segue.destinationViewController;
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     CompetitionEntity *competitionEntity = [arrayCompetitions objectAtIndex:indexPath.row];
@@ -84,8 +84,5 @@
     if (self.interstitial.isReady && (printScreenCount % 10 == 0)) {
         [self.interstitial presentFromRootViewController:self];
     }
-
 }
-
-
 @end

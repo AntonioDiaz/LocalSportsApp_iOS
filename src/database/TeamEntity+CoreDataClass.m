@@ -1,5 +1,5 @@
 //
-//  SportCourtEntity+CoreDataClass.m
+//  TeamEntity+CoreDataClass.m
 //  LocalSports
 //
 //  Created by Antonio Díaz Arroyo on 19/12/17.
@@ -7,8 +7,8 @@
 //
 //
 
-#import "SportCourtEntity+CoreDataClass.h"
+#import "TeamEntity+CoreDataClass.h"
 
-@implementation SportCourtEntity
+@implementation TeamEntity
 
 @end

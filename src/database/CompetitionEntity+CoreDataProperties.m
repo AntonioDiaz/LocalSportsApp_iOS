@@ -2,7 +2,7 @@
 //  CompetitionEntity+CoreDataProperties.m
 //  LocalSports
 //
-//  Created by Antonio Díaz Arroyo on 2/12/17.
+//  Created by Antonio Díaz Arroyo on 19/12/17.
 //  Copyright © 2017 cice. All rights reserved.
 //
 //
@@ -22,6 +22,7 @@
 @dynamic lastUpdateServer;
 @dynamic name;
 @dynamic sport;
+@dynamic isFavorite;
 @dynamic classification;
 @dynamic matches;
 

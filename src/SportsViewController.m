@@ -14,13 +14,12 @@
     self.navigationItem.hidesBackButton = YES;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_NAME];
-    NSString *idTownSelected = [userDefaults objectForKey:PREF_TOWN_ID];
     self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", APP_NAME, townSelected];
     
     UIImage *image = [[UIImage imageNamed:@"menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    image = [Utils imageWithImage:image scaledToSize:CGSizeMake(30, 30)];
+    image = [Utils imageWithSize:image scaledToSize:CGSizeMake(30, 30)];
     UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showSideMenu:)];
+    [button setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
     self.navigationItem.leftBarButtonItem = button;
     
     [self initSportButton:self.buttonFootball];
@@ -29,6 +28,11 @@
     [self initSportButton:self.buttonVolleyball];
     [self initSportButton:self.buttonHockey];
     [self initSportButton:self.buttonFavorites];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *idTownSelected = [userDefaults objectForKey:PREF_TOWN_ID];
     if (![Utils noTengoInterne]) {
         [self loadCompetitions:idTownSelected];
     }
@@ -158,10 +162,16 @@
                 NSArray *jsonResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
                 NSLog(@"competition size %lu", (unsigned long)jsonResults.count);
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    NSMutableSet *setFavoritesIds = [UtilsDataBase queryCompetitionIdsFavorites];
                     //first remove all competitions.
                     [UtilsDataBase deleteAllEntities:COMPETITION_ENTITY];
                    for (NSDictionary *competition in jsonResults) {
-                       [UtilsDataBase insertCompetition:competition];
+                       //[[dictionaryCompetition objectForKey:@"id"] doubleValue];
+                       CompetitionEntity * competitionEntity = [UtilsDataBase insertCompetition:competition];
+                       NSNumber *idNewCompetition = [NSNumber numberWithDouble:competitionEntity.idCompetitionServer];
+                       if([setFavoritesIds containsObject:idNewCompetition]) {
+                           [UtilsDataBase markOrUnmarkCompetitionAsFavorite:competitionEntity.idCompetitionServer isFavorite:true];
+                       }
                     }
                     [self enableSportButtons];
                 });
@@ -180,6 +190,7 @@
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:nil
                                                                             action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
     CompetitionsTableViewController *viewController = (CompetitionsTableViewController *) segue.destinationViewController;
     viewController.sportSelected = sportSelected;
 }
