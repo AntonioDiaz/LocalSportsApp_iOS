@@ -25,6 +25,7 @@
 "CALENDAR_ACTION_ISSUE" = "Enviar error";
 "CALENDAR_ACTION_MAP" = "Ver mapa";
 "CALENDAR_ACTION_CLOSE" = "Cerrar";
+"CALENDAR_CANCELED" = "Cancelado";
 
 "CALENDAR_EVENT_TITLE" = "Añadir evento al calendario";
 "CALENDAR_EVENT_TEXT" = "Jornada %d: %@ contra %@";

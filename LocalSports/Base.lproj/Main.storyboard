@@ -588,6 +588,138 @@
             </objects>
             <point key="canvasLocation" x="2961" y="-2"/>
         </scene>
+        <!--Team Matches Table View Controller-->
+        <scene sceneID="UhJ-3i-BDv">
+            <objects>
+                <tableViewController id="GOC-RM-MPQ" customClass="TeamMatchesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lC5-S1-b9n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_favorite_team_match" rowHeight="160" id="vKG-gZ-jkc" customClass="FavoriteTeamMatchTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vKG-gZ-jkc" id="w6B-L6-bx8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqa-FQ-hlE">
+                                            <rect key="frame" x="10" y="5" width="355" height="149.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jornada 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ha-aV-Sz0" userLabel="week">
+                                                    <rect key="frame" x="10" y="15" width="94" height="25.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pabellón Europa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI5-B1-akB" userLabel="place">
+                                                    <rect key="frame" x="233.5" y="15" width="111" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15/01/2017 12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDW-t9-AFv" userLabel="date">
+                                                    <rect key="frame" x="228" y="38" width="117" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arroyo Culebro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwN-jU-LJj" userLabel="team_local">
+                                                    <rect key="frame" x="10" y="67.5" width="114.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lope de Vega" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emg-GI-OMq" userLabel="team_visitor">
+                                                    <rect key="frame" x="10" y="97" width="102" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3d-td-jPY" userLabel="score_local">
+                                                    <rect key="frame" x="338" y="67.5" width="7" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpq-la-4Ck" userLabel="score_visitor">
+                                                    <rect key="frame" x="338" y="97.5" width="7" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMO-mr-gaI" userLabel="separator_local">
+                                                    <rect key="frame" x="5" y="89" width="345" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="7e6-Q9-6pT"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nC-dx-42v" userLabel="separator_visitor">
+                                                    <rect key="frame" x="5" y="119" width="345" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="8lu-In-Rgq"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="Emg-GI-OMq" firstAttribute="top" secondItem="MwN-jU-LJj" secondAttribute="bottom" constant="10" id="0mh-Au-aYh"/>
+                                                <constraint firstItem="a3d-td-jPY" firstAttribute="centerY" secondItem="MwN-jU-LJj" secondAttribute="centerY" id="45M-wN-Mzr"/>
+                                                <constraint firstItem="Cpq-la-4Ck" firstAttribute="centerY" secondItem="Emg-GI-OMq" secondAttribute="centerY" id="6cW-pr-mhP"/>
+                                                <constraint firstItem="VMO-mr-gaI" firstAttribute="top" secondItem="MwN-jU-LJj" secondAttribute="bottom" constant="2" id="72e-mL-iDU"/>
+                                                <constraint firstItem="AI5-B1-akB" firstAttribute="top" secondItem="1ha-aV-Sz0" secondAttribute="top" id="7dT-ZL-bWQ"/>
+                                                <constraint firstItem="Cpq-la-4Ck" firstAttribute="trailing" secondItem="a3d-td-jPY" secondAttribute="trailing" id="932-Z8-8VS"/>
+                                                <constraint firstItem="MwN-jU-LJj" firstAttribute="top" secondItem="MDW-t9-AFv" secondAttribute="bottom" constant="11.5" id="BPg-qh-Vva"/>
+                                                <constraint firstItem="VMO-mr-gaI" firstAttribute="trailing" secondItem="a3d-td-jPY" secondAttribute="trailing" constant="5" id="GKc-NG-crv"/>
+                                                <constraint firstAttribute="trailing" secondItem="AI5-B1-akB" secondAttribute="trailing" constant="10" id="KcD-nU-8Si"/>
+                                                <constraint firstItem="VMO-mr-gaI" firstAttribute="leading" secondItem="MwN-jU-LJj" secondAttribute="leading" constant="-5" id="PUX-1p-hIh"/>
+                                                <constraint firstItem="MDW-t9-AFv" firstAttribute="trailing" secondItem="AI5-B1-akB" secondAttribute="trailing" id="Pim-Rj-nHy"/>
+                                                <constraint firstItem="8nC-dx-42v" firstAttribute="trailing" secondItem="VMO-mr-gaI" secondAttribute="trailing" id="TKs-36-lJ4"/>
+                                                <constraint firstItem="MwN-jU-LJj" firstAttribute="leading" secondItem="1ha-aV-Sz0" secondAttribute="leading" id="Vhb-WJ-Ngx"/>
+                                                <constraint firstItem="MDW-t9-AFv" firstAttribute="top" secondItem="AI5-B1-akB" secondAttribute="bottom" constant="5" id="VwB-y8-0Mo"/>
+                                                <constraint firstItem="8nC-dx-42v" firstAttribute="height" secondItem="VMO-mr-gaI" secondAttribute="height" id="ZnJ-Kv-J2z"/>
+                                                <constraint firstItem="Emg-GI-OMq" firstAttribute="leading" secondItem="MwN-jU-LJj" secondAttribute="leading" id="adW-1x-MDy"/>
+                                                <constraint firstItem="a3d-td-jPY" firstAttribute="trailing" secondItem="MDW-t9-AFv" secondAttribute="trailing" id="agL-eY-y3c"/>
+                                                <constraint firstItem="8nC-dx-42v" firstAttribute="leading" secondItem="VMO-mr-gaI" secondAttribute="leading" id="lPg-4q-Tod"/>
+                                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="8nC-dx-42v" secondAttribute="bottom" constant="52" id="rbt-0o-nYh"/>
+                                                <constraint firstItem="1ha-aV-Sz0" firstAttribute="leading" secondItem="Mqa-FQ-hlE" secondAttribute="leading" constant="10" id="slN-4P-LMc"/>
+                                                <constraint firstItem="1ha-aV-Sz0" firstAttribute="top" secondItem="Mqa-FQ-hlE" secondAttribute="top" constant="15" id="wlF-Hl-3sl"/>
+                                                <constraint firstItem="8nC-dx-42v" firstAttribute="top" secondItem="Cpq-la-4Ck" secondAttribute="bottom" constant="2" id="xEC-RG-ghl"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mqa-FQ-hlE" firstAttribute="leading" secondItem="w6B-L6-bx8" secondAttribute="leading" constant="10" id="KgF-r7-27r"/>
+                                        <constraint firstItem="Mqa-FQ-hlE" firstAttribute="top" secondItem="w6B-L6-bx8" secondAttribute="top" constant="5" id="mbe-8h-LkW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mqa-FQ-hlE" secondAttribute="trailing" constant="10" id="w8M-zY-yMP"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mqa-FQ-hlE" secondAttribute="bottom" constant="5" id="zCy-8u-rNQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelDate" destination="MDW-t9-AFv" id="F5k-rc-5zy"/>
+                                    <outlet property="labelPlace" destination="AI5-B1-akB" id="BEV-eT-jdn"/>
+                                    <outlet property="labelScoreLocal" destination="a3d-td-jPY" id="4Mq-h7-2P7"/>
+                                    <outlet property="labelScoreVisitor" destination="Cpq-la-4Ck" id="Z89-lg-ILE"/>
+                                    <outlet property="labelTeamLocal" destination="MwN-jU-LJj" id="XKv-jQ-xiz"/>
+                                    <outlet property="labelTeamVisitor" destination="Emg-GI-OMq" id="SxN-IY-7Ns"/>
+                                    <outlet property="labelWeek" destination="1ha-aV-Sz0" id="hHo-o7-eAI"/>
+                                    <outlet property="viewContent" destination="Mqa-FQ-hlE" id="Eqz-jm-Ja3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GOC-RM-MPQ" id="K6Y-n1-MdK"/>
+                            <outlet property="delegate" destination="GOC-RM-MPQ" id="95b-tD-rTI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXa-rr-Ybi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448.80000000000001" y="1946.176911544228"/>
+        </scene>
         <!--Favorites-->
         <scene sceneID="kKG-Bj-X7I">
             <objects>
@@ -692,6 +824,7 @@
                                     <outlet property="labelCompetition" destination="MHH-gd-mBe" id="q2g-Cr-vqM"/>
                                     <outlet property="labelTeam" destination="vYt-sD-sjI" id="KvB-ug-vQJ"/>
                                     <outlet property="viewContainer" destination="le6-wf-SHN" id="rhL-IY-f3R"/>
+                                    <segue destination="GOC-RM-MPQ" kind="show" identifier="segue_favorite_team" id="SYJ-7C-Fjk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -709,7 +842,7 @@
         <scene sceneID="c7E-YZ-QAS">
             <objects>
                 <tableViewController id="XNz-f2-zvZ" customClass="ClassificationTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g1H-hB-vUS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g1H-hB-vUS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -893,7 +1026,7 @@
                                             <outlet property="labelTitle" destination="QQU-fD-V4V" id="Pkh-Ns-ItD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_team_match" id="xcO-il-pio" userLabel="cell_team_match" customClass="TeamMatchTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell_team_match" id="xcO-il-pio" userLabel="cell_team_match" customClass="TeamMatchTableViewCell">
                                         <rect key="frame" x="0.0" y="78" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xcO-il-pio" id="t4n-YD-1P0">

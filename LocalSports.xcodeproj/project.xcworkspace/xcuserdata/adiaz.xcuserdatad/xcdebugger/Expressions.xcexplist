@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[FavoritesTableViewController prepareForSegue:sender:]:FavoritesTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "favoriteTeam.idCompetitionServer">
+            </PersistentString>
+            <PersistentString
+               value = "competitionEntity.matches">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CalendarTableViewController reloadDataTable]:CalendarTableViewController.m">
          <PersistentStrings>
             <PersistentString

@@ -135,11 +135,12 @@
         }];
         [alertController addAction:actionOpenMap];
         
-        UIAlertAction *actionClose = [UIAlertAction actionWithTitle:strActionClose style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UIAlertAction *actionClose = [UIAlertAction actionWithTitle:strActionClose style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
             [alertController dismissViewControllerAnimated:YES completion:nil];
         }];
         [alertController addAction:actionClose];
         [self presentViewController:alertController animated:YES completion:nil];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
 }
 

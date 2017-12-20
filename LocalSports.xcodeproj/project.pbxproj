@@ -53,6 +53,8 @@
 		D1B8FD621FEA6C2900A72D3E /* MatchEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD581FEA6C2900A72D3E /* MatchEntity+CoreDataClass.m */; };
 		D1B8FD631FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD591FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.m */; };
 		D1B8FD661FEA714C00A72D3E /* FavoriteTeamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD651FEA714C00A72D3E /* FavoriteTeamTableViewCell.m */; };
+		D1B8FD6A1FEA806800A72D3E /* TeamMatchesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD691FEA806800A72D3E /* TeamMatchesTableViewController.m */; };
+		D1B8FD6D1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD6C1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m */; };
 		D1B9CE531FDA964E00C1937D /* TeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B9CE521FDA964E00C1937D /* TeamsViewController.m */; };
 		D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */; };
 		D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1C4D2131FD08B35009F3A35 /* leganes.gpx */; };
@@ -152,6 +154,10 @@
 		D1B8FD591FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MatchEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		D1B8FD641FEA714C00A72D3E /* FavoriteTeamTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteTeamTableViewCell.h; sourceTree = "<group>"; };
 		D1B8FD651FEA714C00A72D3E /* FavoriteTeamTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteTeamTableViewCell.m; sourceTree = "<group>"; };
+		D1B8FD681FEA806800A72D3E /* TeamMatchesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamMatchesTableViewController.h; sourceTree = "<group>"; };
+		D1B8FD691FEA806800A72D3E /* TeamMatchesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamMatchesTableViewController.m; sourceTree = "<group>"; };
+		D1B8FD6B1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteTeamMatchTableViewCell.h; sourceTree = "<group>"; };
+		D1B8FD6C1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteTeamMatchTableViewCell.m; sourceTree = "<group>"; };
 		D1B9CE511FDA964E00C1937D /* TeamsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamsViewController.h; sourceTree = "<group>"; };
 		D1B9CE521FDA964E00C1937D /* TeamsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamsViewController.m; sourceTree = "<group>"; };
 		D1C2CB811FCDDEC600922D86 /* CompetitionsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionsTableViewController.h; sourceTree = "<group>"; };
@@ -217,6 +223,8 @@
 				D12A07F01FE5404B0025351A /* SideMenuTableController.m */,
 				D1532CA81FE9851A00896DC1 /* FavoritesTableViewController.h */,
 				D1532CA91FE9851A00896DC1 /* FavoritesTableViewController.m */,
+				D1B8FD681FEA806800A72D3E /* TeamMatchesTableViewController.h */,
+				D1B8FD691FEA806800A72D3E /* TeamMatchesTableViewController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -362,6 +370,8 @@
 				D1B8FD321FEA6C1200A72D3E /* TownsTableViewCell.m */,
 				D1B8FD641FEA714C00A72D3E /* FavoriteTeamTableViewCell.h */,
 				D1B8FD651FEA714C00A72D3E /* FavoriteTeamTableViewCell.m */,
+				D1B8FD6B1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.h */,
+				D1B8FD6C1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -442,6 +452,7 @@
 			files = (
 				D1B8FD421FEA6C1300A72D3E /* TeamMatchTableViewCell.m in Sources */,
 				D13FE3411FD1DC5800067C5B /* Reachability.m in Sources */,
+				D1B8FD6D1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m in Sources */,
 				090123C21FD16E8B00973DD5 /* MatchSendIssueViewController.m in Sources */,
 				D1B8FD5D1FEA6C2900A72D3E /* ClassificationEntity+CoreDataProperties.m in Sources */,
 				D1D3A62D1FD299AF003CA8E7 /* UtilsDataBase.m in Sources */,
@@ -453,6 +464,7 @@
 				D1B8FD441FEA6C1300A72D3E /* ClassificationTableViewCell.m in Sources */,
 				D1B9CE531FDA964E00C1937D /* TeamsViewController.m in Sources */,
 				D1B8FD451FEA6C1300A72D3E /* CompetitionTableViewCell.m in Sources */,
+				D1B8FD6A1FEA806800A72D3E /* TeamMatchesTableViewController.m in Sources */,
 				094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */,
 				D1B8FD5F1FEA6C2900A72D3E /* SportCourtEntity+CoreDataProperties.m in Sources */,
 				D11DBAF61FD9C3F300894683 /* CalendarViewController.m in Sources */,

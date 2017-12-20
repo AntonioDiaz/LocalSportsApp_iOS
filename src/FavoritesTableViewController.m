@@ -5,6 +5,8 @@
 #import "FavoriteTeamTableViewCell.h"
 #import "FavoriteTeamEntity+CoreDataProperties.h"
 #import "CompetitionTabBarController.h"
+#import "TeamMatchesTableViewController.h"
+#import "MatchEntity+CoreDataProperties.h"
 
 @interface FavoritesTableViewController ()
 
@@ -60,7 +62,6 @@
          FavoriteTeamEntity *favoriteTeam = [arrayTeams objectAtIndex:indexPath.row];
          CompetitionEntity *competitionEntity = [UtilsDataBase queryCompetitionsByIdServer:favoriteTeam.idCompetitionServer];
          NSString *sportStr = NSLocalizedString(competitionEntity.sport, nil);
-         NSLog(@"Competition %@", competitionEntity.name);
          cell.labelCompetition.text = [NSString stringWithFormat:@"%@ - %@", sportStr, competitionEntity.name];
          cell.labelCategory.text = competitionEntity.category;
          cell.labelTeam.text = favoriteTeam.teamName;
@@ -95,11 +96,17 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     if ([[segue identifier] isEqualToString:@"segue_favorite_competition"]) {
         CompetitionTabBarController *competitionTabBarController = segue.destinationViewController;
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         CompetitionEntity *competitionEntity = [arrayCompetitions objectAtIndex:indexPath.row];
         competitionTabBarController.competitionEntity = competitionEntity;
+    } else if ([[segue identifier] isEqualToString:@"segue_favorite_team"]) {
+        TeamMatchesTableViewController *teamMatchesViewController = segue.destinationViewController;
+        FavoriteTeamEntity *favoriteTeam = [arrayTeams objectAtIndex:indexPath.row];
+        CompetitionEntity *competitionEntity = [UtilsDataBase queryCompetitionsByIdServer:favoriteTeam.idCompetitionServer];
+        teamMatchesViewController.favoriteTeamEntity = favoriteTeam;
+        teamMatchesViewController.competitionEntity = competitionEntity;
     }
 }
 @end
