@@ -181,7 +181,7 @@
     return arrayCompetitions;
 }
 
-+(CompetitionEntity *) queryCompetitionsById:(long) competitionId {
++(CompetitionEntity *) queryCompetitionsByIdServer:(long) competitionId {
     NSManagedObjectContext *context = [self getContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *description = [NSEntityDescription entityForName:COMPETITION_ENTITY inManagedObjectContext:context];
@@ -240,7 +240,7 @@
 
 +(void) markOrUnmarkCompetitionAsFavorite:(long)competitionId isFavorite:(BOOL)favorite {
     NSManagedObjectContext *context = [self getContext];
-    CompetitionEntity *competition = [self queryCompetitionsById:competitionId];
+    CompetitionEntity *competition = [self queryCompetitionsByIdServer:competitionId];
     if (competition!=nil) {
         competition.isFavorite = favorite;
         NSError *error = nil;
@@ -250,26 +250,54 @@
     }
 }
 
-#pragma mark - teams
-+(NSArray *) queryTeams:(CompetitionEntity *)competitionEntity {
++(NSArray *) queryCompetitionsFavorites {
     NSManagedObjectContext *context = [self getContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:TEAM_ENTITY inManagedObjectContext:context];
+    NSEntityDescription *description = [NSEntityDescription entityForName:COMPETITION_ENTITY inManagedObjectContext:context];
     [request setEntity:description];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"competition == %@", competitionEntity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isFavorite == YES"];
     [request setPredicate:predicate];
+    NSError *error;
+    NSArray *competitions = [context executeFetchRequest:request error:&error];
+    if(error){
+        NSLog(@"queryCompetitionsFavorites error -->%@", error.localizedDescription);
+    }
+    return competitions;
+}
+
+#pragma mark - favorite teams
++(NSArray *) queryAllTeamsFavorites {
+    NSManagedObjectContext *context = [self getContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:FAVORITE_TEAM_ENTITY inManagedObjectContext:context];
+    [request setEntity:description];
     NSError *error;
     NSArray *teams = [context executeFetchRequest:request error:&error];
     if(error){
+        NSLog(@"queryAllTeamsFavorites error -->%@", error.localizedDescription);
+    }
+    return teams;
+}
+
++(NSArray *) queryTeamsFavorites:(long)idCompetitionServer {
+    NSManagedObjectContext *context = [self getContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:FAVORITE_TEAM_ENTITY inManagedObjectContext:context];
+    [request setEntity:description];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"idCompetitionServer == %ld", idCompetitionServer];
+    [request setPredicate:predicate];
+    NSError *error;
+    NSArray *teams = [context executeFetchRequest:request error:&error];
+    if (error) {
         NSLog(@"queryClassification error -->%@", error.localizedDescription);
     }
     return teams;
 }
 
-+(void) deleteTeams:(CompetitionEntity *)competitionEntity {
++(void) deleteTeamsFavorites:(long)idCompetitionServer {
     NSManagedObjectContext *context = [self getContext];
     NSError *error;
-    NSArray *fetchedObjects = [UtilsDataBase queryTeams:competitionEntity];
+    NSArray *fetchedObjects = [UtilsDataBase queryTeamsFavorites:idCompetitionServer];
     for (NSManagedObject *object in fetchedObjects) {
         [context deleteObject:object];
     }
@@ -280,42 +308,42 @@
     }
 }
 
-+(TeamEntity*) findTeamFavorite:(NSString *) teamName withCompetition:(CompetitionEntity *) competitionEntity {
++(FavoriteTeamEntity*) queryTeamFavorite:(NSString *) teamName withCompetition:(long)idCompetitionServer {
     NSManagedObjectContext *context = [self getContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:TEAM_ENTITY inManagedObjectContext:context];
+    NSEntityDescription *description = [NSEntityDescription entityForName:FAVORITE_TEAM_ENTITY inManagedObjectContext:context];
     [request setEntity:description];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"competition == %@ AND teamName == %@", competitionEntity, teamName];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"idCompetitionServer == %ld AND teamName == %@", idCompetitionServer, teamName];
     [request setPredicate:predicate];
     NSError *error;
     NSArray *teams = [context executeFetchRequest:request error:&error];
-    if(error){
+    if (error) {
         NSLog(@"queryClassification error -->%@", error.localizedDescription);
     }
-    return teams.count==1?[teams objectAtIndex:0]:nil;
+    return teams.count==1 ? [teams objectAtIndex:0] : nil;
 }
 
-+(BOOL) isTeamFavorite:(NSString *) teamName withCompetition:(CompetitionEntity *) competitionEntity {
-    return [self findTeamFavorite:teamName withCompetition:competitionEntity]!=nil;
++(BOOL) isTeamFavorite:(NSString *) teamName withCompetition:(long) idCompetitionServer {
+    return [self queryTeamFavorite:teamName withCompetition:idCompetitionServer]!=nil;
 }
 
-+(void) markOrUnmarkTeamAsFavorite:(NSString*)teamName withCompetition:(CompetitionEntity*)competitionEntity isFavorite:(BOOL)favorite {
++(void) markOrUnmarkTeamAsFavorite:(NSString*)teamName withCompetition:(long)idCompetitionServer isFavorite:(BOOL)favorite {
     NSManagedObjectContext *context = [self getContext];
     if (favorite) {
         /** insert into teams table */
-        TeamEntity *teamEntity =  [NSEntityDescription
-                                                 insertNewObjectForEntityForName:TEAM_ENTITY
+        FavoriteTeamEntity *favorite =  [NSEntityDescription
+                                                 insertNewObjectForEntityForName:FAVORITE_TEAM_ENTITY
                                                  inManagedObjectContext:context];
-        teamEntity.teamName = teamName;
-        teamEntity.competition = competitionEntity;
+        favorite.teamName = teamName;
+        favorite.idCompetitionServer = idCompetitionServer;
         NSError *error = nil;
         if(![context save:&error]){
             NSLog(@"Error on insert -->%@", error.localizedDescription);
         }
     } else {
         /** remove from teams table */
-        TeamEntity *teamEntityToDelete = [self findTeamFavorite:teamName withCompetition:competitionEntity];
-        [context deleteObject:teamEntityToDelete];
+        FavoriteTeamEntity *favoriteTeam = [self queryTeamFavorite:teamName withCompetition:idCompetitionServer];
+        [context deleteObject:favoriteTeam];
         NSError *error;
         [context save:&error];
         if(error){

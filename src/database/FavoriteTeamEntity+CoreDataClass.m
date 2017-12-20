@@ -1,5 +1,5 @@
 //
-//  CompetitionEntity+CoreDataClass.m
+//  FavoriteTeamEntity+CoreDataClass.m
 //  LocalSports
 //
 //  Created by Antonio Díaz Arroyo on 20/12/17.
@@ -7,8 +7,8 @@
 //
 //
 
-#import "CompetitionEntity+CoreDataClass.h"
+#import "FavoriteTeamEntity+CoreDataClass.h"
 
-@implementation CompetitionEntity
+@implementation FavoriteTeamEntity
 
 @end

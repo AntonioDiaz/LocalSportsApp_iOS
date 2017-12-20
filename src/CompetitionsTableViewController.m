@@ -46,13 +46,13 @@
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     } else {
         self.tableView.backgroundView  = nil;
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return arrayCompetitions.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CompetitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_competition_new" forIndexPath:indexPath];
+    CompetitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_competition" forIndexPath:indexPath];
     CompetitionEntity *competitionEntity = [arrayCompetitions objectAtIndex:indexPath.row];
     cell.labelCompetitionName.text = competitionEntity.name;
     cell.labelCategory.text = competitionEntity.category;

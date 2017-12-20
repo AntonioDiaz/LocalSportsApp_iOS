@@ -280,6 +280,7 @@
                         <outlet property="buttonVolleyball" destination="v0J-zs-1DU" id="4Ih-Z3-WBU"/>
                         <outlet property="viewHostingBanner" destination="NMp-qy-aq7" id="VQI-Wf-Mfd"/>
                         <segue destination="ARG-Fe-Y3e" kind="show" identifier="idShowCompetitions" id="Gy6-ZH-b30"/>
+                        <segue destination="5ak-cH-zLJ" kind="show" identifier="idShowFavorites" id="VDE-x4-F6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kav-yM-8hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,7 +296,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_competition_new" rowHeight="110" id="1sS-zm-4jU" customClass="CompetitionTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_competition" rowHeight="110" id="1sS-zm-4jU" customClass="CompetitionTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1sS-zm-4jU" id="isz-bO-d5D">
@@ -587,6 +588,123 @@
             </objects>
             <point key="canvasLocation" x="2961" y="-2"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="kKG-Bj-X7I">
+            <objects>
+                <tableViewController id="5ak-cH-zLJ" userLabel="Favorites" customClass="FavoritesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bnO-zK-DZQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_competition" rowHeight="110" id="5tn-v3-Tl1" customClass="CompetitionTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5tn-v3-Tl1" id="e9T-Bb-ccF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zu9-8l-V9f">
+                                            <rect key="frame" x="10" y="10" width="355" height="90"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Competition name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rc9-Vd-Ggs">
+                                                    <rect key="frame" x="0.0" y="8" width="355" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2P1-nw-YLD">
+                                                    <rect key="frame" x="40" y="47" width="275" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Zu9-8l-V9f" firstAttribute="top" secondItem="e9T-Bb-ccF" secondAttribute="top" constant="10" id="Cpe-H2-P1N"/>
+                                        <constraint firstItem="Zu9-8l-V9f" firstAttribute="leading" secondItem="e9T-Bb-ccF" secondAttribute="leading" constant="10" id="lEI-0d-Oa6"/>
+                                        <constraint firstItem="Zu9-8l-V9f" firstAttribute="centerX" secondItem="e9T-Bb-ccF" secondAttribute="centerX" id="mXl-Wb-srm"/>
+                                        <constraint firstItem="Zu9-8l-V9f" firstAttribute="centerY" secondItem="e9T-Bb-ccF" secondAttribute="centerY" id="p0e-Xd-oy6"/>
+                                        <constraint firstAttribute="bottom" secondItem="Zu9-8l-V9f" secondAttribute="bottom" constant="10" id="tWb-Ty-slC"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zu9-8l-V9f" secondAttribute="trailing" constant="10" id="wZD-7d-dxW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelCategory" destination="2P1-nw-YLD" id="8Co-w7-N7n"/>
+                                    <outlet property="labelCompetitionName" destination="Rc9-Vd-Ggs" id="EZc-1R-ADb"/>
+                                    <outlet property="viewCompetition" destination="Zu9-8l-V9f" id="h3E-nc-gaU"/>
+                                    <segue destination="zXi-vt-UEp" kind="show" identifier="segue_favorite_competition" id="Ms9-IB-NeE"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_team" rowHeight="150" id="7yU-dF-75G" customClass="FavoriteTeamTableViewCell">
+                                <rect key="frame" x="0.0" y="138" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7yU-dF-75G" id="f6v-HX-kye">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="le6-wf-SHN">
+                                            <rect key="frame" x="10" y="10.5" width="355" height="129.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Competition name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHH-gd-mBe">
+                                                    <rect key="frame" x="10" y="8" width="335" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3t-Cr-zpB">
+                                                    <rect key="frame" x="10" y="46" width="335" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYt-sD-sjI">
+                                                    <rect key="frame" x="40" y="86" width="275" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="le6-wf-SHN" secondAttribute="bottom" constant="10" id="A4b-mG-TqD"/>
+                                        <constraint firstAttribute="trailing" secondItem="le6-wf-SHN" secondAttribute="trailing" constant="10" id="JzH-L1-RP2"/>
+                                        <constraint firstItem="le6-wf-SHN" firstAttribute="centerX" secondItem="f6v-HX-kye" secondAttribute="centerX" id="QuE-jE-57A"/>
+                                        <constraint firstItem="le6-wf-SHN" firstAttribute="centerY" secondItem="f6v-HX-kye" secondAttribute="centerY" id="Tjr-lg-18s"/>
+                                        <constraint firstItem="le6-wf-SHN" firstAttribute="top" secondItem="f6v-HX-kye" secondAttribute="top" constant="10" id="dVr-HQ-3fm"/>
+                                        <constraint firstItem="le6-wf-SHN" firstAttribute="leading" secondItem="f6v-HX-kye" secondAttribute="leading" constant="10" id="pB2-5e-Uq9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelCategory" destination="Q3t-Cr-zpB" id="Ysn-Xs-t8Q"/>
+                                    <outlet property="labelCompetition" destination="MHH-gd-mBe" id="q2g-Cr-vqM"/>
+                                    <outlet property="labelTeam" destination="vYt-sD-sjI" id="KvB-ug-vQJ"/>
+                                    <outlet property="viewContainer" destination="le6-wf-SHN" id="rhL-IY-f3R"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5ak-cH-zLJ" id="uxg-70-d3I"/>
+                            <outlet property="delegate" destination="5ak-cH-zLJ" id="JWo-Qo-0RU"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KuS-8g-GSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="1187"/>
+        </scene>
         <!--Clasificación-->
         <scene sceneID="c7E-YZ-QAS">
             <objects>
@@ -725,7 +843,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iB-jc-9AM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1262" y="1469"/>
+            <point key="canvasLocation" x="1454" y="1497"/>
         </scene>
         <!--teams ViewController-->
         <scene sceneID="UWq-F4-yvK">
@@ -874,7 +992,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCh-Qd-ySj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1262" y="701"/>
+            <point key="canvasLocation" x="1454" y="674"/>
         </scene>
         <!--Root-->
         <scene sceneID="eXW-tg-heW">
@@ -1047,4 +1165,7 @@
         <image name="hockey" width="364" height="364"/>
         <image name="volleyball" width="517" height="517"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ms9-IB-NeE"/>
+    </inferredMetricsTieBreakers>
 </document>

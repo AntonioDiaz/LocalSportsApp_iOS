@@ -3,7 +3,7 @@
 #import "ClassificationEntity+CoreDataProperties.h"
 #import "MatchEntity+CoreDataProperties.h"
 #import "SportCourtEntity+CoreDataProperties.h"
-#import "TeamEntity+CoreDataProperties.h"
+#import "FavoriteTeamEntity+CoreDataProperties.h"
 
 @interface UtilsDataBase : NSObject
 
@@ -26,15 +26,18 @@
 
 /** competition */
 +(NSArray *) queryCompetitionsBySport:(NSString *) sportStr;
-+(CompetitionEntity *) queryCompetitionsById:(long) competitionId;
++(CompetitionEntity *) queryCompetitionsByIdServer:(long) competitionId;
 +(NSMutableSet *) queryCompetitionIdsFavorites;
 +(CompetitionEntity *) insertCompetition:(NSDictionary *) dictionaryCompetition;
 +(void) markOrUnmarkCompetitionAsFavorite:(long)competitionId isFavorite:(BOOL)favorite;
++(NSArray *) queryCompetitionsFavorites;
 
 /** teams */
-+(NSArray *) queryTeams:(CompetitionEntity *)competitionEntity;
-+(void) deleteTeams:(CompetitionEntity *)competitionEntity;
-+(BOOL) isTeamFavorite:(NSString *) teamName withCompetition:(CompetitionEntity *) competitionEntity;
-+(void) markOrUnmarkTeamAsFavorite:(NSString*)teamName withCompetition:(CompetitionEntity*)competitionEntity isFavorite:(BOOL)favorite;
++(NSArray *) queryAllTeamsFavorites;
++(NSArray *) queryTeamsFavorites:(long)idCompetitionServer;
++(FavoriteTeamEntity*) queryTeamFavorite:(NSString *) teamName withCompetition:(long)idCompetitionServer;
++(void) deleteTeamsFavorites:(long)idCompetitionServer;
++(BOOL) isTeamFavorite:(NSString *) teamName withCompetition:(long)idCompetitionServer;
++(void) markOrUnmarkTeamAsFavorite:(NSString*)teamName withCompetition:(long)idCompetitionServer isFavorite:(BOOL)favorite;
 
 @end

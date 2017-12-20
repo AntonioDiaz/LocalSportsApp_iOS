@@ -10,5 +10,27 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[FavoritesTableViewController tableView:cellForRowAtIndexPath:]:FavoritesTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "teamEntity.teamName">
+            </PersistentString>
+            <PersistentString
+               value = "competitionEntity.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TeamsViewController tapDetected:]:TeamsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "teamEntity.teamName">
+            </PersistentString>
+            <PersistentString
+               value = "teamEntity.competition">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

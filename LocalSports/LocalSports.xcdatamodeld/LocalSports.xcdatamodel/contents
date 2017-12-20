@@ -22,6 +22,11 @@
         <relationship name="classification" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ClassificationEntity" inverseName="competition" inverseEntity="ClassificationEntity" syncable="YES"/>
         <relationship name="matches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MatchEntity" inverseName="competition" inverseEntity="MatchEntity" syncable="YES"/>
     </entity>
+    <entity name="FavoriteTeamEntity" representedClassName="FavoriteTeamEntity" syncable="YES">
+        <attribute name="idCompetitionServer" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="teamName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="MatchEntity" representedClassName="MatchEntity" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="idServer" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -42,16 +47,11 @@
         <attribute name="idServer" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="matches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MatchEntity" inverseName="court" inverseEntity="MatchEntity" syncable="YES"/>
     </entity>
-    <entity name="TeamEntity" representedClassName="TeamEntity" syncable="YES">
-        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="teamName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="competition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CompetitionEntity" syncable="YES"/>
-    </entity>
     <elements>
         <element name="ClassificationEntity" positionX="144" positionY="-189" width="128" height="165"/>
         <element name="CompetitionEntity" positionX="-144" positionY="-45" width="144" height="195"/>
-        <element name="TeamEntity" positionX="-389" positionY="-196" width="173" height="90"/>
         <element name="MatchEntity" positionX="-119" positionY="-385" width="128" height="210"/>
         <element name="SportCourtEntity" positionX="133" positionY="-375" width="128" height="120"/>
+        <element name="FavoriteTeamEntity" positionX="-389" positionY="-196" width="173" height="88"/>
     </elements>
 </model>

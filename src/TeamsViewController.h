@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "CompetitionEntity+CoreDataProperties.h"
+#import "FavoriteTeamEntity+CoreDataProperties.h"
 
 @interface TeamsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {

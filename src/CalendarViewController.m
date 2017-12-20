@@ -73,7 +73,6 @@
     }
 }
 
-
 #pragma mark - table delegate
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {

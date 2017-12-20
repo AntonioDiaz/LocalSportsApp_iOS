@@ -4,6 +4,7 @@
 #import "CompetitionEntity+CoreDataProperties.h"
 #import "UtilsDataBase.h"
 #import "UIViewController+LGSideMenuController.h"
+#import "FavoritesTableViewController.h"
 
 @implementation SportsViewController
 
@@ -186,13 +187,22 @@
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil)
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:nil
-                                                                            action:nil];
-    [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
-    CompetitionsTableViewController *viewController = (CompetitionsTableViewController *) segue.destinationViewController;
-    viewController.sportSelected = sportSelected;
+    if ([[segue identifier] isEqualToString:@"idShowCompetitions"]) {
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil)
+                                                                                 style:UIBarButtonItemStylePlain
+                                                                                target:nil
+                                                                                action:nil];
+        [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
+        CompetitionsTableViewController *viewController = (CompetitionsTableViewController *) segue.destinationViewController;
+        viewController.sportSelected = sportSelected;
+    } else if ([[segue identifier] isEqualToString:@"idShowFavorites"]) {
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil)
+                                                                                 style:UIBarButtonItemStylePlain
+                                                                                target:nil
+                                                                                action:nil];
+        [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
+        //FavoritesTableViewController *viewController = (FavoritesTableViewController *) segue.destinationViewController;
+    }
 }
 
 #pragma mark - Actions
@@ -203,7 +213,7 @@
 }
 
 - (IBAction)actionFavorites:(id)sender {
-    [Utils showComingSoon];
+    [self performSegueWithIdentifier:@"idShowFavorites" sender:nil];
 }
 
 #pragma mark -

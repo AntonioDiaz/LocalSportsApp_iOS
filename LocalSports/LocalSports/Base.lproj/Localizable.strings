@@ -41,3 +41,5 @@
 
 "MAP_TITLE" = "Direción del centro deportivo";
 "CLASSIFICATION_TEAM" = "Equipo";
+"FAVORITES" = "Favoritos";
+"FAVORITES_EMPTY" = "Para añadir favoritos pulsa el ♥️ en la pantalla de la competición o en el equipo.";

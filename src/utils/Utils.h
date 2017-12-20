@@ -16,7 +16,7 @@
 #define MATCH_ENTITY @"MatchEntity"
 #define CLASSIFICATION_ENTITY @"ClassificationEntity"
 #define COURT_ENTITY @"SportCourtEntity"
-#define TEAM_ENTITY @"TeamEntity"
+#define FAVORITE_TEAM_ENTITY @"FavoriteTeamEntity"
 
 #define SECONDS_IN_TWO_HOURS 2*60*60
 

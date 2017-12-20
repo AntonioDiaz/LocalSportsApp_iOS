@@ -35,7 +35,7 @@
         NSString *teamName = [arrayTeams objectAtIndex:indexPath.section];
         cell.labelTitle.text = teamName;
         UIImage *image = [UIImage imageNamed:@"favorite_unselect"];
-        if ([UtilsDataBase isTeamFavorite:teamName withCompetition:competitionEntity]) {
+        if ([UtilsDataBase isTeamFavorite:teamName withCompetition:competitionEntity.idCompetitionServer]) {
             image = [UIImage imageNamed:@"favorite"];
         }
         cell.imageViewFavorite.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -47,7 +47,6 @@
         [cell.imageViewFavorite setUserInteractionEnabled:YES];
         [cell.imageViewFavorite addGestureRecognizer:tapRecognizer];
         cell.imageViewFavorite.tag = indexPath.section;
-        NSLog(@"tag: %ld", indexPath.section);
         return cell;
     } else {
         TeamMatchTableViewCell *cell = [self.tableViewTeams dequeueReusableCellWithIdentifier:@"cell_team_match"];
@@ -101,20 +100,21 @@
 -(void) tapDetected:(UITapGestureRecognizer*)sender {
     UIImageView *favoriteView = (UIImageView*)sender.view;
     NSString *teamName = [arrayTeams objectAtIndex:(int)favoriteView.tag];
-    BOOL isFavorite = [UtilsDataBase isTeamFavorite:teamName withCompetition:competitionEntity];
+    long idCompetitionServer = competitionEntity.idCompetitionServer;
+    BOOL isFavorite = [UtilsDataBase isTeamFavorite:teamName withCompetition:idCompetitionServer];
     NSString *favoriteImage;
     if (!isFavorite) {
         favoriteImage = @"favorite";
     } else {
         favoriteImage = @"favorite_unselect";
     }
-    [UtilsDataBase markOrUnmarkTeamAsFavorite:teamName withCompetition:competitionEntity isFavorite:!isFavorite];
+    [UtilsDataBase markOrUnmarkTeamAsFavorite:teamName withCompetition:idCompetitionServer isFavorite:!isFavorite];
     UIImage *image = [[UIImage imageNamed:favoriteImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     favoriteView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
- 
 }
 
 -(void) reloadDataTable:(CompetitionEntity *) competition {
+    competitionEntity = competition;
     arrayTeams = [[NSMutableArray alloc] init];
     arrayTeamMatches = [[NSMutableArray alloc] init];
     NSArray *arrayMatches = [UtilsDataBase queryMatches:competition];
