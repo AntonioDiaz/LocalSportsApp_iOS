@@ -92,22 +92,29 @@
             [tableView insertRowsAtIndexPaths:mutableArrayCells withRowAnimation:UITableViewRowAnimationTop];
         }
     } else {
-        NSString *alertTitle = NSLocalizedString(@"CALENDAR_ACTION_TITLE", nil);
-        NSString *strActionShare = NSLocalizedString(@"CALENDAR_ACTION_SHARE", nil);
-        NSString *strActionAddEvent = NSLocalizedString(@"CALENDAR_ACTION_EVENT", nil);
-        NSString *strActionSendIssue = NSLocalizedString(@"CALENDAR_ACTION_ISSUE", nil);
-        NSString *strActionOpenMap = NSLocalizedString(@"CALENDAR_ACTION_MAP", nil);;
-        NSString *strActionClose = NSLocalizedString(@"CALENDAR_ACTION_CLOSE", nil);
+        NSString *alertTitle = NSLocalizedString(@"MATCH_ACTION_TITLE", nil);
+        NSString *strActionShare = NSLocalizedString(@"MATCH_ACTION_SHARE", nil);
+        NSString *strActionAddEvent = NSLocalizedString(@"MATCH_ACTION_EVENT", nil);
+        NSString *strActionSendIssue = NSLocalizedString(@"MATCH_ACTION_ISSUE", nil);
+        NSString *strActionOpenMap = NSLocalizedString(@"MATCH_ACTION_MAP", nil);;
+        NSString *strActionClose = NSLocalizedString(@"MATCH_ACTION_CLOSE", nil);
+        NSIndexPath *indexPath = [self.tableViewCalendar indexPathForSelectedRow];
+        int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
+        matchEntity = [arrayMatches objectAtIndex:indexInArray];
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleAlert];
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
             alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         }
-        UIAlertAction *actionShare = [UIAlertAction actionWithTitle:strActionShare style:UIAlertActionStyleDefault
+        UIAlertAction *actionShare = [UIAlertAction actionWithTitle:strActionShare
+                                                              style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction *action) {
-                                                                [self actionShareMatch:[self matchSelectedInList]];
-                                                                [alertController dismissViewControllerAnimated:YES completion:nil];
-                                                            }];
-        [alertController addAction:actionShare];
+                NSString *dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
+                NSString *strShareText = NSLocalizedString(@"MATCH_SHARE_TEXT", nil);
+                NSString *textToShare = [NSString stringWithFormat:strShareText, matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor, matchEntity.court.centerName, dateStr];
+                [Utils actionShareMatch:textToShare inViewController:self];
+                [alertController dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alertController addAction:actionShare];
         
         UIAlertAction *actionAddEvent = [UIAlertAction actionWithTitle:strActionAddEvent style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             [self performSegueWithIdentifier:SEGUE_EVENT sender:nil];
@@ -122,8 +129,8 @@
         
         UIAlertAction *actionOpenMap = [UIAlertAction actionWithTitle:strActionOpenMap style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             UIApplication *application = [UIApplication sharedApplication];
-            NSString *courtAddress = [self matchSelectedInList].court.centerAddress;
-            NSString *centerName = [self matchSelectedInList].court.centerName;
+            NSString *courtAddress = matchEntity.court.centerAddress;
+            NSString *centerName = matchEntity.court.centerName;
             courtAddress =  [NSString stringWithFormat:@"%@, %@", centerName, courtAddress];
             courtAddress = [courtAddress stringByReplacingOccurrencesOfString:@" " withString:@"+"];
             NSURLComponents *components = [NSURLComponents componentsWithString:@"http://maps.apple.com"];
@@ -151,50 +158,14 @@
     self.tabBarController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:strBack style:UIBarButtonItemStylePlain target:nil action:nil];
     if ([[segue identifier] isEqualToString:SEGUE_EVENT]) {
         MatchAddEventViewController *matchAddEventViewController = (MatchAddEventViewController *) segue.destinationViewController;
-        matchAddEventViewController.matchEntity = [self matchSelectedInList];
-    }
-    if ([[segue identifier] isEqualToString:SEGUE_MAP]) {
-        MatchMapViewController *matchMapViewController = (MatchMapViewController *) segue.destinationViewController;
-        matchMapViewController.sportCenter = [self matchSelectedInList].court;
+        matchAddEventViewController.matchEntity = matchEntity;
     }
     if ([[segue identifier] isEqualToString:SEGUE_POST]) {
         MatchSendIssueViewController *matchSendIssueController = (MatchSendIssueViewController *) segue.destinationViewController;
-        matchSendIssueController.matchEntity = [self matchSelectedInList];
+        matchSendIssueController.matchEntity = matchEntity;
     }
 }
 
-#pragma mark - private methods
--(MatchEntity *) matchSelectedInList{
-    NSIndexPath *indexPath = [self.tableViewCalendar indexPathForSelectedRow];
-    int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
-    return [arrayMatches objectAtIndex:indexInArray];
-}
-
-- (void)actionShareMatch:(MatchEntity*) matchEntity {
-    NSString *dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
-    NSString *strShareText = NSLocalizedString(@"CALENDAR_SHARE_TEXT", nil);
-    NSString *textToShare = [NSString stringWithFormat:strShareText, matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor, matchEntity.court.centerName, dateStr];
-    NSArray *contents = @[textToShare];
-    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:contents applicationActivities:nil];
-    controller.modalPresentationStyle = UIModalPresentationPopover;
-    UIPopoverPresentationController *popController = [controller popoverPresentationController];
-    popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
-    popController.sourceView = self.view;
-    [self presentViewController:controller animated:YES completion:nil];
-    controller.completionWithItemsHandler = ^(NSString *activityType,
-                                              BOOL completed,
-                                              NSArray *returnedItems,
-                                              NSError *error){
-        if (completed) {
-            NSLog(@"We used activity type%@", activityType);
-        } else {
-            NSLog(@"We didn't want to share anything after all.");
-        }
-        if (error) {
-            NSLog(@"An Error occured: %@, %@", error.localizedDescription, error.localizedFailureReason);
-        }
-    };
-}
 
 -(void) reloadDataTable:(CompetitionEntity *) competition {
     competitionEntity = competition;

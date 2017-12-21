@@ -3,6 +3,8 @@
 #import "TeamMatchesTableViewController.h"
 #import "FavoriteTeamMatchTableViewCell.h"
 #import "MatchEntity+CoreDataProperties.h"
+#import "MatchAddEventViewController.h"
+#import "MatchSendIssueViewController.h"
 
 @implementation TeamMatchesTableViewController
 
@@ -115,6 +117,8 @@
     }
     cell.viewContent.layer.cornerRadius = 5;
     cell.viewContent.layer.masksToBounds = true;
+    cell.labelWeek.layer.cornerRadius = 5;
+    cell.labelWeek.layer.masksToBounds = true;
     return cell;
 }
 
@@ -124,20 +128,24 @@
 
 #pragma mark - table delegate
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    MatchEntity *matchEntity = [matches objectAtIndex:indexPath.row];
-    NSString *alertTitle = NSLocalizedString(@"CALENDAR_ACTION_TITLE", nil);
-    NSString *strActionShare = NSLocalizedString(@"CALENDAR_ACTION_SHARE", nil);
-    NSString *strActionAddEvent = NSLocalizedString(@"CALENDAR_ACTION_EVENT", nil);
-    NSString *strActionSendIssue = NSLocalizedString(@"CALENDAR_ACTION_ISSUE", nil);
-    NSString *strActionOpenMap = NSLocalizedString(@"CALENDAR_ACTION_MAP", nil);;
-    NSString *strActionClose = NSLocalizedString(@"CALENDAR_ACTION_CLOSE", nil);
+    matchEntity = [matches objectAtIndex:indexPath.row];
+    NSString *alertTitle = NSLocalizedString(@"MATCH_ACTION_TITLE", nil);
+    NSString *strActionShare = NSLocalizedString(@"MATCH_ACTION_SHARE", nil);
+    NSString *strActionAddEvent = NSLocalizedString(@"MATCH_ACTION_EVENT", nil);
+    NSString *strActionSendIssue = NSLocalizedString(@"MATCH_ACTION_ISSUE", nil);
+    NSString *strActionOpenMap = NSLocalizedString(@"MATCH_ACTION_MAP", nil);;
+    NSString *strActionClose = NSLocalizedString(@"MATCH_ACTION_CLOSE", nil);
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleAlert];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         alertController = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     }
-    UIAlertAction *actionShare = [UIAlertAction actionWithTitle:strActionShare style:UIAlertActionStyleDefault
+    UIAlertAction *actionShare = [UIAlertAction actionWithTitle:strActionShare
+                                                          style:UIAlertActionStyleDefault
                                                         handler:^(UIAlertAction *action) {
-                                                            //[self actionShareMatch:matchEntity];
+                                                            NSString *dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
+                                                            NSString *strShareText = NSLocalizedString(@"MATCH_SHARE_TEXT", nil);
+                                                            NSString *textToShare = [NSString stringWithFormat:strShareText, matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor, matchEntity.court.centerName, dateStr];
+                                                            [Utils actionShareMatch:textToShare inViewController:self];
                                                             [alertController dismissViewControllerAnimated:YES completion:nil];
                                                         }];
     [alertController addAction:actionShare];
@@ -174,5 +182,18 @@
     [alertController addAction:actionClose];
     [self presentViewController:alertController animated:YES completion:nil];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
+    if ([[segue identifier] isEqualToString:SEGUE_EVENT]) {
+        MatchAddEventViewController *matchAddEventViewController = (MatchAddEventViewController *) segue.destinationViewController;
+        matchAddEventViewController.matchEntity = matchEntity;
+    }
+    if ([[segue identifier] isEqualToString:SEGUE_POST]) {
+        MatchSendIssueViewController *matchSendIssueController = (MatchSendIssueViewController *) segue.destinationViewController;
+        matchSendIssueController.matchEntity = matchEntity;
+    }
 }
 @end

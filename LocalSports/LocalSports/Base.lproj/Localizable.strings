@@ -16,25 +16,25 @@
 "HOME_INTERNET_REQUIRED" = "Se necesita internet para que funcione la aplicación.";
 
 "COMPETITIONS_EMPTY" = "No hay competiciones activas para este deporte.";
-"CALENDAR_SHARE_TEXT" = "Jornada %d: %@ contra %@, cuando:%@ donde:%@";
+"MATCH_SHARE_TEXT" = "Jornada %d: %@ - %@, cuando:%@ donde:%@";
 
 "CALENDAR_WEEK" = "Jornada %d";
-"CALENDAR_ACTION_TITLE" = "Acciones sobre el partido";
-"CALENDAR_ACTION_SHARE" = "Compartir detalles";
-"CALENDAR_ACTION_EVENT" = "Añadir evento al calendario";
-"CALENDAR_ACTION_ISSUE" = "Enviar error";
-"CALENDAR_ACTION_MAP" = "Ver mapa";
-"CALENDAR_ACTION_CLOSE" = "Cerrar";
+"MATCH_ACTION_TITLE" = "Acciones sobre el partido";
+"MATCH_ACTION_SHARE" = "Compartir detalles";
+"MATCH_ACTION_EVENT" = "Añadir evento al calendario";
+"MATCH_ACTION_ISSUE" = "Enviar error";
+"MATCH_ACTION_MAP" = "Ver mapa";
+"MATCH_ACTION_CLOSE" = "Cerrar";
 "CALENDAR_CANCELED" = "Cancelado";
 
-"CALENDAR_EVENT_TITLE" = "Añadir evento al calendario";
-"CALENDAR_EVENT_TEXT" = "Jornada %d: %@ contra %@";
+"MATCH_EVENT_TITLE" = "Añadir evento al calendario";
+"MATCH_EVENT_TEXT" = "Jornada %d: %@ - %@";
 "CALENDAR_ACCESS" = "Se necesita acceder al calendario.";
 "CALENDAR_ERROR" = "Error al añadir el evento al calendario";
 "CALENDAR_SUCCESS" = "Partido añadido al calendario";
 
 "ISSUE_TITLE" = "Enviar error al servidor";
-"ISSUE_TEXT_TITLE" = "Jornada %d: %@ contra %@";
+"ISSUE_TEXT_TITLE" = "Jornada %d: %@ - %@";
 "ISSUE_DESCRIPTION_REQUIRED" = "Es necesario indicar una descripción del error.";
 "ISSUE_REGISTERED" = "El error ha sido registrado. En cuanto nos sea posible lo revisaremos.";
 "ISSUE_SEND_HTTP_ERROR" = "No ha podido enviarse el error. HTTP error: %d";

@@ -8,6 +8,7 @@
     NSMutableIndexSet *sectionsExpanded;
     int numOfWeeks;
     int numMatchesEachWeek;
+    MatchEntity *matchEntity;
 }
 @property (weak, nonatomic) IBOutlet UILabel *labelCategory;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewCalendar;

@@ -55,6 +55,7 @@ typedef NS_ENUM (NSInteger, EnumStates) {
 +(NSDate *) formatDateDoubleToDate:(double) dateDouble;
 +(NSString *) dictionaryToString:(NSDictionary *) dictionary;
 +(BOOL) noTengoInterne;
-+ (UIImage *)imageWithSize:(UIImage *)image scaledToSize:(CGSize)newSize;
++(UIImage *) imageWithSize:(UIImage *)image scaledToSize:(CGSize)newSize;
++(void) actionShareMatch:(NSString *) textToShare inViewController:(UIViewController *) viewController;
 
 @end

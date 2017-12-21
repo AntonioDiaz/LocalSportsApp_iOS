@@ -16,18 +16,18 @@
 "HOME_INTERNET_REQUIRED" = "Internet is required to run LocalSports.";
 
 "COMPETITIONS_EMPTY" = "There is no competitions for this sport.";
-"CALENDAR_SHARE_TEXT" = "Weel %d: %@ vs %@, when:%@ where:%@";
+"MATCH_SHARE_TEXT" = "Weel %d: %@ vs %@, when:%@ where:%@";
 
 "CALENDAR_WEEK" = "Week %d";
-"CALENDAR_ACTION_TITLE" = "Actions with the match";
-"CALENDAR_ACTION_SHARE" = "Share match details";
-"CALENDAR_ACTION_EVENT" = "Add calendar event";
-"CALENDAR_ACTION_ISSUE" = "Send issue";
-"CALENDAR_ACTION_MAP" = "View map";
-"CALENDAR_ACTION_CLOSE" = "Close";
+"MATCH_ACTION_TITLE" = "Actions with the match";
+"MATCH_ACTION_SHARE" = "Share match details";
+"MATCH_ACTION_EVENT" = "Add calendar event";
+"MATCH_ACTION_ISSUE" = "Send issue";
+"MATCH_ACTION_MAP" = "View map";
+"MATCH_ACTION_CLOSE" = "Close";
 
-"CALENDAR_EVENT_TITLE" = "Add match to calendar";
-"CALENDAR_EVENT_TEXT" = "Week %d: %@ vs %@";
+"MATCH_EVENT_TITLE" = "Add match to calendar";
+"MATCH_EVENT_TEXT" = "Week %d: %@ vs %@";
 "CALENDAR_ACCESS" = "Access to calendar needed.";
 "CALENDAR_ERROR" = "Error when adding calendar";
 "CALENDAR_SUCCESS" = "Match added to calendar";

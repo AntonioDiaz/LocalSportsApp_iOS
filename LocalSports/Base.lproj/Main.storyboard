@@ -377,7 +377,7 @@
                                     <constraint firstAttribute="height" constant="40" id="oPE-Pk-xNf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Accept">
+                                <state key="normal" title="Aceptar">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -486,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yi-4c-Ov7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="768"/>
+            <point key="canvasLocation" x="3127" y="1903"/>
         </scene>
         <!--Match: add event-->
         <scene sceneID="HDi-Ft-qdy">
@@ -515,7 +515,7 @@
                                 <rect key="frame" x="75" y="607" width="225" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.38039215686274508" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Accept">
+                                <state key="normal" title="Aceptar">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -607,8 +607,12 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqa-FQ-hlE">
                                             <rect key="frame" x="10" y="5" width="355" height="149.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jornada 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ha-aV-Sz0" userLabel="week">
-                                                    <rect key="frame" x="10" y="15" width="94" height="25.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jornada 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ha-aV-Sz0" userLabel="week">
+                                                    <rect key="frame" x="10" y="15" width="120" height="25.5"/>
+                                                    <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="R1p-MD-VDY"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -715,10 +719,14 @@
                             <outlet property="delegate" destination="GOC-RM-MPQ" id="95b-tD-rTI"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="ela-zj-yiv" kind="show" identifier="segue_post" id="a38-Ps-9KX"/>
+                        <segue destination="fOB-Oz-Bjt" kind="show" identifier="segue_event" id="zEs-Oe-gnb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXa-rr-Ybi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448.80000000000001" y="1946.176911544228"/>
+            <point key="canvasLocation" x="449" y="1947"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="kKG-Bj-X7I">
@@ -1300,5 +1308,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ms9-IB-NeE"/>
+        <segue reference="zEs-Oe-gnb"/>
+        <segue reference="a38-Ps-9KX"/>
     </inferredMetricsTieBreakers>
 </document>

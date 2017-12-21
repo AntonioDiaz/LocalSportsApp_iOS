@@ -74,4 +74,27 @@
     return newImage;
 }
 
++ (void)actionShareMatch:(NSString*) textToShare inViewController:(UIViewController *) viewController {
+    NSArray *contents = @[textToShare];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:contents applicationActivities:nil];
+    controller.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController *popController = [controller popoverPresentationController];
+    popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popController.sourceView = viewController.view;
+    [viewController presentViewController:controller animated:YES completion:nil];
+    controller.completionWithItemsHandler = ^(NSString *activityType,
+                                              BOOL completed,
+                                              NSArray *returnedItems,
+                                              NSError *error){
+        if (completed) {
+            NSLog(@"We used activity type%@", activityType);
+        } else {
+            NSLog(@"We didn't want to share anything after all.");
+        }
+        if (error) {
+            NSLog(@"An Error occured: %@, %@", error.localizedDescription, error.localizedFailureReason);
+        }
+    };
+}
+
 @end

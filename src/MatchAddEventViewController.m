@@ -11,8 +11,8 @@
     //TODO: check if event is allready added to the calendar.
     [super viewDidLoad];
     eventStore = [[EKEventStore alloc]init];
-    self.navigationItem.title = NSLocalizedString(@"CALENDAR_EVENT_TITLE", nil);
-    self.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
+    self.navigationItem.title = NSLocalizedString(@"MATCH_EVENT_TITLE", nil);
+    self.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"MATCH_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
     self.labelDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
     self.labelPlace.text = matchEntity.court.centerAddress;
 }
@@ -28,7 +28,7 @@
             [Utils showAlert:NSLocalizedString(@"CALENDAR_ACCESS", nil)];
         } else {
             EKEvent *event = [EKEvent eventWithEventStore:eventStore];
-            event.title = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
+            event.title = [NSString stringWithFormat:NSLocalizedString(@"MATCH_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
             event.calendar = eventStore.defaultCalendarForNewEvents;
             NSDate *initDate = [Utils formatDateDoubleToDate:matchEntity.date];
             event.location = matchEntity.court.centerAddress;
