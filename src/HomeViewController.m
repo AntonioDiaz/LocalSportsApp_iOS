@@ -1,6 +1,7 @@
 #import "HomeViewController.h"
 #import "Utils.h"
 #import "SportsViewController.h"
+#import "SideMenuController.h"
 #import "TownsTableViewCell.h"
 
 @implementation HomeViewController
@@ -101,7 +102,8 @@
 -(void) navigateToSportsScreen {
     NSString *storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"SportsNavigationController"];
+    SideMenuController * vc = [storyboard instantiateViewControllerWithIdentifier:@"SportsNavigationController"];
+    //vc.leftViewBackgroundColor =[UIColor grayColor];
     [self presentViewController:vc animated:YES completion:nil];
 }
 

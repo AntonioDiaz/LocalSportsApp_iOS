@@ -7,12 +7,15 @@
 //
 
 #import "SideMenuController.h"
+#import "SideMenuTableController.h"
+#import "Utils.h"
 
 @implementation SideMenuController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    self.leftViewBackgroundColor =[UIColor grayColor];
+     [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
