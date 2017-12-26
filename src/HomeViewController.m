@@ -79,23 +79,15 @@
     NSDictionary *dictionary = [arrayTowns objectAtIndex:indexPath.row];
     NSString *townSelectedString = [dictionary objectForKey:@"name"];
     NSString *townSelectedId = [dictionary objectForKey:@"id"];
+    NSString *iconName = [dictionary objectForKey:@"iconName"];
     [userDefaults setValue:townSelectedString forKey:PREF_TOWN_NAME];
     [userDefaults setValue:townSelectedId forKey:PREF_TOWN_ID];
-    [self navigateToSportsScreen];
-}
-
-#pragma mark - segue methods
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if ([userDefaults objectForKey:PREF_TOWN_NAME]==nil) {
-        [[self navigationController] setNavigationBarHidden:true animated:YES];
-        NSIndexPath *indexPath = [self.townsTableView indexPathForSelectedRow];
-        NSDictionary *dictionary = [arrayTowns objectAtIndex:indexPath.row];
-        NSString *townSelectedString = [dictionary objectForKey:@"name"];
-        NSString *townSelectedId = [dictionary objectForKey:@"id"];
-        [userDefaults setValue:townSelectedString forKey:PREF_TOWN_NAME];
-        [userDefaults setValue:townSelectedId forKey:PREF_TOWN_ID];
+    if (@available(iOS 10.3, *)) {
+        [UIApplication.sharedApplication setAlternateIconName:iconName completionHandler:nil];
+    } else {
+        NSLog(@"not possible to change app icon.");
     }
+    [self navigateToSportsScreen];
 }
 
 #pragma mark - private methods

@@ -40,6 +40,11 @@
         [userDefaults setValue:nil forKey:PREF_TOWN_ID];
         [UtilsDataBase deleteAllEntities:COMPETITION_ENTITY];
         [UtilsDataBase deleteAllEntities:FAVORITE_TEAM_ENTITY];
+        if (@available(iOS 10.3, *)) {
+            [UIApplication.sharedApplication setAlternateIconName:nil completionHandler:nil];
+        } else {
+            NSLog(@"not possible to change app icon.");
+        }
         NSString *storyboardName = @"Main";
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
         UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RootNavigationController"];

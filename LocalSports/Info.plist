@@ -52,5 +52,49 @@
 	<string></string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>AppIcon</string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<true/>
+		</dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>alcorcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>alcorcon</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
+			<key>leganes</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>leganes</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
+			<key>getafe</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>getafe</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>
