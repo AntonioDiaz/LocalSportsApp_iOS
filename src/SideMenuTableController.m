@@ -30,6 +30,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *idCell = [arrayMenuItems objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idCell forIndexPath:indexPath];
+    if (indexPath.row==1) {
+        cell.backgroundColor = [Utils primaryColor];
+    }
     return cell;
 }
 
@@ -38,6 +41,8 @@
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults setValue:nil forKey:PREF_TOWN_NAME];
         [userDefaults setValue:nil forKey:PREF_TOWN_ID];
+        [userDefaults setValue:nil forKey:PREF_PRIMARY_COLOR];
+        [userDefaults setValue:nil forKey:PREF_ACCENT_COLOR];
         [UtilsDataBase deleteAllEntities:COMPETITION_ENTITY];
         [UtilsDataBase deleteAllEntities:FAVORITE_TEAM_ENTITY];
         if (@available(iOS 10.3, *)) {

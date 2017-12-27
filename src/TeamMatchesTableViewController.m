@@ -8,14 +8,14 @@
 
 @implementation TeamMatchesTableViewController
 
-@synthesize favoriteTeamEntity;
 @synthesize competitionEntity;
+@synthesize teamName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadCompetitionDetails:competitionEntity inTable:self.tableView];
     self.navigationItem.prompt = [NSString stringWithFormat:@"%@ - %@", self.competitionEntity.name, self.competitionEntity.category];
-    self.navigationItem.title = self.favoriteTeamEntity.teamName;
+    self.navigationItem.title = teamName;
     isFavoriteTeam = true;
     [self updateFavoriteImage];
 }
@@ -36,14 +36,16 @@
                                                      style:UIBarButtonItemStylePlain
                                                     target:self
                                                     action:@selector(switchFavoriteCompetition:)];
-    [buttonFavorite setTintColor:UIColorFromRGB(COLOR_ACCENT)];
+    [buttonFavorite setTintColor:[Utils accentColor]];
     self.navigationItem.rightBarButtonItem = buttonFavorite;
 }
 
 /** set or unset team as favorite. */
 -(void) switchFavoriteCompetition:(id)sender {
     isFavoriteTeam = !isFavoriteTeam;
-    [UtilsDataBase markOrUnmarkTeamAsFavorite:favoriteTeamEntity.teamName withCompetition:competitionEntity.idCompetitionServer isFavorite:isFavoriteTeam];
+    [UtilsDataBase markOrUnmarkTeamAsFavorite:teamName
+                              withCompetition:self.competitionEntity.idCompetitionServer
+                                   isFavorite:isFavoriteTeam];
     [self updateFavoriteImage];
 }
 
@@ -72,7 +74,7 @@
                     NSArray *arrayAllMatches = [UtilsDataBase queryMatches:competitionEntity];
                     matches = [[NSMutableArray alloc] init];
                     for (MatchEntity *match in arrayAllMatches) {
-                        if ([favoriteTeamEntity.teamName isEqualToString:match.teamLocal] || [favoriteTeamEntity.teamName isEqualToString:match.teamVisitor]) {
+                        if ([teamName isEqualToString:match.teamLocal] || [teamName isEqualToString:match.teamVisitor]) {
                             [matches addObject:match];
                         }
                     }
@@ -98,6 +100,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FavoriteTeamMatchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_favorite_team_match" forIndexPath:indexPath];
     cell.labelWeek.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.row + 1];
+    cell.labelWeek.backgroundColor = [Utils accentColor];
     MatchEntity *matchEntity = [matches objectAtIndex:indexPath.row];
     NSString* dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
     if (matchEntity.state == CANCELED) {
@@ -117,6 +120,7 @@
     }
     cell.viewContent.layer.cornerRadius = 5;
     cell.viewContent.layer.masksToBounds = true;
+    cell.viewContent.backgroundColor = [Utils primaryColor];
     cell.labelWeek.layer.cornerRadius = 5;
     cell.labelWeek.layer.masksToBounds = true;
     return cell;
@@ -186,7 +190,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
+    [self.navigationItem.backBarButtonItem setTintColor:[Utils primaryColorDarker]];
     if ([[segue identifier] isEqualToString:SEGUE_EVENT]) {
         MatchAddEventViewController *matchAddEventViewController = (MatchAddEventViewController *) segue.destinationViewController;
         matchAddEventViewController.matchEntity = matchEntity;

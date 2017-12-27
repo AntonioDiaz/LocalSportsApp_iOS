@@ -22,6 +22,7 @@
     [self updateFavoriteImage];
     AppDelegate *app = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     managedObjectContext = app.persistentContainer.viewContext;
+    [[UITabBar appearance] setTintColor:[Utils primaryColorLighter]]; 
     //add calendar image to tabbar
     UITabBarItem *tabBarItemCalendar = [self.tabBar.items objectAtIndex:0];
     UIImage *imageCalendar = [UIImage imageNamed:@"calendar"];
@@ -68,7 +69,7 @@
                                                      style:UIBarButtonItemStylePlain
                                                     target:self
                                                     action:@selector(switchFavoriteCompetition:)];
-    [buttonFavorite setTintColor:UIColorFromRGB(COLOR_ACCENT)];
+    [buttonFavorite setTintColor:[Utils accentColor]];
     self.navigationItem.rightBarButtonItem = buttonFavorite;
 }
 

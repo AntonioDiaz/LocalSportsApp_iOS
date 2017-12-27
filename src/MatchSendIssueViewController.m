@@ -18,6 +18,13 @@
     self.labelDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
     self.labelSportCenter.text = matchEntity.court.centerName;
     self.textViewDescription.text = @"";
+    
+    [self.viewTitle setBackgroundColor:[Utils primaryColorDarker]];
+    [self.viewDate setBackgroundColor:[Utils primaryColorDarker]];
+    [self.viewPlace setBackgroundColor:[Utils primaryColorDarker]];
+    [self.viewDescription setBackgroundColor:[Utils primaryColorDarker]];
+    [self.buttonAccept setBackgroundColor:[Utils primaryColor]];
+    
 }
 
 - (void)didReceiveMemoryWarning {

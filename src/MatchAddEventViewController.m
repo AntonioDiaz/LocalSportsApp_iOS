@@ -15,7 +15,12 @@
     self.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"MATCH_EVENT_TEXT", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
     self.labelDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
     self.labelPlace.text = matchEntity.court.centerAddress;
+    [self.labelHeadingTitle setBackgroundColor:[Utils primaryColorDarker]];
+    [self.labelHeadingDate setBackgroundColor:[Utils primaryColorDarker]];
+    [self.labelHeadingPlace setBackgroundColor:[Utils primaryColorDarker]];
+    [self.buttonAccept setBackgroundColor:[Utils primaryColor]];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

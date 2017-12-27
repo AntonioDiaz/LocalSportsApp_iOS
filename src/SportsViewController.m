@@ -20,15 +20,15 @@
     UIImage *image = [[UIImage imageNamed:@"menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     image = [Utils imageWithSize:image scaledToSize:CGSizeMake(30, 30)];
     UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showSideMenu:)];
-    [button setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
+    [button setTintColor:[Utils primaryColorDarker]];
     self.navigationItem.leftBarButtonItem = button;
     
-    [self initSportButton:self.buttonFootball];
-    [self initSportButton:self.buttonBasketball];
-    [self initSportButton:self.buttonHandball];
-    [self initSportButton:self.buttonVolleyball];
-    [self initSportButton:self.buttonHockey];
-    [self initSportButton:self.buttonFavorites];
+    [self initSportButton:self.buttonFootball withImage:@"football" withColor:[Utils primaryColor]];
+    [self initSportButton:self.buttonBasketball withImage:@"basketball" withColor:[Utils primaryColor]];
+    [self initSportButton:self.buttonHandball withImage:@"handball" withColor:[Utils primaryColor]];
+    [self initSportButton:self.buttonVolleyball withImage:@"volleyball" withColor:[Utils primaryColor]];
+    [self initSportButton:self.buttonHockey withImage:@"hockey" withColor:[Utils primaryColor]];
+    [self initSportButton:self.buttonFavorites withImage:@"favorite" withColor:[Utils accentColor]];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -142,8 +142,11 @@
     self.buttonFavorites.enabled = true;
 }
 
--(void) initSportButton:(UIButton*)button {
+-(void) initSportButton:(UIButton*)button withImage:(NSString *) strImage withColor:(UIColor *) color{
     [button setContentMode:UIViewContentModeCenter];
+    UIImage *imageFootball = [[UIImage imageNamed:strImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [button setImage:imageFootball forState:UIControlStateNormal];
+    button.tintColor = color;
     [button.imageView setContentMode:UIViewContentModeScaleAspectFit];
     button.enabled = false;
 }
@@ -187,20 +190,15 @@
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil)
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
+    [self.navigationItem.backBarButtonItem setTintColor:[Utils primaryColorDarker]];
     if ([[segue identifier] isEqualToString:@"idShowCompetitions"]) {
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil)
-                                                                                 style:UIBarButtonItemStylePlain
-                                                                                target:nil
-                                                                                action:nil];
-        [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
         CompetitionsTableViewController *viewController = (CompetitionsTableViewController *) segue.destinationViewController;
         viewController.sportSelected = sportSelected;
     } else if ([[segue identifier] isEqualToString:@"idShowFavorites"]) {
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil)
-                                                                                 style:UIBarButtonItemStylePlain
-                                                                                target:nil
-                                                                                action:nil];
-        [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
         //FavoritesTableViewController *viewController = (FavoritesTableViewController *) segue.destinationViewController;
     }
 }

@@ -6,12 +6,12 @@
 @interface TeamMatchesTableViewController : UITableViewController
 {
     NSMutableArray *matches;
-    FavoriteTeamEntity *favoriteTeamEntity;
     CompetitionEntity *competitionEntity;
     UIBarButtonItem *buttonFavorite;
     BOOL isFavoriteTeam;
     MatchEntity *matchEntity;
+    NSString *teamName;
 }
-@property FavoriteTeamEntity *favoriteTeamEntity;
 @property CompetitionEntity *competitionEntity;
+@property NSString *teamName;
 @end

@@ -3,6 +3,7 @@
 #import "SportsViewController.h"
 #import "SideMenuController.h"
 #import "TownsTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation HomeViewController
 
@@ -63,15 +64,21 @@
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TownsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_town_new"];
-    NSString *name = [[arrayTowns objectAtIndex:indexPath.row] objectForKey:@"name"];
+    NSDictionary *dictionary = [arrayTowns objectAtIndex:indexPath.row];
+    NSString *name = [dictionary objectForKey:@"name"];
+    NSString *iconName = [dictionary objectForKey:@"iconName"];
+    UIImage *image = [UIImage imageNamed: iconName];
     cell.labelTownName.text = name;
-    cell.labelTownName.layer.cornerRadius = 5;
-    cell.labelTownName.layer.masksToBounds = true;
+    [cell.imageViewTown setImage:image];
+    cell.imageViewTown.layer.cornerRadius = 5;
+    cell.imageViewTown.clipsToBounds = true;
+    cell.viewContent.layer.cornerRadius = 5;
+    [cell.viewContent setBackgroundColor:[Utils primaryColor]];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 90;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,8 +87,16 @@
     NSString *townSelectedString = [dictionary objectForKey:@"name"];
     NSString *townSelectedId = [dictionary objectForKey:@"id"];
     NSString *iconName = [dictionary objectForKey:@"iconName"];
+    NSString *townPrimaryColor = [dictionary objectForKey:@"colorPrimary"];
+    NSString *townAccentColor = [dictionary objectForKey:@"colorAccent"];
     [userDefaults setValue:townSelectedString forKey:PREF_TOWN_NAME];
     [userDefaults setValue:townSelectedId forKey:PREF_TOWN_ID];
+    if (townPrimaryColor!=nil && townPrimaryColor!=(id)[NSNull null] && townPrimaryColor.length>0) {
+        [userDefaults setInteger:[Utils intFromHexString:townPrimaryColor] forKey:PREF_PRIMARY_COLOR];
+    }
+   if (townAccentColor!=nil && townAccentColor!=(id)[NSNull null] && townAccentColor.length>0) {
+        [userDefaults setInteger:[Utils intFromHexString:townAccentColor] forKey:PREF_ACCENT_COLOR];
+    }
     if (@available(iOS 10.3, *)) {
         [UIApplication.sharedApplication setAlternateIconName:iconName completionHandler:nil];
     } else {

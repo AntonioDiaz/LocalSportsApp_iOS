@@ -40,7 +40,7 @@
         label.numberOfLines = 4;
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont fontWithName:@"Verdana-Bold" size:22];
-        label.textColor = UIColorFromRGB(COLOR_PRIMARY);
+        label.textColor = [Utils primaryColor];
         [view addSubview:label];
         self.tableView.backgroundView = view;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -56,10 +56,12 @@
     CompetitionEntity *competitionEntity = [arrayCompetitions objectAtIndex:indexPath.row];
     cell.labelCompetitionName.text = competitionEntity.name;
     cell.labelCategory.text = competitionEntity.category;
+    cell.labelCategory.backgroundColor = [Utils accentColor];
     cell.labelCategory.layer.cornerRadius = 5;
     cell.labelCategory.layer.masksToBounds = true;
     cell.viewCompetition.layer.cornerRadius = 5;
     cell.viewCompetition.layer.masksToBounds = true;
+    cell.viewCompetition.backgroundColor = [Utils primaryColor];
     return cell;
 }
 
@@ -67,7 +69,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
+    [self.navigationItem.backBarButtonItem setTintColor:[Utils primaryColorDarker]];
     CompetitionTabBarController *competitionTabBarController = segue.destinationViewController;
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     CompetitionEntity *competitionEntity = [arrayCompetitions objectAtIndex:indexPath.row];

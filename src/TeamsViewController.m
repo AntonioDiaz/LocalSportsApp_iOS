@@ -34,6 +34,8 @@
         TeamHeadingTableViewCell *cell = [self.tableViewTeams dequeueReusableCellWithIdentifier:@"cell_team_heading"];
         NSString *teamName = [arrayTeams objectAtIndex:indexPath.section];
         cell.labelTitle.text = teamName;
+        cell.labelTitle.backgroundColor = [Utils primaryColor];
+        
         UIImage *image = [UIImage imageNamed:@"favorite_unselect"];
         if ([UtilsDataBase isTeamFavorite:teamName withCompetition:competitionEntity.idCompetitionServer]) {
             image = [UIImage imageNamed:@"favorite"];
@@ -41,7 +43,7 @@
         cell.imageViewFavorite.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [cell.imageViewFavorite setTintColor:[UIColor whiteColor]];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.backgroundColor = UIColorFromRGB(COLOR_PRIMARY);
+        cell.backgroundColor = [Utils primaryColor];
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
         tapRecognizer.numberOfTapsRequired = 1;
         [cell.imageViewFavorite setUserInteractionEnabled:YES];

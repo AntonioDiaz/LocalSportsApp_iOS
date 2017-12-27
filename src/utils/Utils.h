@@ -10,6 +10,9 @@
 #define APP_NAME @"LocalSports"
 #define PREF_TOWN_NAME @"PREF_TOWN_NAME"
 #define PREF_TOWN_ID @"PREF_TOWN_ID"
+#define PREF_PRIMARY_COLOR @"PREF_PRIMARY_COLOR"
+#define PREF_ACCENT_COLOR @"PREF_ACCENT_COLOR"
+
 #define COUNT_PRINTSCREEN_RESULTS @"COUNT_PRINTSCREEN_RESULTS"
 
 #define COMPETITION_ENTITY @"CompetitionEntity"
@@ -57,5 +60,11 @@ typedef NS_ENUM (NSInteger, EnumStates) {
 +(BOOL) noTengoInterne;
 +(UIImage *) imageWithSize:(UIImage *)image scaledToSize:(CGSize)newSize;
 +(void) actionShareMatch:(NSString *) textToShare inViewController:(UIViewController *) viewController;
-
++(UIColor *) primaryColor;
++(UIColor *) primaryColorDarker;
++(UIColor *) primaryColorLighter;
++(UIColor *) accentColor;
++(NSInteger)intFromHexString:(NSString *) hexStr;
++(UIColor *)lighterColorForColor:(UIColor *)c;
++(UIColor *)darkerColorForColor:(UIColor *)c;
 @end

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TownsTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *viewContent;
 @property (weak, nonatomic) IBOutlet UILabel *labelTownName;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewTown;
 
 @end

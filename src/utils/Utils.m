@@ -97,4 +97,70 @@
     };
 }
 
++(UIColor *) primaryColor {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];    
+    NSInteger colorInt = [userDefaults integerForKey:PREF_PRIMARY_COLOR];
+    if (colorInt == 0) {
+        colorInt = COLOR_PRIMARY;
+    }
+    return UIColorFromRGB(colorInt);
+}
+
++(UIColor *) primaryColorDarker {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger colorInt = [userDefaults integerForKey:PREF_PRIMARY_COLOR];
+    if (colorInt == 0) {
+        colorInt = COLOR_PRIMARY;
+    }
+    return [self darkerColorForColor:UIColorFromRGB(colorInt)];
+}
+
++(UIColor *) primaryColorLighter {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger colorInt = [userDefaults integerForKey:PREF_PRIMARY_COLOR];
+    if (colorInt == 0) {
+        colorInt = COLOR_PRIMARY;
+    }
+    return [self lighterColorForColor:UIColorFromRGB(colorInt)];
+}
+
++(UIColor *) accentColor {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger colorInt = [userDefaults integerForKey:PREF_ACCENT_COLOR];
+    if (colorInt == 0) {
+        colorInt = COLOR_ACCENT;
+    }
+    return UIColorFromRGB(colorInt);
+}
+
++(NSInteger)intFromHexString:(NSString *) hexStr {
+    unsigned int hexInt = 0;
+    // Create scanner
+    NSScanner *scanner = [NSScanner scannerWithString:hexStr];
+    // Tell scanner to skip the # character
+    [scanner setCharactersToBeSkipped:[NSCharacterSet characterSetWithCharactersInString:@"#"]];
+    // Scan hex value
+    [scanner scanHexInt:&hexInt];
+    return hexInt;
+}
+
++ (UIColor *)lighterColorForColor:(UIColor *)c {
+    CGFloat r, g, b, a;
+    if ([c getRed:&r green:&g blue:&b alpha:&a])
+        return [UIColor colorWithRed:MIN(r + 0.2, 1.0)
+                               green:MIN(g + 0.2, 1.0)
+                                blue:MIN(b + 0.2, 1.0)
+                               alpha:a];
+    return nil;
+}
+
++ (UIColor *)darkerColorForColor:(UIColor *)c {
+    CGFloat r, g, b, a;
+    if ([c getRed:&r green:&g blue:&b alpha:&a])
+        return [UIColor colorWithRed:MAX(r - 0.2, 0.0)
+                               green:MAX(g - 0.2, 0.0)
+                                blue:MAX(b - 0.2, 0.0)
+                               alpha:a];
+    return nil;
+}
 @end

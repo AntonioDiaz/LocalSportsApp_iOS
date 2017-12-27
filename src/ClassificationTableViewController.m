@@ -29,7 +29,7 @@
     ClassificationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_classification" forIndexPath:indexPath];
     if (indexPath.row == 0) {
         cell.labelTeam.text = NSLocalizedString(@"CLASSIFICATION_TEAM", nil);
-        cell.backgroundColor = UIColorFromRGB(COLOR_PRIMARY);
+        cell.backgroundColor = [Utils primaryColor];
         cell.labelPoints.textColor = [UIColor whiteColor];
         cell.labelTeam.textColor = [UIColor whiteColor];
         cell.labelMatchesPlayed.textColor = [UIColor whiteColor];

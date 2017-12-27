@@ -42,7 +42,7 @@
         label.numberOfLines = 4;
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont fontWithName:@"Verdana-Bold" size:22];
-        label.textColor = UIColorFromRGB(COLOR_PRIMARY);
+        label.textColor = [Utils primaryColor];
         [view addSubview:label];
         self.tableView.backgroundView = view;
         return 0;
@@ -64,11 +64,13 @@
          NSString *sportStr = NSLocalizedString(competitionEntity.sport, nil);
          cell.labelCompetition.text = [NSString stringWithFormat:@"%@ - %@", sportStr, competitionEntity.name];
          cell.labelCategory.text = competitionEntity.category;
+         cell.labelTeam.backgroundColor = [Utils accentColor];
          cell.labelTeam.text = favoriteTeam.teamName;
          cell.labelTeam.layer.cornerRadius = 5;
          cell.labelTeam.layer.masksToBounds = true;
          cell.viewContainer.layer.cornerRadius = 5;
          cell.viewContainer.layer.masksToBounds = true;
+         cell.viewContainer.backgroundColor = [Utils primaryColor];
          return cell;
     } else {
         CompetitionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_competition" forIndexPath:indexPath];
@@ -76,10 +78,12 @@
         NSString *sportStr = NSLocalizedString(competitionEntity.sport, nil);
         cell.labelCompetitionName.text = [NSString stringWithFormat:@"%@ - %@", sportStr, competitionEntity.name];
         cell.labelCategory.text = competitionEntity.category;
+        cell.labelCategory.backgroundColor = [Utils accentColor];
         cell.labelCategory.layer.cornerRadius = 5;
         cell.labelCategory.layer.masksToBounds = true;
         cell.viewCompetition.layer.cornerRadius = 5;
         cell.viewCompetition.layer.masksToBounds = true;
+        cell.viewCompetition.backgroundColor = [Utils primaryColor];
         return cell;
     }
 }
@@ -95,7 +99,7 @@
 #pragma mark - Navigation
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BACK", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.navigationItem.backBarButtonItem setTintColor:UIColorFromRGB(COLOR_PRIMARY)];
+    [self.navigationItem.backBarButtonItem setTintColor:[Utils primaryColorDarker]];
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     if ([[segue identifier] isEqualToString:@"segue_favorite_competition"]) {
         CompetitionTabBarController *competitionTabBarController = segue.destinationViewController;
@@ -105,8 +109,8 @@
         TeamMatchesTableViewController *teamMatchesViewController = segue.destinationViewController;
         FavoriteTeamEntity *favoriteTeam = [arrayTeams objectAtIndex:indexPath.row];
         CompetitionEntity *competitionEntity = [UtilsDataBase queryCompetitionsByIdServer:favoriteTeam.idCompetitionServer];
-        teamMatchesViewController.favoriteTeamEntity = favoriteTeam;
         teamMatchesViewController.competitionEntity = competitionEntity;
+        teamMatchesViewController.teamName = favoriteTeam.teamName;
     }
 }
 @end

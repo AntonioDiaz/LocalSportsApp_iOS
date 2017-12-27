@@ -36,13 +36,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        //UITableViewCell
-        // *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_heading" forIndexPath:indexPath];
         CalendarHeadingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_heading" forIndexPath:indexPath];
         cell.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.section + 1];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.backgroundColor = UIColorFromRGB(COLOR_PRIMARY);
-        cell.textLabel.backgroundColor = UIColorFromRGB(COLOR_PRIMARY);
+        cell.backgroundColor = [Utils primaryColor];
+        cell.labelTitle.backgroundColor = [Utils primaryColor];
         return cell;
     } else {
         MatchDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_detail" forIndexPath:indexPath];
@@ -154,8 +152,9 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSString * strBack = NSLocalizedString(@"Back", nil);
+    NSString * strBack = NSLocalizedString(@"BACK", nil);
     self.tabBarController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:strBack style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.tabBarController.navigationItem.backBarButtonItem setTintColor:[Utils primaryColorDarker]];
     if ([[segue identifier] isEqualToString:SEGUE_EVENT]) {
         MatchAddEventViewController *matchAddEventViewController = (MatchAddEventViewController *) segue.destinationViewController;
         matchAddEventViewController.matchEntity = matchEntity;

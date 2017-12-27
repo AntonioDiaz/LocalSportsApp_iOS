@@ -6,10 +6,10 @@
          contextName = "-[FavoritesTableViewController prepareForSegue:sender:]:FavoritesTableViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "favoriteTeam.idCompetitionServer">
+               value = "competitionEntity.matches">
             </PersistentString>
             <PersistentString
-               value = "competitionEntity.matches">
+               value = "favoriteTeam.idCompetitionServer">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -40,6 +40,17 @@
             </PersistentString>
             <PersistentString
                value = "teamEntity.competition">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TeamMatchesTableViewController switchFavoriteCompetition:]:TeamMatchesTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "favoriteTeamEntity.teamName">
+            </PersistentString>
+            <PersistentString
+               value = "self.favoriteTeamEntity.teamName">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
