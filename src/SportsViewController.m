@@ -15,8 +15,9 @@
     managedObjectContext = app.persistentContainer.viewContext;
     self.navigationItem.hidesBackButton = YES;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *appName = NSLocalizedString(@"APP_NAME", nil);
     NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_NAME];
-    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", APP_NAME, townSelected];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", appName, townSelected];
     
     UIImage *image = [[UIImage imageNamed:@"menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     image = [Utils imageWithSize:image scaledToSize:CGSizeMake(30, 30)];

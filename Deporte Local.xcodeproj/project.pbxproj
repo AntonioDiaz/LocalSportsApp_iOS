@@ -76,7 +76,7 @@
 		090123C11FD16E8B00973DD5 /* MatchSendIssueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchSendIssueViewController.m; sourceTree = "<group>"; };
 		0926246B1FCD8FA1008F2280 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		0926246C1FCD8FA1008F2280 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		094C1D521FC83A3F003685DD /* LocalSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		094C1D521FC83A3F003685DD /* Deporte Local.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Deporte Local.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		094C1D551FC83A3F003685DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		094C1D561FC83A3F003685DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		094C1D581FC83A3F003685DD /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 		094C1D531FC83A3F003685DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				094C1D521FC83A3F003685DD /* LocalSports.app */,
+				094C1D521FC83A3F003685DD /* Deporte Local.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -411,9 +411,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		094C1D511FC83A3F003685DD /* LocalSports */ = {
+		094C1D511FC83A3F003685DD /* Deporte Local */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 094C1D6B1FC83A3F003685DD /* Build configuration list for PBXNativeTarget "LocalSports" */;
+			buildConfigurationList = 094C1D6B1FC83A3F003685DD /* Build configuration list for PBXNativeTarget "Deporte Local" */;
 			buildPhases = (
 				094C1D4E1FC83A3F003685DD /* Sources */,
 				094C1D4F1FC83A3F003685DD /* Frameworks */,
@@ -423,9 +423,9 @@
 			);
 			dependencies = (
 			);
-			name = LocalSports;
+			name = "Deporte Local";
 			productName = LocalSports;
-			productReference = 094C1D521FC83A3F003685DD /* LocalSports.app */;
+			productReference = 094C1D521FC83A3F003685DD /* Deporte Local.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -443,7 +443,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 094C1D4D1FC83A3F003685DD /* Build configuration list for PBXProject "LocalSports" */;
+			buildConfigurationList = 094C1D4D1FC83A3F003685DD /* Build configuration list for PBXProject "Deporte Local" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = es;
 			hasScannedForEncodings = 0;
@@ -457,7 +457,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				094C1D511FC83A3F003685DD /* LocalSports */,
+				094C1D511FC83A3F003685DD /* Deporte Local */,
 			);
 		};
 /* End PBXProject section */
@@ -722,7 +722,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		094C1D4D1FC83A3F003685DD /* Build configuration list for PBXProject "LocalSports" */ = {
+		094C1D4D1FC83A3F003685DD /* Build configuration list for PBXProject "Deporte Local" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				094C1D691FC83A3F003685DD /* Debug */,
@@ -731,7 +731,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		094C1D6B1FC83A3F003685DD /* Build configuration list for PBXNativeTarget "LocalSports" */ = {
+		094C1D6B1FC83A3F003685DD /* Build configuration list for PBXNativeTarget "Deporte Local" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				094C1D6C1FC83A3F003685DD /* Debug */,

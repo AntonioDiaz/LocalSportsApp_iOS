@@ -11,7 +11,9 @@
     [super viewDidLoad];
     NSString *documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSLog(@"device directory: %@", documentsDirectoryPath);
-    self.navigationItem.title = [NSString stringWithFormat: NSLocalizedString(@"HOME_TITLE", nil), APP_NAME];
+    NSString *appName = NSLocalizedString(@"APP_NAME", nil);
+    NSString *title = NSLocalizedString(@"HOME_TITLE", nil);
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", appName, title];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -20,7 +22,7 @@
     if (townSelectedStr.length > 0) {
         [self navigateToSportsScreen];
     } else {
-        self.navigationItem.title = [NSString stringWithFormat: NSLocalizedString(@"HOME_TITLE", nil), APP_NAME];
+        //self.navigationItem.title = [NSString stringWithFormat: NSLocalizedString(@"HOME_TITLE", nil), APP_NAME];
         //check for internet conection.
         if ([Utils noTengoInterne]) {
             [Utils showAlert:NSLocalizedString(@"HOME_INTERNET_REQUIRED", nil)];

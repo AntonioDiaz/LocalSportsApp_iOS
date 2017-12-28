@@ -5,6 +5,8 @@
  Created by Antonio Díaz Arroyo on 3/12/17.
  Copyright © 2017 cice. All rights reserved.
  */
+"APP_NAME" = "Deporte Local";
+
 "BACK" = "Volver";
 "FUTBOL_11" = "Futbol 11";
 "FUTBOL_7" = "Futbol 7";
@@ -14,7 +16,7 @@
 "BALONMANO" = "Balonmano";
 "UNIHOCKEY" = "Hockey";
 
-"HOME_TITLE" = "%@ - Municipios disponibles";
+"HOME_TITLE" = "Municipios disponibles";
 "HOME_INTERNET_REQUIRED" = "Se necesita internet para que funcione la aplicación.";
 
 "COMPETITIONS_EMPTY" = "No hay competiciones activas para este deporte.";

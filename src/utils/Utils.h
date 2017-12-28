@@ -7,7 +7,6 @@
 #define URL_COMPETITIONS @"https://localsports-web.appspot.com/server/search_competitions/?idTown=%@"
 #define URL_COMPETITION_DETAILS @"https://localsports-web.appspot.com/server/competitiondetails/%@"
 #define URL_SEND_ISSUE @"https://localsports-web.appspot.com/server/issues/"
-#define APP_NAME @"LocalSports"
 #define PREF_TOWN_NAME @"PREF_TOWN_NAME"
 #define PREF_TOWN_ID @"PREF_TOWN_ID"
 #define PREF_TOWN_SPORTS @"PREF_TOWN_SPORTS"

@@ -16,7 +16,7 @@
 
 
 
-"HOME_TITLE" = "%@ - Available Towns";
+"HOME_TITLE" = "Available Towns";
 "HOME_INTERNET_REQUIRED" = "Internet is required to run LocalSports.";
 
 "COMPETITIONS_EMPTY" = "There is no competitions for this sport.";

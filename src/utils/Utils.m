@@ -8,7 +8,8 @@
 }
 
 +(void)showAlert:(NSString *) alertDesc {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:APP_NAME message:alertDesc delegate:self cancelButtonTitle:@"Accept" otherButtonTitles: nil];
+    NSString *appName = NSLocalizedString(@"APP_NAME", nil);
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:appName message:alertDesc delegate:self cancelButtonTitle:@"Accept" otherButtonTitles: nil];
     [alertView show];
 }
 
