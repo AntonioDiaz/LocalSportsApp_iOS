@@ -5,6 +5,7 @@
 #import "UtilsDataBase.h"
 #import "UIViewController+LGSideMenuController.h"
 #import "FavoritesTableViewController.h"
+#import "SportCollectionViewCell.h"
 
 @implementation SportsViewController
 
@@ -22,13 +23,8 @@
     UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showSideMenu:)];
     [button setTintColor:[Utils primaryColorDarker]];
     self.navigationItem.leftBarButtonItem = button;
+    arraySports = [userDefaults objectForKey:PREF_TOWN_SPORTS];
     
-    [self initSportButton:self.buttonFootball withImage:@"football" withColor:[Utils primaryColor]];
-    [self initSportButton:self.buttonBasketball withImage:@"basketball" withColor:[Utils primaryColor]];
-    [self initSportButton:self.buttonHandball withImage:@"handball" withColor:[Utils primaryColor]];
-    [self initSportButton:self.buttonVolleyball withImage:@"volleyball" withColor:[Utils primaryColor]];
-    [self initSportButton:self.buttonHockey withImage:@"hockey" withColor:[Utils primaryColor]];
-    [self initSportButton:self.buttonFavorites withImage:@"favorite" withColor:[Utils accentColor]];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -48,7 +44,7 @@
 -(void)loadBanner{
     self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
     //self.bannerView.frame = CGRectMake(0, 0, self.bannerView.frame.size.width , self.bannerView.frame.size.height);
-    self.bannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
+    self.bannerView.adUnitID = AD_UNIT_ID_BANNER;
     //cuando se clica en el banner, quien se encarga de navegar.
     self.bannerView.rootViewController = self;
     
@@ -133,15 +129,6 @@
     [self.sideMenuController showLeftViewAnimated:YES completionHandler:nil];
 }
 
--(void) enableSportButtons {
-    self.buttonFootball.enabled = true;
-    self.buttonBasketball.enabled = true;
-    self.buttonVolleyball.enabled = true;
-    self.buttonHandball.enabled = true;
-    self.buttonHockey.enabled = true;
-    self.buttonFavorites.enabled = true;
-}
-
 -(void) initSportButton:(UIButton*)button withImage:(NSString *) strImage withColor:(UIColor *) color{
     [button setContentMode:UIViewContentModeCenter];
     UIImage *imageFootball = [[UIImage imageNamed:strImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -187,6 +174,63 @@
     [task resume];
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ((int)indexPath.row==0) {
+         [self performSegueWithIdentifier:@"idShowFavorites" sender:nil];
+    } else {
+        NSDictionary *sportDictionary = [arraySports objectAtIndex:indexPath.row -1];
+        sportSelectedTag = [sportDictionary objectForKey:@"tag"];
+        [self performSegueWithIdentifier:@"idShowCompetitions" sender:nil];
+    }
+}
+
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return arraySports.count + 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"cell_sport";
+    SportCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    if (indexPath.row == 0) {
+        cell.labelSport.text = NSLocalizedString (@"FAVORITES", nil);
+        cell.labelSport.backgroundColor = [Utils accentColor];
+        cell.labelSport.layer.cornerRadius = 5;
+        cell.labelSport.layer.masksToBounds = true;
+        UIImage *image = [[UIImage imageNamed:@"favorite"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [cell.imageViewSport setImage:image];
+        [cell.imageViewSport setTintColor:[Utils accentColor]];
+    } else {
+        NSDictionary *sportDictionary = [arraySports objectAtIndex:indexPath.row - 1];
+        NSString *sportName = [sportDictionary objectForKey:@"tag"];
+        NSString *imageName = [sportDictionary objectForKey:@"image"];
+        cell.labelSport.text = NSLocalizedString (sportName, nil);
+        cell.labelSport.backgroundColor = [Utils primaryColor];
+        cell.labelSport.layer.cornerRadius = 5;
+        cell.labelSport.layer.masksToBounds = true;
+        UIImage *image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [cell.imageViewSport setImage:image];
+        [cell.imageViewSport setTintColor:[Utils primaryColor]];
+    }
+    cell.contentView.alpha = 0.5;
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat cvWidth = self.collectionViewSports.frame.size.width;
+    int rowsNum;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        rowsNum = 4;
+    } else {
+        if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
+            rowsNum = 3;
+        } else {
+            rowsNum = 2;
+        }
+    }
+    return CGSizeMake(cvWidth/rowsNum, cvWidth/rowsNum);
+}
+
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -197,24 +241,23 @@
     [self.navigationItem.backBarButtonItem setTintColor:[Utils primaryColorDarker]];
     if ([[segue identifier] isEqualToString:@"idShowCompetitions"]) {
         CompetitionsTableViewController *viewController = (CompetitionsTableViewController *) segue.destinationViewController;
-        viewController.sportSelected = sportSelected;
+        viewController.sportSelectedTag = sportSelectedTag;
     } else if ([[segue identifier] isEqualToString:@"idShowFavorites"]) {
         //FavoritesTableViewController *viewController = (FavoritesTableViewController *) segue.destinationViewController;
     }
 }
 
-#pragma mark - Actions
-- (IBAction)actionOpenSport:(id)sender {
-    UIButton *clickedButton = (UIButton *) sender;
-    sportSelected = clickedButton.tag;
-    [self performSegueWithIdentifier:@"idShowCompetitions" sender:nil];
+#pragma mark - private methods
+-(void) enableSportButtons {
+    for (int i=0; i<[self.collectionViewSports numberOfItemsInSection:0]; i++) {
+        NSIndexPath *index = [NSIndexPath indexPathForRow:i inSection:0];
+        UICollectionViewCell *cell = [self.collectionViewSports cellForItemAtIndexPath:index];
+        cell.contentView.alpha = 1;
+    }
 }
 
-- (IBAction)actionFavorites:(id)sender {
-    [self performSegueWithIdentifier:@"idShowFavorites" sender:nil];
-}
 
-#pragma mark -
+#pragma mark - GADBannerViewDelegate
 //cuando se carga el anuncio
 -(void)adViewDidReceiveAd:(GADBannerView *)bannerView {
     bannerView.alpha = 0;

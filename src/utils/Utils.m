@@ -3,23 +3,6 @@
 
 @implementation Utils
 
-+(NSString*) enumSportToString:(EnumSports)enumSport {
-    switch (enumSport) {
-        case FOOTBALL:
-            return @"FUTBOL_11";
-        case BASKETBALL:
-            return @"BALONCESTO";
-        case VOLLEYBALL:
-            return @"VOLEIBOL";
-        case HANDBALL:
-            return @"BALONMANO";
-        case HOCKEY:
-            return @"UNIHOCKEY";
-        default:
-            break;
-    }
-}
-
 +(void)showComingSoon {
     [self showAlert:@"comming soon"];
 }
@@ -163,4 +146,21 @@
                                alpha:a];
     return nil;
 }
+
++(void)showInterstitial:(GADInterstitial *)intestitial inViewController:(UIViewController *)viewController {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *printScreenCountStr = [userDefaults objectForKey:COUNT_PRINTSCREEN_RESULTS];
+    int printScreenCount = 0;
+    if (printScreenCountStr!=nil) {
+        printScreenCount = [printScreenCountStr intValue];
+    }
+    printScreenCount++;
+    [userDefaults setObject:[NSString stringWithFormat:@"%d",printScreenCount] forKey:COUNT_PRINTSCREEN_RESULTS];
+    if (intestitial.isReady && (printScreenCount % 2 == 0)) {
+        [intestitial presentFromRootViewController:viewController];
+    }
+}
+
+
+
 @end

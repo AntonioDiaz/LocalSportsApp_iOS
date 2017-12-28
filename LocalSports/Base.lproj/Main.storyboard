@@ -205,104 +205,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="D3t-pj-yKc">
-                                <rect key="frame" x="19" y="104" width="337.5" height="563"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-rb-EK9">
-                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="443"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Qv-Wx-txL">
-                                                <rect key="frame" x="0.0" y="0.0" width="337.5" height="114.5"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-Rk-fcD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="114.5"/>
-                                                        <state key="normal" image="football"/>
-                                                        <connections>
-                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="9Qt-0E-eDi"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-wO-44y">
-                                                        <rect key="frame" x="179" y="0.0" width="158.5" height="114.5"/>
-                                                        <state key="normal" image="basketball"/>
-                                                        <connections>
-                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="eJe-Lr-l3Q"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9th-Sr-Mph">
-                                                <rect key="frame" x="0.0" y="164.5" width="337.5" height="114"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="3" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0J-zs-1DU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="114"/>
-                                                        <state key="normal" image="volleyball"/>
-                                                        <connections>
-                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="L82-Vs-pnQ"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="4" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jak-Ju-Isb">
-                                                        <rect key="frame" x="179" y="0.0" width="158.5" height="114"/>
-                                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                        <state key="normal" image="handball"/>
-                                                        <connections>
-                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="jMI-U4-e9c"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zud-4d-mbF">
-                                                <rect key="frame" x="0.0" y="328.5" width="337.5" height="114.5"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4f-bP-bC3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="114.5"/>
-                                                        <state key="normal" image="hockey"/>
-                                                        <connections>
-                                                            <action selector="actionOpenSport:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="zdy-Hf-Vh0"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="6" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-LR-eD3">
-                                                        <rect key="frame" x="179" y="0.0" width="158.5" height="114.5"/>
-                                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                        <state key="normal" image="favorite"/>
-                                                        <connections>
-                                                            <action selector="actionFavorites:" destination="6Ed-xZ-v4P" eventType="touchUpInside" id="h4M-Dk-wSA"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMp-qy-aq7" userLabel="ViewHostingBanner">
-                                        <rect key="frame" x="17.5" y="463" width="302.5" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="J0B-rp-1D4"/>
-                                            <constraint firstAttribute="width" constant="302.5" id="ep7-Cd-zst"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMp-qy-aq7" userLabel="ViewHostingBanner">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <constraints>
-                                    <constraint firstItem="NMp-qy-aq7" firstAttribute="leading" secondItem="D3t-pj-yKc" secondAttribute="leading" constant="17.5" id="71D-sG-hj1"/>
+                                    <constraint firstAttribute="height" constant="100" id="J0B-rp-1D4"/>
                                 </constraints>
-                            </stackView>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="osR-tW-WFJ">
+                                <rect key="frame" x="10" y="74" width="355" height="493"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aHP-2C-EdT">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell_sport" id="pdt-WK-5fe" customClass="SportCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbp-fp-LCt">
+                                                    <rect key="frame" x="10" y="114" width="130" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="wfy-6O-BZC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PbB-fT-uXy">
+                                                    <rect key="frame" x="10" y="5" width="130" height="104"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Kbp-fp-LCt" firstAttribute="trailing" secondItem="PbB-fT-uXy" secondAttribute="trailing" id="5oC-DR-fMM"/>
+                                            <constraint firstItem="Kbp-fp-LCt" firstAttribute="leading" secondItem="PbB-fT-uXy" secondAttribute="leading" id="BkL-VP-6yU"/>
+                                            <constraint firstItem="Kbp-fp-LCt" firstAttribute="top" secondItem="PbB-fT-uXy" secondAttribute="bottom" constant="5" id="Ma5-Mb-7Y5"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kbp-fp-LCt" secondAttribute="bottom" constant="6" id="OLL-XW-Qje"/>
+                                            <constraint firstItem="PbB-fT-uXy" firstAttribute="leading" secondItem="pdt-WK-5fe" secondAttribute="leading" constant="10" id="WAc-GE-8JW"/>
+                                            <constraint firstItem="PbB-fT-uXy" firstAttribute="top" secondItem="pdt-WK-5fe" secondAttribute="top" constant="5" id="rQV-PO-esL"/>
+                                            <constraint firstAttribute="trailing" secondItem="PbB-fT-uXy" secondAttribute="trailing" constant="10" id="zr9-w1-wbj"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageViewSport" destination="PbB-fT-uXy" id="ga3-0I-5D4"/>
+                                            <outlet property="labelSport" destination="Kbp-fp-LCt" id="chS-0Z-r87"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Ed-xZ-v4P" id="arW-dO-68j"/>
+                                    <outlet property="delegate" destination="6Ed-xZ-v4P" id="AFG-gv-WIn"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="D3t-pj-yKc" firstAttribute="height" secondItem="k8I-L3-hrQ" secondAttribute="height" constant="-40" id="66G-fK-Ybz"/>
-                            <constraint firstItem="D3t-pj-yKc" firstAttribute="width" secondItem="k8I-L3-hrQ" secondAttribute="width" multiplier="0.9" id="7IU-hg-MCZ"/>
-                            <constraint firstItem="D3t-pj-yKc" firstAttribute="centerY" secondItem="k8I-L3-hrQ" secondAttribute="centerY" priority="900" id="R2d-00-W1n"/>
-                            <constraint firstItem="D3t-pj-yKc" firstAttribute="centerX" secondItem="k8I-L3-hrQ" secondAttribute="centerX" id="aoz-Vq-D1y"/>
-                            <constraint firstItem="D3t-pj-yKc" firstAttribute="top" secondItem="k8I-L3-hrQ" secondAttribute="top" constant="40" id="mjO-yq-x2w"/>
+                            <constraint firstItem="NMp-qy-aq7" firstAttribute="top" secondItem="osR-tW-WFJ" secondAttribute="bottom" id="8km-3l-gk6"/>
+                            <constraint firstItem="osR-tW-WFJ" firstAttribute="top" secondItem="k8I-L3-hrQ" secondAttribute="top" constant="10" id="WTA-u5-ltk"/>
+                            <constraint firstItem="NMp-qy-aq7" firstAttribute="centerX" secondItem="k8I-L3-hrQ" secondAttribute="centerX" id="Xsf-8U-7Ho"/>
+                            <constraint firstItem="NMp-qy-aq7" firstAttribute="width" secondItem="fI8-Bz-2NE" secondAttribute="width" id="YmY-a4-lks"/>
+                            <constraint firstItem="k8I-L3-hrQ" firstAttribute="bottom" secondItem="NMp-qy-aq7" secondAttribute="bottom" id="fza-ZC-LnT"/>
+                            <constraint firstItem="osR-tW-WFJ" firstAttribute="leading" secondItem="k8I-L3-hrQ" secondAttribute="leading" constant="10" id="iOm-n4-ch1"/>
+                            <constraint firstItem="k8I-L3-hrQ" firstAttribute="trailing" secondItem="osR-tW-WFJ" secondAttribute="trailing" constant="10" id="phU-ge-30l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k8I-L3-hrQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="LjE-l5-9T8"/>
                     <connections>
-                        <outlet property="buttonBasketball" destination="b6x-wO-44y" id="J5b-8a-clb"/>
-                        <outlet property="buttonFavorites" destination="HtM-LR-eD3" id="tFW-Ek-ucn"/>
-                        <outlet property="buttonFootball" destination="PSt-Rk-fcD" id="ofs-VZ-AEc"/>
-                        <outlet property="buttonHandball" destination="jak-Ju-Isb" id="hPd-KM-E2Y"/>
-                        <outlet property="buttonHockey" destination="n4f-bP-bC3" id="59l-l4-NfI"/>
-                        <outlet property="buttonVolleyball" destination="v0J-zs-1DU" id="4Ih-Z3-WBU"/>
+                        <outlet property="collectionViewSports" destination="osR-tW-WFJ" id="prf-Wb-Xhd"/>
                         <outlet property="viewHostingBanner" destination="NMp-qy-aq7" id="VQI-Wf-Mfd"/>
                         <segue destination="ARG-Fe-Y3e" kind="show" identifier="idShowCompetitions" id="Gy6-ZH-b30"/>
                         <segue destination="5ak-cH-zLJ" kind="show" identifier="idShowFavorites" id="VDE-x4-F6k"/>
@@ -310,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kav-yM-8hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="450" y="466"/>
+            <point key="canvasLocation" x="357.60000000000002" y="519.49025487256381"/>
         </scene>
         <!--competitions - Table View Controller-->
         <scene sceneID="R19-KG-ypF">
@@ -1418,13 +1394,7 @@
     </scenes>
     <resources>
         <image name="alcorcon.png" width="57" height="57"/>
-        <image name="basketball" width="297" height="297"/>
-        <image name="favorite" width="512" height="512"/>
         <image name="favorite_unselect" width="512" height="512"/>
-        <image name="football" width="512" height="512"/>
-        <image name="handball" width="298" height="298"/>
-        <image name="hockey" width="364" height="364"/>
-        <image name="volleyball" width="517" height="517"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ms9-IB-NeE"/>

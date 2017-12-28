@@ -4,9 +4,9 @@
 
 @interface CompetitionsTableViewController : UITableViewController
 {
-    EnumSports sportSelected;
+    NSString *sportSelectedTag;
     NSArray *arrayCompetitions;
 }
-@property EnumSports sportSelected;
+@property NSString *sportSelectedTag;
 @property(nonatomic, strong) GADInterstitial *interstitial;
 @end

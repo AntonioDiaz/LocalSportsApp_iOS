@@ -9,17 +9,16 @@
 
 @implementation CompetitionsTableViewController
 
-@synthesize sportSelected;
+@synthesize sportSelectedTag;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_NAME];
-    NSString *sportStr =  [Utils enumSportToString:sportSelected];
-    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", townSelected, NSLocalizedString(sportStr, nil)];
-    arrayCompetitions = [UtilsDataBase queryCompetitionsBySport:sportStr];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", townSelected, NSLocalizedString(sportSelectedTag, nil)];
+    arrayCompetitions = [UtilsDataBase queryCompetitionsBySport:sportSelectedTag];
     [self.tableView reloadData];
-    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-3940256099942544/4411468910"];
+    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:AD_UNIT_ID_INTERSTITIAL];
     [self.interstitial loadRequest:[GADRequest request]];
 }
 
@@ -74,17 +73,6 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     CompetitionEntity *competitionEntity = [arrayCompetitions objectAtIndex:indexPath.row];
     competitionTabBarController.competitionEntity = competitionEntity;
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *printScreenCountStr = [userDefaults objectForKey:COUNT_PRINTSCREEN_RESULTS];
-    int printScreenCount = 0;
-    if (printScreenCountStr!=nil) {
-        printScreenCount = [printScreenCountStr intValue];
-    }
-    printScreenCount++;
-    [userDefaults setObject:[NSString stringWithFormat:@"%d",printScreenCount] forKey:COUNT_PRINTSCREEN_RESULTS];
-    if (self.interstitial.isReady && (printScreenCount % 10 == 0)) {
-        [self.interstitial presentFromRootViewController:self];
-    }
+    [Utils showInterstitial:self.interstitial inViewController:self];
 }
 @end

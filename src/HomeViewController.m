@@ -83,14 +83,18 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *dictionary = [arrayTowns objectAtIndex:indexPath.row];
-    NSString *townSelectedString = [dictionary objectForKey:@"name"];
-    NSString *townSelectedId = [dictionary objectForKey:@"id"];
-    NSString *iconName = [dictionary objectForKey:@"iconName"];
-    NSString *townPrimaryColor = [dictionary objectForKey:@"colorPrimary"];
-    NSString *townAccentColor = [dictionary objectForKey:@"colorAccent"];
+    NSDictionary *dictionaryTown = [arrayTowns objectAtIndex:indexPath.row];
+    NSString *townSelectedString = [dictionaryTown objectForKey:@"name"];
+    NSString *townSelectedId = [dictionaryTown objectForKey:@"id"];
+    NSString *iconName = [dictionaryTown objectForKey:@"iconName"];
+    NSString *townPrimaryColor = [dictionaryTown objectForKey:@"colorPrimary"];
+    NSString *townAccentColor = [dictionaryTown objectForKey:@"colorAccent"];
+    NSArray *sports = [dictionaryTown objectForKey:@"sportsDeref"];
+    //NSArray *sports = [dictionaryTown objectForKey:@"sportsDeref"];
     [userDefaults setValue:townSelectedString forKey:PREF_TOWN_NAME];
     [userDefaults setValue:townSelectedId forKey:PREF_TOWN_ID];
+    [userDefaults setObject:sports forKey:PREF_TOWN_SPORTS];
+    //[userDefaults setObject:sports forKey:PREF_TOWN_SPORTS]
     if (townPrimaryColor!=nil && townPrimaryColor!=(id)[NSNull null] && townPrimaryColor.length>0) {
         [userDefaults setInteger:[Utils intFromHexString:townPrimaryColor] forKey:PREF_PRIMARY_COLOR];
     }

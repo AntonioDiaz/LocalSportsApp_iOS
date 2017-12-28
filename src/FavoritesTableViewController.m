@@ -23,6 +23,8 @@
     arrayCompetitions = [UtilsDataBase queryCompetitionsFavorites];
     arrayTeams = [UtilsDataBase queryAllTeamsFavorites];
     [self.tableView reloadData];
+    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:AD_UNIT_ID_INTERSTITIAL];
+    [self.interstitial loadRequest:[GADRequest request]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,5 +114,6 @@
         teamMatchesViewController.competitionEntity = competitionEntity;
         teamMatchesViewController.teamName = favoriteTeam.teamName;
     }
+    [Utils showInterstitial:self.interstitial inViewController:self];
 }
 @end
