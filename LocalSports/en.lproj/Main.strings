@@ -1,21 +1,21 @@
 
 /* Class = "UILabel"; text = "Cuándo"; ObjectID = "13k-Xv-yQu"; */
-"13k-Xv-yQu.text" = "Cuándo";
+"13k-Xv-yQu.text" = "  Where";
 
 /* Class = "UILabel"; text = "Descripción"; ObjectID = "2D2-e5-fb6"; */
-"2D2-e5-fb6.text" = "Descripción";
+"2D2-e5-fb6.text" = "Description";
 
 /* Class = "UILabel"; text = "12 - 87"; ObjectID = "3a7-hK-ao5"; */
 "3a7-hK-ao5.text" = "12 - 87";
 
 /* Class = "UILabel"; text = "Dónde"; ObjectID = "4IK-zN-iFU"; */
-"4IK-zN-iFU.text" = "Dónde";
+"4IK-zN-iFU.text" = "Where";
 
 /* Class = "UILabel"; text = "Dónde"; ObjectID = "4QL-Y1-btW"; */
-"4QL-Y1-btW.text" = "Dónde";
+"4QL-Y1-btW.text" = "  When";
 
 /* Class = "UILabel"; text = "Cambiar municipio"; ObjectID = "5AZ-e1-uGe"; */
-"5AZ-e1-uGe.text" = "Cambiar municipio";
+"5AZ-e1-uGe.text" = "Change town";
 
 /* Class = "UIViewController"; title = "Sports"; ObjectID = "6Ed-xZ-v4P"; */
 "6Ed-xZ-v4P.title" = "Sports";
@@ -30,7 +30,7 @@
 "9wq-7x-YGK.text" = "Rayo de Ciempozuelos";
 
 /* Class = "UITabBarItem"; title = "Calendario"; ObjectID = "ATc-s2-3gc"; */
-"ATc-s2-3gc.title" = "Calendario";
+"ATc-s2-3gc.title" = "Calendar";
 
 /* Class = "UILabel"; text = "12 - 10"; ObjectID = "Ab4-RS-U5f"; */
 "Ab4-RS-U5f.text" = "12 - 10";
@@ -39,19 +39,19 @@
 "EO5-oZ-epk.text" = "Title";
 
 /* Class = "UILabel"; text = "Partido"; ObjectID = "F1D-4a-x04"; */
-"F1D-4a-x04.text" = "Partido";
+"F1D-4a-x04.text" = "  Match";
 
 /* Class = "UILabel"; text = "pg"; ObjectID = "G3Y-CE-sqm"; */
-"G3Y-CE-sqm.text" = "pg";
+"G3Y-CE-sqm.text" = "W";
 
 /* Class = "UILabel"; text = "pp"; ObjectID = "IbZ-lG-W2O"; */
-"IbZ-lG-W2O.text" = "pp";
+"IbZ-lG-W2O.text" = "L";
 
 /* Class = "UILabel"; text = "Atletico de Madrid"; ObjectID = "IvT-wc-WWb"; */
 "IvT-wc-WWb.text" = "Atletico de Madrid";
 
 /* Class = "UILabel"; text = "pg"; ObjectID = "JFB-ln-AGT"; */
-"JFB-ln-AGT.text" = "pg";
+"JFB-ln-AGT.text" = "D";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "KKc-TG-bsN"; */
 "KKc-TG-bsN.text" = "Label";
@@ -60,7 +60,7 @@
 "Khs-ur-SHV.text" = "Atletico de madrid";
 
 /* Class = "UILabel"; text = "Partido"; ObjectID = "MEC-0f-JiD"; */
-"MEC-0f-JiD.text" = "Partido";
+"MEC-0f-JiD.text" = "Match";
 
 /* Class = "UILabel"; text = "21/12/2017 21:00 "; ObjectID = "NCM-Of-YBD"; */
 "NCM-Of-YBD.text" = "21/12/2017 21:00 ";
@@ -75,13 +75,13 @@
 "Qpf-Hc-jGQ.text" = "21/12/2017 21:00 ";
 
 /* Class = "UITextView"; text = "descripcion del error"; ObjectID = "WIP-Rs-qu6"; */
-"WIP-Rs-qu6.text" = "descripcion del error";
+"WIP-Rs-qu6.text" = "Issue description";
 
 /* Class = "UILabel"; text = "pt"; ObjectID = "YWQ-B4-pDq"; */
 "YWQ-B4-pDq.text" = "pt";
 
 /* Class = "UILabel"; text = "Menú"; ObjectID = "aPf-xJ-ZVa"; */
-"aPf-xJ-ZVa.text" = "Menú";
+"aPf-xJ-ZVa.text" = "Menu";
 
 /* Class = "UILabel"; text = "Pabellon Europa"; ObjectID = "b1C-NX-eql"; */
 "b1C-NX-eql.text" = "Pabellon Europa";
@@ -105,13 +105,13 @@
 "iKa-im-hNm.text" = "Label";
 
 /* Class = "UITabBarItem"; title = "Clasificación"; ObjectID = "jzo-Ty-fLL"; */
-"jzo-Ty-fLL.title" = "Clasificación";
+"jzo-Ty-fLL.title" = "Classification";
 
 /* Class = "UIViewController"; title = "Equipos"; ObjectID = "lxO-4S-Lh5"; */
-"lxO-4S-Lh5.title" = "Equipos";
+"lxO-4S-Lh5.title" = "Teams";
 
 /* Class = "UITabBarItem"; title = "Equipos"; ObjectID = "pHQ-zm-rwh"; */
-"pHQ-zm-rwh.title" = "Equipos";
+"pHQ-zm-rwh.title" = "Teams";
 
 /* Class = "UILabel"; text = "Pabellon de la paz"; ObjectID = "ssz-db-bvt"; */
 "ssz-db-bvt.text" = "Pabellon de la paz";
@@ -120,10 +120,10 @@
 "u4c-8E-95p.text" = "title example";
 
 /* Class = "UILabel"; text = "pj"; ObjectID = "uEm-lB-Dg2"; */
-"uEm-lB-Dg2.text" = "pj";
+"uEm-lB-Dg2.text" = "P";
 
 /* Class = "UILabel"; text = "Cúando"; ObjectID = "wIf-SX-Bta"; */
-"wIf-SX-Bta.text" = "Cúando";
+"wIf-SX-Bta.text" = "When";
 
 /* Class = "UITabBarController"; title = "titulo prueba"; ObjectID = "zXi-vt-UEp"; */
 "zXi-vt-UEp.title" = "titulo prueba";

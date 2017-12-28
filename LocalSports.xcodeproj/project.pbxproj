@@ -94,6 +94,7 @@
 		098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionTabBarController.m; sourceTree = "<group>"; };
 		D1055DCC1FF4D8C600C4F98D /* SportCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportCollectionViewCell.h; sourceTree = "<group>"; };
 		D1055DCD1FF4D8C600C4F98D /* SportCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportCollectionViewCell.m; sourceTree = "<group>"; };
+		D1055DCF1FF54E1A00C4F98D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D11829431FC8992600805590 /* SportsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportsViewController.h; sourceTree = "<group>"; };
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
 		D11DBAF41FD9C3F300894683 /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
@@ -121,7 +122,6 @@
 		D12A07ED1FE537B80025351A /* SideMenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuController.m; sourceTree = "<group>"; };
 		D12A07EF1FE5404B0025351A /* SideMenuTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuTableController.h; sourceTree = "<group>"; };
 		D12A07F01FE5404B0025351A /* SideMenuTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuTableController.m; sourceTree = "<group>"; };
-		D131B0E11FE7CB4200C6B8B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D131B0E21FE7CB4200C6B8B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = LocalSports/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D13CAD7F1FF249D0002CD751 /* getafe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "getafe@3x.png"; sourceTree = "<group>"; };
 		D13CAD801FF249D0002CD751 /* alcorcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alcorcon@3x.png"; sourceTree = "<group>"; };
@@ -548,7 +548,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				094C1D5C1FC83A3F003685DD /* Base */,
-				D131B0E11FE7CB4200C6B8B0 /* en */,
+				D1055DCF1FF54E1A00C4F98D /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

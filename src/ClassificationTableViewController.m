@@ -38,7 +38,7 @@
         cell.labelMatchesLost.textColor = [UIColor whiteColor];
         cell.labelPoints.textColor = [UIColor whiteColor];
         UIFont *currentFont = cell.textLabel.font;
-        UIFont *newFont = [UIFont fontWithName:[NSString stringWithFormat:@"%@-Bold",currentFont.fontName] size:currentFont.pointSize - 2];
+        UIFont *newFont = [UIFont fontWithName:[NSString stringWithFormat:@"%@-Semibold",currentFont.fontName] size:currentFont.pointSize - 2];
         cell.labelPoints.font = newFont;
         cell.labelTeam.font = newFont;
         cell.labelMatchesPlayed.font = newFont;
