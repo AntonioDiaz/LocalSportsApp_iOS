@@ -5,6 +5,8 @@
  Created by Antonio Díaz Arroyo on 3/12/17.
  Copyright © 2017 cice. All rights reserved.
  */
+"APP_NAME" = "Deporte Local";
+
 "BACK" = "Back";
 "FUTBOL_11" = "Football 11";
 "FUTBOL_7" = "Footbal 7";
