@@ -59,7 +59,6 @@
 		D1B8FD6D1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD6C1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m */; };
 		D1B9CE531FDA964E00C1937D /* TeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B9CE521FDA964E00C1937D /* TeamsViewController.m */; };
 		D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */; };
-		D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1C4D2131FD08B35009F3A35 /* leganes.gpx */; };
 		D1D3A62D1FD299AF003CA8E7 /* UtilsDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D3A62C1FD299AF003CA8E7 /* UtilsDataBase.m */; };
 /* End PBXBuildFile section */
 
@@ -159,7 +158,6 @@
 		D1B9CE521FDA964E00C1937D /* TeamsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamsViewController.m; sourceTree = "<group>"; };
 		D1C2CB811FCDDEC600922D86 /* CompetitionsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionsTableViewController.h; sourceTree = "<group>"; };
 		D1C2CB821FCDDEC600922D86 /* CompetitionsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionsTableViewController.m; sourceTree = "<group>"; };
-		D1C4D2131FD08B35009F3A35 /* leganes.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = leganes.gpx; sourceTree = "<group>"; };
 		D1D3A62B1FD299AF003CA8E7 /* UtilsDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsDataBase.h; sourceTree = "<group>"; };
 		D1D3A62C1FD299AF003CA8E7 /* UtilsDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilsDataBase.m; sourceTree = "<group>"; };
 		EE6A11938A7F1B191C72CC4F /* Pods-Deporte Local.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deporte Local.release.xcconfig"; path = "Pods/Target Support Files/Pods-Deporte Local/Pods-Deporte Local.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,14 +175,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		090123BF1FD167F500973DD5 /* gps_locations */ = {
-			isa = PBXGroup;
-			children = (
-				D1C4D2131FD08B35009F3A35 /* leganes.gpx */,
-			);
-			path = gps_locations;
-			sourceTree = "<group>";
-		};
 		092624671FCD8645008F2280 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				D1AD5F151FF58CFE00DE98FB /* Deporte Local.entitlements */,
-				090123BF1FD167F500973DD5 /* gps_locations */,
 				092624671FCD8645008F2280 /* src */,
 				D14097461FC9D42B00EAE6DA /* images */,
 				094C1D541FC83A3F003685DD /* LocalSports */,
@@ -438,7 +427,6 @@
 				D13CAD8C1FF249D1002CD751 /* alcorcon.png in Resources */,
 				D191D2CB1FD4608A00A40804 /* Localizable.strings in Resources */,
 				D13CAD8E1FF249D1002CD751 /* leganes@3x.png in Resources */,
-				D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */,
 				D13CAD891FF249D1002CD751 /* alcorcon@3x.png in Resources */,
 				D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */,
 				D13CAD8D1FF249D1002CD751 /* leganes.png in Resources */,
