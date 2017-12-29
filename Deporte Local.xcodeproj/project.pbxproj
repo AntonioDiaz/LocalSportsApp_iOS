@@ -17,18 +17,10 @@
 		095BA4831FD02486005C7214 /* MatchAddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095BA4821FD02486005C7214 /* MatchAddEventViewController.m */; };
 		098179061FCED01F0011F4FD /* ClassificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179051FCED01F0011F4FD /* ClassificationTableViewController.m */; };
 		098179091FCED5CD0011F4FD /* CompetitionTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */; };
+		4B7BC3FD56AB825545F8E634 /* Pods_Deporte_Local.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318F7D973FDFE2B46B443162 /* Pods_Deporte_Local.framework */; };
 		D1055DCE1FF4D8C600C4F98D /* SportCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1055DCD1FF4D8C600C4F98D /* SportCollectionViewCell.m */; };
 		D11829451FC8992600805590 /* SportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11829441FC8992600805590 /* SportsViewController.m */; };
 		D11DBAF61FD9C3F300894683 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11DBAF51FD9C3F300894683 /* CalendarViewController.m */; };
-		D12A07D71FE532D80025351A /* LGSideMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07CC1FE532D80025351A /* LGSideMenuSegue.m */; };
-		D12A07D81FE532D80025351A /* UIViewController+LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07CF1FE532D80025351A /* UIViewController+LGSideMenuController.m */; };
-		D12A07D91FE532D80025351A /* LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07D01FE532D80025351A /* LGSideMenuController.m */; };
-		D12A07DA1FE532D80025351A /* LGSideMenuGesturesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07D21FE532D80025351A /* LGSideMenuGesturesHandler.m */; };
-		D12A07DB1FE532D80025351A /* LGSideMenuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07D31FE532D80025351A /* LGSideMenuHelper.m */; };
-		D12A07DC1FE532D80025351A /* LGSideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07D41FE532D80025351A /* LGSideMenuView.m */; };
-		D12A07DD1FE532D80025351A /* LGSideMenuBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07D61FE532D80025351A /* LGSideMenuBorderView.m */; };
-		D12A07E41FE536760025351A /* GoogleMobileAdsSdkiOS-7.26.0 in Resources */ = {isa = PBXBuildFile; fileRef = D12A07E31FE536760025351A /* GoogleMobileAdsSdkiOS-7.26.0 */; };
-		D12A07EB1FE537300025351A /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; fileRef = D12A07E51FE536CE0025351A /* GoogleMobileAds */; };
 		D12A07EE1FE537B80025351A /* SideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07ED1FE537B80025351A /* SideMenuController.m */; };
 		D12A07F11FE5404B0025351A /* SideMenuTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07F01FE5404B0025351A /* SideMenuTableController.m */; };
 		D13CAD881FF249D1002CD751 /* getafe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D13CAD7F1FF249D0002CD751 /* getafe@3x.png */; };
@@ -92,6 +84,8 @@
 		098179051FCED01F0011F4FD /* ClassificationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassificationTableViewController.m; sourceTree = "<group>"; };
 		098179071FCED5CD0011F4FD /* CompetitionTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompetitionTabBarController.h; sourceTree = "<group>"; };
 		098179081FCED5CD0011F4FD /* CompetitionTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompetitionTabBarController.m; sourceTree = "<group>"; };
+		12AB23641AC38E535EE5D554 /* Pods-Deporte Local.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deporte Local.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Deporte Local/Pods-Deporte Local.debug.xcconfig"; sourceTree = "<group>"; };
+		318F7D973FDFE2B46B443162 /* Pods_Deporte_Local.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Deporte_Local.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1055DCC1FF4D8C600C4F98D /* SportCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SportCollectionViewCell.h; sourceTree = "<group>"; };
 		D1055DCD1FF4D8C600C4F98D /* SportCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportCollectionViewCell.m; sourceTree = "<group>"; };
 		D1055DCF1FF54E1A00C4F98D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -99,25 +93,6 @@
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
 		D11DBAF41FD9C3F300894683 /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		D11DBAF51FD9C3F300894683 /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
-		D12A07C91FE532D70025351A /* LGSideMenuBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuBorderView.h; sourceTree = "<group>"; };
-		D12A07CA1FE532D80025351A /* LGSideMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuSegue.h; sourceTree = "<group>"; };
-		D12A07CB1FE532D80025351A /* LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuController.h; sourceTree = "<group>"; };
-		D12A07CC1FE532D80025351A /* LGSideMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuSegue.m; sourceTree = "<group>"; };
-		D12A07CD1FE532D80025351A /* LGSideMenuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuHelper.h; sourceTree = "<group>"; };
-		D12A07CE1FE532D80025351A /* LGSideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuView.h; sourceTree = "<group>"; };
-		D12A07CF1FE532D80025351A /* UIViewController+LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LGSideMenuController.m"; sourceTree = "<group>"; };
-		D12A07D01FE532D80025351A /* LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuController.m; sourceTree = "<group>"; };
-		D12A07D11FE532D80025351A /* LGSideMenuGesturesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuGesturesHandler.h; sourceTree = "<group>"; };
-		D12A07D21FE532D80025351A /* LGSideMenuGesturesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuGesturesHandler.m; sourceTree = "<group>"; };
-		D12A07D31FE532D80025351A /* LGSideMenuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuHelper.m; sourceTree = "<group>"; };
-		D12A07D41FE532D80025351A /* LGSideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuView.m; sourceTree = "<group>"; };
-		D12A07D51FE532D80025351A /* UIViewController+LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LGSideMenuController.h"; sourceTree = "<group>"; };
-		D12A07D61FE532D80025351A /* LGSideMenuBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuBorderView.m; sourceTree = "<group>"; };
-		D12A07DE1FE535280025351A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "src/libraries/GoogleMobileAdsSdkiOS-7.26.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
-		D12A07E31FE536760025351A /* GoogleMobileAdsSdkiOS-7.26.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "GoogleMobileAdsSdkiOS-7.26.0"; sourceTree = "<group>"; };
-		D12A07E51FE536CE0025351A /* GoogleMobileAds */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = GoogleMobileAds; path = "src/libraries/GoogleMobileAdsSdkiOS-7.26.0/GoogleMobileAds.framework/GoogleMobileAds"; sourceTree = "<group>"; };
-		D12A07E61FE536CE0025351A /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = "src/libraries/GoogleMobileAdsSdkiOS-7.26.0/GoogleMobileAds.framework/Headers"; sourceTree = "<group>"; };
-		D12A07E71FE536CF0025351A /* Modules */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Modules; path = "src/libraries/GoogleMobileAdsSdkiOS-7.26.0/GoogleMobileAds.framework/Modules"; sourceTree = "<group>"; };
 		D12A07EC1FE537B80025351A /* SideMenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuController.h; sourceTree = "<group>"; };
 		D12A07ED1FE537B80025351A /* SideMenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuController.m; sourceTree = "<group>"; };
 		D12A07EF1FE5404B0025351A /* SideMenuTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuTableController.h; sourceTree = "<group>"; };
@@ -187,7 +162,7 @@
 		D1C4D2131FD08B35009F3A35 /* leganes.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = leganes.gpx; sourceTree = "<group>"; };
 		D1D3A62B1FD299AF003CA8E7 /* UtilsDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsDataBase.h; sourceTree = "<group>"; };
 		D1D3A62C1FD299AF003CA8E7 /* UtilsDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilsDataBase.m; sourceTree = "<group>"; };
-		D1D953521FD3EE5F0029A240 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.26.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		EE6A11938A7F1B191C72CC4F /* Pods-Deporte Local.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deporte Local.release.xcconfig"; path = "Pods/Target Support Files/Pods-Deporte Local/Pods-Deporte Local.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D12A07EB1FE537300025351A /* GoogleMobileAds in Frameworks */,
+				4B7BC3FD56AB825545F8E634 /* Pods_Deporte_Local.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +236,7 @@
 				094C1D541FC83A3F003685DD /* LocalSports */,
 				094C1D531FC83A3F003685DD /* Products */,
 				D1D953511FD3EE5F0029A240 /* Frameworks */,
+				22B94630983F38246FD50AB1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -285,32 +261,18 @@
 			path = LocalSports;
 			sourceTree = "<group>";
 		};
-		D12A07C81FE532A00025351A /* LGSideMenuController */ = {
+		22B94630983F38246FD50AB1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D12A07C91FE532D70025351A /* LGSideMenuBorderView.h */,
-				D12A07D61FE532D80025351A /* LGSideMenuBorderView.m */,
-				D12A07CB1FE532D80025351A /* LGSideMenuController.h */,
-				D12A07D01FE532D80025351A /* LGSideMenuController.m */,
-				D12A07D11FE532D80025351A /* LGSideMenuGesturesHandler.h */,
-				D12A07D21FE532D80025351A /* LGSideMenuGesturesHandler.m */,
-				D12A07CD1FE532D80025351A /* LGSideMenuHelper.h */,
-				D12A07D31FE532D80025351A /* LGSideMenuHelper.m */,
-				D12A07CA1FE532D80025351A /* LGSideMenuSegue.h */,
-				D12A07CC1FE532D80025351A /* LGSideMenuSegue.m */,
-				D12A07CE1FE532D80025351A /* LGSideMenuView.h */,
-				D12A07D41FE532D80025351A /* LGSideMenuView.m */,
-				D12A07D51FE532D80025351A /* UIViewController+LGSideMenuController.h */,
-				D12A07CF1FE532D80025351A /* UIViewController+LGSideMenuController.m */,
+				12AB23641AC38E535EE5D554 /* Pods-Deporte Local.debug.xcconfig */,
+				EE6A11938A7F1B191C72CC4F /* Pods-Deporte Local.release.xcconfig */,
 			);
-			path = LGSideMenuController;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D13FE33E1FD1DC2B00067C5B /* libraries */ = {
 			isa = PBXGroup;
 			children = (
-				D12A07E31FE536760025351A /* GoogleMobileAdsSdkiOS-7.26.0 */,
-				D12A07C81FE532A00025351A /* LGSideMenuController */,
 				D13FE3401FD1DC5800067C5B /* Reachability.h */,
 				D13FE33F1FD1DC5800067C5B /* Reachability.m */,
 			);
@@ -374,11 +336,7 @@
 		D1D953511FD3EE5F0029A240 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D12A07E51FE536CE0025351A /* GoogleMobileAds */,
-				D12A07E61FE536CE0025351A /* Headers */,
-				D12A07E71FE536CF0025351A /* Modules */,
-				D12A07DE1FE535280025351A /* GoogleMobileAds.framework */,
-				D1D953521FD3EE5F0029A240 /* GoogleMobileAds.framework */,
+				318F7D973FDFE2B46B443162 /* Pods_Deporte_Local.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -417,9 +375,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 094C1D6B1FC83A3F003685DD /* Build configuration list for PBXNativeTarget "Deporte Local" */;
 			buildPhases = (
+				0A785C40F464228160EDC11F /* [CP] Check Pods Manifest.lock */,
 				094C1D4E1FC83A3F003685DD /* Sources */,
 				094C1D4F1FC83A3F003685DD /* Frameworks */,
 				094C1D501FC83A3F003685DD /* Resources */,
+				F4613F80D4A77B4B5E60E6C8 /* [CP] Embed Pods Frameworks */,
+				4D867454DE39167120281747 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -475,7 +436,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D13CAD8C1FF249D1002CD751 /* alcorcon.png in Resources */,
-				D12A07E41FE536760025351A /* GoogleMobileAdsSdkiOS-7.26.0 in Resources */,
 				D191D2CB1FD4608A00A40804 /* Localizable.strings in Resources */,
 				D13CAD8E1FF249D1002CD751 /* leganes@3x.png in Resources */,
 				D1C4D2141FD08B35009F3A35 /* leganes.gpx in Resources */,
@@ -493,6 +453,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A785C40F464228160EDC11F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Deporte Local-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D867454DE39167120281747 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Deporte Local/Pods-Deporte Local-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4613F80D4A77B4B5E60E6C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Deporte Local/Pods-Deporte Local-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Deporte Local/Pods-Deporte Local-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		094C1D4E1FC83A3F003685DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -505,7 +519,6 @@
 				D1B8FD5D1FEA6C2900A72D3E /* ClassificationEntity+CoreDataProperties.m in Sources */,
 				D1D3A62D1FD299AF003CA8E7 /* UtilsDataBase.m in Sources */,
 				D1B8FD611FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataProperties.m in Sources */,
-				D12A07D81FE532D80025351A /* UIViewController+LGSideMenuController.m in Sources */,
 				D1532CAA1FE9851A00896DC1 /* FavoritesTableViewController.m in Sources */,
 				D1B8FD661FEA714C00A72D3E /* FavoriteTeamTableViewCell.m in Sources */,
 				098179091FCED5CD0011F4FD /* CompetitionTabBarController.m in Sources */,
@@ -527,22 +540,16 @@
 				D1B8FD5B1FEA6C2900A72D3E /* CompetitionEntity+CoreDataProperties.m in Sources */,
 				D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */,
 				094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */,
-				D12A07DC1FE532D80025351A /* LGSideMenuView.m in Sources */,
 				094C1D681FC83A3F003685DD /* main.m in Sources */,
 				095BA4831FD02486005C7214 /* MatchAddEventViewController.m in Sources */,
-				D12A07DA1FE532D80025351A /* LGSideMenuGesturesHandler.m in Sources */,
 				D12A07EE1FE537B80025351A /* SideMenuController.m in Sources */,
 				D1B8FD401FEA6C1300A72D3E /* TeamHeadingTableViewCell.m in Sources */,
 				D11829451FC8992600805590 /* SportsViewController.m in Sources */,
 				D1B8FD3F1FEA6C1300A72D3E /* TownsTableViewCell.m in Sources */,
 				D1B8FD621FEA6C2900A72D3E /* MatchEntity+CoreDataClass.m in Sources */,
 				D1B8FD431FEA6C1300A72D3E /* MatchDetailTableViewCell.m in Sources */,
-				D12A07D71FE532D80025351A /* LGSideMenuSegue.m in Sources */,
 				0926246D1FCD8FA1008F2280 /* Utils.m in Sources */,
-				D12A07DB1FE532D80025351A /* LGSideMenuHelper.m in Sources */,
-				D12A07DD1FE532D80025351A /* LGSideMenuBorderView.m in Sources */,
 				D1B8FD5C1FEA6C2900A72D3E /* ClassificationEntity+CoreDataClass.m in Sources */,
-				D12A07D91FE532D80025351A /* LGSideMenuController.m in Sources */,
 				D1B8FD411FEA6C1300A72D3E /* CalendarHeadingTableViewCell.m in Sources */,
 				094C1D571FC83A3F003685DD /* AppDelegate.m in Sources */,
 			);
@@ -680,6 +687,7 @@
 		};
 		094C1D6C1FC83A3F003685DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12AB23641AC38E535EE5D554 /* Pods-Deporte Local.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deporte Local.entitlements";
@@ -707,6 +715,7 @@
 		};
 		094C1D6D1FC83A3F003685DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE6A11938A7F1B191C72CC4F /* Pods-Deporte Local.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Deporte Local.entitlements";
