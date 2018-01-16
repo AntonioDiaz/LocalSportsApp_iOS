@@ -27,9 +27,12 @@
 #pragma mark - private methods
 -(void) updateFavoriteImage {
     NSString *favoriteImage = @"favorite_unselect";
+    NSString *msg = NSLocalizedString(@"FAVORITES_TEAM_REMOVED", nil);
     if (isFavoriteTeam) {
         favoriteImage = @"favorite";
+        msg = NSLocalizedString(@"FAVORITES_TEAM_ADDED", nil);
     }
+    [Utils showAlert:msg];
     UIImage *image = [[UIImage imageNamed:favoriteImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     image = [Utils imageWithSize:image scaledToSize:CGSizeMake(30, 30)];
     buttonFavorite = [[UIBarButtonItem alloc]initWithImage:image

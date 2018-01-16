@@ -77,6 +77,13 @@
 -(void) switchFavoriteCompetition:(id)sender {
     competitionEntity.isFavorite = !competitionEntity.isFavorite;
     [UtilsDataBase markOrUnmarkCompetitionAsFavorite:competitionEntity.idCompetitionServer isFavorite:competitionEntity.isFavorite];
+    if (competitionEntity.isFavorite) {
+        NSString *msg = NSLocalizedString(@"FAVORITES_COMPETITION_ADDED", nil);
+        [Utils showAlert:msg];
+    } else {
+        NSString *msg = NSLocalizedString(@"FAVORITES_COMPETITION_REMOVED", nil);
+        [Utils showAlert:msg];
+    }
     [self updateFavoriteImage];
 }
     

@@ -48,3 +48,8 @@
 "CLASSIFICATION_TEAM" = "Equipo";
 "FAVORITES" = "Favoritos";
 "FAVORITES_EMPTY" = "Para añadir favoritos pulsa el ♥️ en la pantalla de la competición o en el equipo.";
+"FAVORITES_COMPETITION_ADDED" = "Competición añadida a favoritos.";
+"FAVORITES_COMPETITION_REMOVED" = "Competición borrada de favoritos.";
+"FAVORITES_TEAM_ADDED" = "Equipo añadido a favoritos.";
+"FAVORITES_TEAM_REMOVED" = "Equipo borrado de favoritos.";
+

@@ -50,4 +50,8 @@
 "CLASSIFICATION_TEAM" = "Team";
 "FAVORITES" = "Favorites";
 "FAVORITES_EMPTY" = "To add favorites press the ♥️ on the competition or on the team screen";
+"FAVORITES_COMPETITION_ADDED" = "Added competition to favorites.";
+"FAVORITES_COMPETITION_REMOVED" = "Removed competition from favorites.";
+"FAVORITES_TEAM_ADDED" = "Added team to favorites.";
+"FAVORITES_TEAM_REMOVED" = "Removed team from favorites.";
 

@@ -107,8 +107,12 @@
     NSString *favoriteImage;
     if (!isFavorite) {
         favoriteImage = @"favorite";
+        NSString *msg = NSLocalizedString(@"FAVORITES_TEAM_ADDED", nil);
+        [Utils showAlert:msg];
     } else {
         favoriteImage = @"favorite_unselect";
+        NSString *msg = NSLocalizedString(@"FAVORITES_TEAM_REMOVED", nil);
+        [Utils showAlert:msg];
     }
     [UtilsDataBase markOrUnmarkTeamAsFavorite:teamName withCompetition:idCompetitionServer isFavorite:!isFavorite];
     UIImage *image = [[UIImage imageNamed:favoriteImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
