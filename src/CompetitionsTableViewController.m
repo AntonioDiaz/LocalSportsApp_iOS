@@ -16,10 +16,13 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *townSelected = [userDefaults objectForKey:PREF_TOWN_NAME];
     self.navigationItem.title = [NSString stringWithFormat:@"%@ - %@", townSelected, NSLocalizedString(sportSelectedTag, nil)];
-    arrayCompetitions = [UtilsDataBase queryCompetitionsBySport:sportSelectedTag];
-    [self.tableView reloadData];
     self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:AD_UNIT_ID_INTERSTITIAL];
     [self.interstitial loadRequest:[GADRequest request]];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    arrayCompetitions = [UtilsDataBase queryCompetitionsBySport:sportSelectedTag];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
