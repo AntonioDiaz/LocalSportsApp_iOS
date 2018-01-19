@@ -149,16 +149,18 @@
 }
 
 +(void)showInterstitial:(GADInterstitial *)intestitial inViewController:(UIViewController *)viewController {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *printScreenCountStr = [userDefaults objectForKey:COUNT_PRINTSCREEN_RESULTS];
-    int printScreenCount = 0;
-    if (printScreenCountStr!=nil) {
-        printScreenCount = [printScreenCountStr intValue];
-    }
-    printScreenCount++;
-    [userDefaults setObject:[NSString stringWithFormat:@"%d",printScreenCount] forKey:COUNT_PRINTSCREEN_RESULTS];
-    if (intestitial.isReady && (printScreenCount % 2 == 0)) {
-        [intestitial presentFromRootViewController:viewController];
+    if (SHOW_ADS) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSString *printScreenCountStr = [userDefaults objectForKey:COUNT_PRINTSCREEN_RESULTS];
+        int printScreenCount = 0;
+        if (printScreenCountStr!=nil) {
+            printScreenCount = [printScreenCountStr intValue];
+        }
+        printScreenCount++;
+        [userDefaults setObject:[NSString stringWithFormat:@"%d",printScreenCount] forKey:COUNT_PRINTSCREEN_RESULTS];
+        if (intestitial.isReady && (printScreenCount % INTERSTITIAL_FREQUENCY == 0)) {
+            [intestitial presentFromRootViewController:viewController];
+        }
     }
 }
 

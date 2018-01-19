@@ -25,7 +25,6 @@
     [button setTintColor:[Utils primaryColorDarker]];
     self.navigationItem.leftBarButtonItem = button;
     arraySports = [userDefaults objectForKey:PREF_TOWN_SPORTS];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -34,7 +33,19 @@
     if (![Utils noTengoInterne]) {
         [self loadCompetitions:idTownSelected];
     }
-    [self loadBanner];
+    if (SHOW_ADS) {
+        [self loadBanner];
+    } else {
+        NSLayoutConstraint *constrain = [NSLayoutConstraint
+                                         constraintWithItem:self.collectionViewSports
+                                         attribute:NSLayoutAttributeBottom
+                                         relatedBy:NSLayoutRelationEqual
+                                         toItem:self.collectionViewSports.superview
+                                         attribute:NSLayoutAttributeBottom
+                                         multiplier:1
+                                         constant:0];
+        [self.view addConstraint:constrain];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
