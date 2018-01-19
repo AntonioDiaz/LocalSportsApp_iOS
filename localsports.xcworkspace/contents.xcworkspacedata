@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Deporte Local.xcodeproj">
+      location = "group:/Users/adiaz/git/LocalSportsApp.ios/localsports.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
