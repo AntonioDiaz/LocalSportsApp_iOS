@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  localsports
+
+  Created by Antonio Díaz Arroyo on 27/1/18.
+  Copyright © 2018 cice. All rights reserved.
+*/
+"NSCalendarsUsageDescription" = "To add match schedules.";

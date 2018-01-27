@@ -15,8 +15,16 @@
     [[self.textViewDescription layer] setBorderWidth:2];
     [[self.textViewDescription layer] setCornerRadius:5];
     self.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"ISSUE_TEXT_TITLE", nil), matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor];
-    self.labelDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
-    self.labelSportCenter.text = matchEntity.court.centerName;
+    if (matchEntity.date) {
+        self.labelDate.text = [Utils formatDateDoubleToStr:matchEntity.date];
+    } else {
+        self.labelDate.text = @"-";
+    }
+    if (matchEntity.court) {
+        self.labelSportCenter.text = matchEntity.court.centerName;
+    } else {
+        self.labelSportCenter.text = @"-";
+    }
     self.textViewDescription.text = @"";
     
     [self.viewTitle setBackgroundColor:[Utils primaryColorDarker]];

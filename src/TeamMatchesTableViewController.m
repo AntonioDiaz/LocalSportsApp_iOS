@@ -108,22 +108,39 @@
     cell.labelWeek.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.row + 1];
     cell.labelWeek.backgroundColor = [Utils accentColor];
     MatchEntity *matchEntity = [matches objectAtIndex:indexPath.row];
-    NSString* dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
+    NSString* scoreLocal = @"-";
+    NSString* scoreVisitor = @"-";
+    NSString* dateStr = @"-";
+    NSString* teamLocal = matchEntity.teamLocal;
+    NSString* teamVisitor = matchEntity.teamVisitor;
+    NSString* centerName = matchEntity.court.centerName;
+    if (!matchEntity.court.centerName) {
+        centerName = @"-";
+    }
     if (matchEntity.state == CANCELED) {
-        cell.labelDate.text = NSLocalizedString(@"CALENDAR_CANCELED", nil);
-    } else {
-        cell.labelDate.text = dateStr;
+        centerName = NSLocalizedString(@"CALENDAR_CANCELED", nil);
+    } else if (matchEntity.state == PLAYED) {
+        scoreLocal = [NSString stringWithFormat:@"%d", matchEntity.scoreLocal];
+        scoreVisitor = [NSString stringWithFormat:@"%d", matchEntity.scoreVisitor];
+        if (matchEntity.date) {
+            dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
+        }
+    } else if (matchEntity.state == PENDING) {
+        if (matchEntity.date) {
+            dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
+        }
+    } else if (matchEntity.state == RESTING) {
+        centerName = NSLocalizedString(@"CALENDAR_RESTING", nil);
+        teamVisitor = @"-";
     }
-    cell.labelPlace.text = matchEntity.court.centerName;
-    cell.labelTeamLocal.text = matchEntity.teamLocal;
-    cell.labelTeamVisitor.text = matchEntity.teamVisitor;
-    if (matchEntity.state == PLAYED) {
-        cell.labelScoreLocal.text = [NSString stringWithFormat:@"%d", matchEntity.scoreLocal];
-        cell.labelScoreVisitor.text = [NSString stringWithFormat:@"%d", matchEntity.scoreVisitor];
-    } else {
-        cell.labelScoreLocal.text = @"-";
-        cell.labelScoreVisitor.text = @"-";
-    }
+    
+    cell.labelScoreLocal.text = scoreLocal;
+    cell.labelScoreVisitor.text = scoreVisitor;
+    cell.labelPlace.text = centerName;
+    cell.labelTeamLocal.text = teamLocal;
+    cell.labelTeamVisitor.text = teamVisitor;
+    cell.labelDate.text = dateStr;
+    
     cell.viewContent.layer.cornerRadius = 5;
     cell.viewContent.layer.masksToBounds = true;
     cell.viewContent.backgroundColor = [Utils primaryColor];
@@ -163,6 +180,9 @@
     UIAlertAction *actionAddEvent = [UIAlertAction actionWithTitle:strActionAddEvent style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self performSegueWithIdentifier:SEGUE_EVENT sender:nil];
     }];
+    if (matchEntity.state!=PENDING || !matchEntity.date) {
+        [actionAddEvent setEnabled:false];
+    }
     [alertController addAction:actionAddEvent];
     
     UIAlertAction *actionSendIssue = [UIAlertAction actionWithTitle:strActionSendIssue style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -184,6 +204,9 @@
         [application openURL:url options:@{} completionHandler:nil];
         [alertController dismissViewControllerAnimated:YES completion:nil];
     }];
+    if (matchEntity.state==CANCELED || matchEntity.state==RESTING || !matchEntity.court.centerName) {
+        [actionOpenMap setEnabled:false];
+    }
     [alertController addAction:actionOpenMap];
     
     UIAlertAction *actionClose = [UIAlertAction actionWithTitle:strActionClose style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

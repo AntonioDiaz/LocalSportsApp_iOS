@@ -132,12 +132,16 @@
     }
     [arrayTeams sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     for (MatchEntity *matchEntity in arrayMatches) {
-        NSUInteger teamLocalPosition = [arrayTeams indexOfObject:matchEntity.teamLocal];
-        NSMutableArray *teamAsLocalMatches = [arrayTeamMatches objectAtIndex:teamLocalPosition];
-        [teamAsLocalMatches addObject:matchEntity];
-        NSUInteger teamVisitorPosition = [arrayTeams indexOfObject:matchEntity.teamVisitor];
-        NSMutableArray *teamAsVisitorMatches = [arrayTeamMatches objectAtIndex:teamVisitorPosition];
-        [teamAsVisitorMatches addObject:matchEntity];
+        if (matchEntity.teamLocal!=NULL) {
+            NSUInteger teamLocalPosition = [arrayTeams indexOfObject:matchEntity.teamLocal];
+            NSMutableArray *teamAsLocalMatches = [arrayTeamMatches objectAtIndex:teamLocalPosition];
+            [teamAsLocalMatches addObject:matchEntity];
+        }
+        if (matchEntity.teamVisitor!=NULL) {
+            NSUInteger teamVisitorPosition = [arrayTeams indexOfObject:matchEntity.teamVisitor];
+            NSMutableArray *teamAsVisitorMatches = [arrayTeamMatches objectAtIndex:teamVisitorPosition];
+            [teamAsVisitorMatches addObject:matchEntity];
+        }
     }
     [self.tableViewTeams reloadData];
 }

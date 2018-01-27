@@ -45,7 +45,8 @@
 typedef NS_ENUM (NSInteger, EnumStates) {
     PENDING = 0,
     PLAYED = 1,
-    CANCELED = 2
+    CANCELED = 2,
+    RESTING = 3
 };
 
 +(void)showComingSoon;

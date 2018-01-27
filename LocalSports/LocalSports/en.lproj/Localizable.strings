@@ -32,6 +32,8 @@
 "MATCH_ACTION_MAP" = "View map";
 "MATCH_ACTION_CLOSE" = "Close";
 "CALENDAR_CANCELED" = "Canceled";
+"CALENDAR_RESTING" = "Rest";
+
 
 "MATCH_EVENT_TITLE" = "Add match to calendar";
 "MATCH_EVENT_TEXT" = "Week %d: %@ vs %@";

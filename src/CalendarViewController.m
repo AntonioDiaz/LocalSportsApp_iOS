@@ -46,18 +46,37 @@
         MatchDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_detail" forIndexPath:indexPath];
         int indexInArray = ((int)indexPath.row - 1) + (int)indexPath.section * numMatchesEachWeek;
         MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexInArray];
-        NSString* dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
+        NSString* dateStr = @"-";
+        if (matchEntity.date) {
+            dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
+        }
+        NSString* teamVisitor = matchEntity.teamVisitor;
         cell.labelLocal.text = matchEntity.teamLocal;
-        cell.labelVisitor.text = matchEntity.teamVisitor;
         cell.labelDate.text = dateStr;
-        cell.labelCenter.text = matchEntity.court.centerName;
-        NSString *scoreText = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
+        NSString* centerName = @"-";
+        if (matchEntity.court) {
+            centerName = matchEntity.court.centerName;
+        }
+        NSString *scoreText = @"";
         if (matchEntity.state==PENDING) {
             scoreText = @"-";
+        } else if (matchEntity.state == PLAYED) {
+            scoreText = [NSString stringWithFormat:@"%d - %d", matchEntity.scoreLocal, matchEntity.scoreVisitor];
         } else if (matchEntity.state == CANCELED) {
             scoreText = @"CANC";
+            dateStr = @"";
+            centerName = @"-";
+        } else if (matchEntity.state == RESTING) {
+            scoreText = @"DESC";
+            dateStr = @"";
+            teamVisitor = @"";
+            centerName = @"-";
         }
+        cell.labelCenter.text = centerName;
+        cell.labelVisitor.text = teamVisitor;
+        cell.labelDate.text = dateStr;
         cell.labelScore.text = scoreText;
+        cell.labelCenter.text = centerName;
         cell.separatorInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, CGFLOAT_MAX);
         return cell;
     }
@@ -108,15 +127,18 @@
                                                             handler:^(UIAlertAction *action) {
                 NSString *dateStr = [Utils formatDateDoubleToStr:matchEntity.date];
                 NSString *strShareText = NSLocalizedString(@"MATCH_SHARE_TEXT", nil);
-                NSString *textToShare = [NSString stringWithFormat:strShareText, matchEntity.week, matchEntity.teamLocal, matchEntity.teamVisitor, matchEntity.court.centerName, dateStr];
+                NSString *textToShare = [NSString stringWithFormat:strShareText, matchEntity.week, matchEntity.teamLocal,
+                                         matchEntity.teamVisitor, matchEntity.court.centerName, dateStr];
                 [Utils actionShareMatch:textToShare inViewController:self];
                 [alertController dismissViewControllerAnimated:YES completion:nil];
             }];
-            [alertController addAction:actionShare];
-        
+        [alertController addAction:actionShare];
         UIAlertAction *actionAddEvent = [UIAlertAction actionWithTitle:strActionAddEvent style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             [self performSegueWithIdentifier:SEGUE_EVENT sender:nil];
         }];
+        if (matchEntity.state!=PENDING || !matchEntity.date) {
+            [actionAddEvent setEnabled:false];
+        }
         [alertController addAction:actionAddEvent];
         
         UIAlertAction *actionSendIssue = [UIAlertAction actionWithTitle:strActionSendIssue style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -138,6 +160,9 @@
             [application openURL:url options:@{} completionHandler:nil];
             [alertController dismissViewControllerAnimated:YES completion:nil];
         }];
+        if (matchEntity.state==CANCELED || matchEntity.state==RESTING || !matchEntity.court.centerName) {
+            [actionOpenMap setEnabled:false];
+        }
         [alertController addAction:actionOpenMap];
         
         UIAlertAction *actionClose = [UIAlertAction actionWithTitle:strActionClose style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

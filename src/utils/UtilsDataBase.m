@@ -46,18 +46,25 @@
     NSDictionary* dictionaryTeamLocal = [dictionaryMatch objectForKey:@"teamLocalEntity"];
     NSDictionary* dictionaryTeamVisitor = [dictionaryMatch objectForKey:@"teamVisitorEntity"];
     NSDictionary* dictionarySportCenterCourt = [dictionaryMatch objectForKey:@"sportCenterCourt"];
-    SportCourtEntity *courtEntity = [self insertOrUpdateCourtEntity:dictionarySportCenterCourt];
+
     matchEntity.lastUpdate = (int)[[dictionaryMatch objectForKey:@"lastUpdate"] integerValue];
     matchEntity.scoreLocal = (int)[[dictionaryMatch objectForKey:@"scoreLocal"] integerValue];
     matchEntity.scoreVisitor = (int)[[dictionaryMatch objectForKey:@"scoreVisitor"] integerValue];
     matchEntity.state = (int)[[dictionaryMatch objectForKey:@"state"] integerValue];
     matchEntity.teamLocal = [dictionaryTeamLocal objectForKey:@"name"];
-    matchEntity.teamVisitor = [dictionaryTeamVisitor objectForKey:@"name"];
+    if (dictionaryTeamVisitor != (id)[NSNull null]) {
+        matchEntity.teamVisitor = [dictionaryTeamVisitor objectForKey:@"name"];
+    }
     matchEntity.week = (int)[[dictionaryMatch objectForKey:@"week"] integerValue];
-    matchEntity.date = [[dictionaryMatch objectForKey:@"date"] doubleValue];
+    if ([dictionaryMatch objectForKey:@"date"] != (id)[NSNull null]) {
+        matchEntity.date = [[dictionaryMatch objectForKey:@"date"] doubleValue];
+    }
     matchEntity.idServer = [[dictionaryMatch objectForKey:@"id"] doubleValue];
     matchEntity.competition = competition;
-    matchEntity.court = courtEntity;
+    if (dictionarySportCenterCourt != (id)[NSNull null]) {
+        SportCourtEntity *courtEntity = [self insertOrUpdateCourtEntity:dictionarySportCenterCourt];
+        matchEntity.court = courtEntity;
+    }
     NSError *error = nil;
     if(![context save:&error]){
         NSLog(@"Error on insert -->%@", error.localizedDescription);
@@ -168,14 +175,16 @@
 #pragma mark - competition
 +(NSArray *) queryCompetitionsBySport:(NSString *) sportStr {
     NSManagedObjectContext *context = [self getContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *description = [NSEntityDescription entityForName:COMPETITION_ENTITY inManagedObjectContext:context];
-    [request setEntity:description];
+    [fetchRequest setEntity:description];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sport == %@", sportStr];
-    [request setPredicate:predicate];
+    [fetchRequest setPredicate:predicate];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"categoryOrder" ascending:YES]; //the key is the attribute you want to sort by
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     NSError *error;
-    NSArray *arrayCompetitions = [context executeFetchRequest:request error:&error];
-    if(error){
+    NSArray *arrayCompetitions = [context executeFetchRequest:fetchRequest error:&error];
+    if (error) {
         NSLog(@"queryCompetitionsBySport error -->%@", error.localizedDescription);
     }
     return arrayCompetitions;

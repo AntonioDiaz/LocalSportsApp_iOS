@@ -726,8 +726,8 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arroyo Culebro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwN-jU-LJj" userLabel="team_local">
-                                                    <rect key="frame" x="10" y="67.5" width="114.5" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GETAFE OLIMPICO MAHOUNCHESTER (M. UNITED)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwN-jU-LJj" userLabel="team_local">
+                                                    <rect key="frame" x="10" y="67.5" width="240" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -738,14 +738,20 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3d-td-jPY" userLabel="score_local">
-                                                    <rect key="frame" x="283" y="67.5" width="7" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="122" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3d-td-jPY" userLabel="score_local">
+                                                    <rect key="frame" x="260" y="67.5" width="30" height="19.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="w6d-F4-WtI"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpq-la-4Ck" userLabel="score_visitor">
-                                                    <rect key="frame" x="283" y="97.5" width="7" height="19.5"/>
+                                                    <rect key="frame" x="260" y="97.5" width="30" height="19.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="ahK-y9-yAH"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -781,9 +787,11 @@
                                                 <constraint firstItem="8nC-dx-42v" firstAttribute="trailing" secondItem="VMO-mr-gaI" secondAttribute="trailing" id="TKs-36-lJ4"/>
                                                 <constraint firstItem="MwN-jU-LJj" firstAttribute="leading" secondItem="1ha-aV-Sz0" secondAttribute="leading" id="Vhb-WJ-Ngx"/>
                                                 <constraint firstItem="MDW-t9-AFv" firstAttribute="top" secondItem="AI5-B1-akB" secondAttribute="bottom" constant="5" id="VwB-y8-0Mo"/>
+                                                <constraint firstItem="Cpq-la-4Ck" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Emg-GI-OMq" secondAttribute="trailing" constant="10" id="WQ2-OF-MmI"/>
                                                 <constraint firstItem="8nC-dx-42v" firstAttribute="height" secondItem="VMO-mr-gaI" secondAttribute="height" id="ZnJ-Kv-J2z"/>
                                                 <constraint firstItem="Emg-GI-OMq" firstAttribute="leading" secondItem="MwN-jU-LJj" secondAttribute="leading" id="adW-1x-MDy"/>
                                                 <constraint firstItem="a3d-td-jPY" firstAttribute="trailing" secondItem="MDW-t9-AFv" secondAttribute="trailing" id="agL-eY-y3c"/>
+                                                <constraint firstItem="a3d-td-jPY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MwN-jU-LJj" secondAttribute="trailing" constant="10" id="gVI-6j-H29"/>
                                                 <constraint firstItem="8nC-dx-42v" firstAttribute="leading" secondItem="VMO-mr-gaI" secondAttribute="leading" id="lPg-4q-Tod"/>
                                                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="8nC-dx-42v" secondAttribute="bottom" constant="52" id="rbt-0o-nYh"/>
                                                 <constraint firstItem="1ha-aV-Sz0" firstAttribute="leading" secondItem="Mqa-FQ-hlE" secondAttribute="leading" constant="10" id="slN-4P-LMc"/>
@@ -855,7 +863,7 @@
                                                     <rect key="frame" x="13" y="47" width="275" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -905,9 +913,9 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYt-sD-sjI">
                                                     <rect key="frame" x="13" y="86" width="275" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.25098039220000001" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1403,7 +1411,7 @@
         <image name="favorite_unselect" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FGC-Hb-PX7"/>
+        <segue reference="Ms9-IB-NeE"/>
         <segue reference="zEs-Oe-gnb"/>
         <segue reference="a38-Ps-9KX"/>
     </inferredMetricsTieBreakers>

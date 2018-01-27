@@ -30,6 +30,7 @@
 "MATCH_ACTION_MAP" = "Ver mapa";
 "MATCH_ACTION_CLOSE" = "Cerrar";
 "CALENDAR_CANCELED" = "Cancelado";
+"CALENDAR_RESTING" = "Descansa";
 
 "MATCH_EVENT_TITLE" = "Añadir evento al calendario";
 "MATCH_EVENT_TEXT" = "Jornada %d: %@ - %@";
