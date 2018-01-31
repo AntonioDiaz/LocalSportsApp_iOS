@@ -12,7 +12,7 @@
 
 /** matches */
 +(NSArray *) queryMatches:(CompetitionEntity *) competitionEntity;
-+(void) insertMatch:(NSDictionary *) dictionaryMatch withEntity:(CompetitionEntity *) competition;
++(void) insertMatch:(NSDictionary *) dictionaryMatch withEntity:(CompetitionEntity *) competition withWeeksNames:(NSArray *)weeksNames;
 +(void) deleteMatches:(CompetitionEntity *)competitionEntity;
 
 /** classification */

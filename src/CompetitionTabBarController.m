@@ -101,13 +101,14 @@
             if (httpResponse.statusCode == 200) {
                 NSError *jsonError = nil;
                 NSDictionary *jsonResults = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+                NSArray *weeksNames = [jsonResults objectForKey:@"weeksNames"];
                 NSArray *arrayMatches = [jsonResults objectForKey:@"matches"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [UtilsDataBase deleteMatches:competitionEntity];
                     [UtilsDataBase deleteClassification:competitionEntity];
                     [UtilsDataBase deleteAllEntities:COURT_ENTITY];
                     for (NSDictionary *matchDictionary in arrayMatches) {
-                        [UtilsDataBase insertMatch: matchDictionary withEntity:self.competitionEntity];
+                        [UtilsDataBase insertMatch: matchDictionary withEntity:self.competitionEntity withWeeksNames:weeksNames];
                     }
                     NSArray *arrayClassification = [jsonResults objectForKey:@"classification"];
                     for (NSDictionary *classification in arrayClassification) {

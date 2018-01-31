@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="ClassificationEntity" representedClassName="ClassificationEntity" syncable="YES">
         <attribute name="matchesDrawn" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="matchesLost" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -37,6 +37,7 @@
         <attribute name="teamLocal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teamVisitor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="week" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="weekName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="competition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CompetitionEntity" inverseName="matches" inverseEntity="CompetitionEntity" syncable="YES"/>
         <relationship name="court" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SportCourtEntity" inverseName="matches" inverseEntity="SportCourtEntity" syncable="YES"/>
     </entity>
@@ -50,8 +51,8 @@
     <elements>
         <element name="ClassificationEntity" positionX="144" positionY="-189" width="128" height="165"/>
         <element name="CompetitionEntity" positionX="-144" positionY="-45" width="144" height="195"/>
-        <element name="MatchEntity" positionX="-119" positionY="-385" width="128" height="210"/>
-        <element name="SportCourtEntity" positionX="133" positionY="-375" width="128" height="120"/>
         <element name="FavoriteTeamEntity" positionX="-389" positionY="-196" width="173" height="88"/>
+        <element name="MatchEntity" positionX="-119" positionY="-385" width="128" height="223"/>
+        <element name="SportCourtEntity" positionX="133" positionY="-375" width="128" height="120"/>
     </elements>
 </model>

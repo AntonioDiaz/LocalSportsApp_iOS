@@ -1,9 +1,9 @@
 //
 //  FavoriteTeamEntity+CoreDataProperties.h
-//  LocalSports
+//  localsports
 //
-//  Created by Antonio Díaz Arroyo on 20/12/17.
-//  Copyright © 2017 cice. All rights reserved.
+//  Created by Antonio Díaz Arroyo on 31/1/18.
+//  Copyright © 2018 cice. All rights reserved.
 //
 //
 
@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<FavoriteTeamEntity *> *)fetchRequest;
 
+@property (nonatomic) double idCompetitionServer;
 @property (nonatomic) BOOL isFavorite;
 @property (nullable, nonatomic, copy) NSString *teamName;
-@property (nonatomic) double idCompetitionServer;
 
 @end
 

@@ -37,7 +37,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         CalendarHeadingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_calendar_heading" forIndexPath:indexPath];
-        cell.labelTitle.text = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.section + 1];
+        /** get first match of the week to print the week name */
+        NSString* labelTitle = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.section + 1];
+        int indexInArray = (int)indexPath.section * numMatchesEachWeek;
+        MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexInArray];
+        if(matchEntity!=nil) {
+            labelTitle = [NSString stringWithFormat:@"%@ (%@)", labelTitle, matchEntity.weekName];
+        }
+        cell.labelTitle.text = labelTitle;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.backgroundColor = [Utils primaryColor];
         cell.labelTitle.backgroundColor = [Utils primaryColor];

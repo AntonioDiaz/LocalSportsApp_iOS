@@ -1,9 +1,9 @@
 //
 //  FavoriteTeamEntity+CoreDataProperties.m
-//  LocalSports
+//  localsports
 //
-//  Created by Antonio Díaz Arroyo on 20/12/17.
-//  Copyright © 2017 cice. All rights reserved.
+//  Created by Antonio Díaz Arroyo on 31/1/18.
+//  Copyright © 2018 cice. All rights reserved.
 //
 //
 
@@ -15,8 +15,8 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"FavoriteTeamEntity"];
 }
 
+@dynamic idCompetitionServer;
 @dynamic isFavorite;
 @dynamic teamName;
-@dynamic idCompetitionServer;
 
 @end

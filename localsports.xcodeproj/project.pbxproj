@@ -36,6 +36,16 @@
 		D140974E1FC9E93500EAE6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094C1D611FC83A3F003685DD /* Assets.xcassets */; };
 		D14397071FD0788100AEF92B /* MatchMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D14397061FD0788100AEF92B /* MatchMapViewController.m */; };
 		D1532CAA1FE9851A00896DC1 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1532CA91FE9851A00896DC1 /* FavoritesTableViewController.m */; };
+		D181B1D720223D9400A52CFE /* SportCourtEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1C520223D9400A52CFE /* SportCourtEntity+CoreDataClass.m */; };
+		D181B1D820223D9400A52CFE /* SportCourtEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1C620223D9400A52CFE /* SportCourtEntity+CoreDataProperties.m */; };
+		D181B1D920223D9400A52CFE /* CompetitionEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1C920223D9400A52CFE /* CompetitionEntity+CoreDataClass.m */; };
+		D181B1DA20223D9400A52CFE /* CompetitionEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1CA20223D9400A52CFE /* CompetitionEntity+CoreDataProperties.m */; };
+		D181B1DB20223D9400A52CFE /* FavoriteTeamEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1CD20223D9400A52CFE /* FavoriteTeamEntity+CoreDataClass.m */; };
+		D181B1DC20223D9400A52CFE /* FavoriteTeamEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1CE20223D9400A52CFE /* FavoriteTeamEntity+CoreDataProperties.m */; };
+		D181B1DD20223D9400A52CFE /* MatchEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1D120223D9400A52CFE /* MatchEntity+CoreDataClass.m */; };
+		D181B1DE20223D9400A52CFE /* MatchEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1D220223D9400A52CFE /* MatchEntity+CoreDataProperties.m */; };
+		D181B1DF20223D9400A52CFE /* ClassificationEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1D520223D9400A52CFE /* ClassificationEntity+CoreDataClass.m */; };
+		D181B1E020223D9400A52CFE /* ClassificationEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1D620223D9400A52CFE /* ClassificationEntity+CoreDataProperties.m */; };
 		D191D2CB1FD4608A00A40804 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D191D2C91FD4608A00A40804 /* Localizable.strings */; };
 		D1B8FD3F1FEA6C1300A72D3E /* TownsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD321FEA6C1200A72D3E /* TownsTableViewCell.m */; };
 		D1B8FD401FEA6C1300A72D3E /* TeamHeadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD371FEA6C1200A72D3E /* TeamHeadingTableViewCell.m */; };
@@ -44,16 +54,6 @@
 		D1B8FD431FEA6C1300A72D3E /* MatchDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD3B1FEA6C1200A72D3E /* MatchDetailTableViewCell.m */; };
 		D1B8FD441FEA6C1300A72D3E /* ClassificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD3C1FEA6C1200A72D3E /* ClassificationTableViewCell.m */; };
 		D1B8FD451FEA6C1300A72D3E /* CompetitionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD3D1FEA6C1200A72D3E /* CompetitionTableViewCell.m */; };
-		D1B8FD5A1FEA6C2900A72D3E /* CompetitionEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD481FEA6C2900A72D3E /* CompetitionEntity+CoreDataClass.m */; };
-		D1B8FD5B1FEA6C2900A72D3E /* CompetitionEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD491FEA6C2900A72D3E /* CompetitionEntity+CoreDataProperties.m */; };
-		D1B8FD5C1FEA6C2900A72D3E /* ClassificationEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD4C1FEA6C2900A72D3E /* ClassificationEntity+CoreDataClass.m */; };
-		D1B8FD5D1FEA6C2900A72D3E /* ClassificationEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD4D1FEA6C2900A72D3E /* ClassificationEntity+CoreDataProperties.m */; };
-		D1B8FD5E1FEA6C2900A72D3E /* SportCourtEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD501FEA6C2900A72D3E /* SportCourtEntity+CoreDataClass.m */; };
-		D1B8FD5F1FEA6C2900A72D3E /* SportCourtEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD511FEA6C2900A72D3E /* SportCourtEntity+CoreDataProperties.m */; };
-		D1B8FD601FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD541FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataClass.m */; };
-		D1B8FD611FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD551FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataProperties.m */; };
-		D1B8FD621FEA6C2900A72D3E /* MatchEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD581FEA6C2900A72D3E /* MatchEntity+CoreDataClass.m */; };
-		D1B8FD631FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD591FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.m */; };
 		D1B8FD661FEA714C00A72D3E /* FavoriteTeamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD651FEA714C00A72D3E /* FavoriteTeamTableViewCell.m */; };
 		D1B8FD6A1FEA806800A72D3E /* TeamMatchesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD691FEA806800A72D3E /* TeamMatchesTableViewController.m */; };
 		D1B8FD6D1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8FD6C1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m */; };
@@ -113,6 +113,26 @@
 		D14397061FD0788100AEF92B /* MatchMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchMapViewController.m; sourceTree = "<group>"; };
 		D1532CA81FE9851A00896DC1 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		D1532CA91FE9851A00896DC1 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
+		D181B1C320223D9400A52CFE /* SportCourtEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportCourtEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D181B1C420223D9400A52CFE /* SportCourtEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportCourtEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D181B1C520223D9400A52CFE /* SportCourtEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SportCourtEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D181B1C620223D9400A52CFE /* SportCourtEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SportCourtEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D181B1C720223D9400A52CFE /* CompetitionEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompetitionEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D181B1C820223D9400A52CFE /* CompetitionEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompetitionEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D181B1C920223D9400A52CFE /* CompetitionEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CompetitionEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D181B1CA20223D9400A52CFE /* CompetitionEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CompetitionEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D181B1CB20223D9400A52CFE /* FavoriteTeamEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteTeamEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D181B1CC20223D9400A52CFE /* FavoriteTeamEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteTeamEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D181B1CD20223D9400A52CFE /* FavoriteTeamEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteTeamEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D181B1CE20223D9400A52CFE /* FavoriteTeamEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteTeamEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D181B1CF20223D9400A52CFE /* MatchEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MatchEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D181B1D020223D9400A52CFE /* MatchEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MatchEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D181B1D120223D9400A52CFE /* MatchEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MatchEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D181B1D220223D9400A52CFE /* MatchEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MatchEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D181B1D320223D9400A52CFE /* ClassificationEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D181B1D420223D9400A52CFE /* ClassificationEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		D181B1D520223D9400A52CFE /* ClassificationEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassificationEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		D181B1D620223D9400A52CFE /* ClassificationEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassificationEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		D191D2CA1FD4608A00A40804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = LocalSports/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1AD5F151FF58CFE00DE98FB /* localsports.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = localsports.entitlements; sourceTree = "<group>"; };
 		D1B8FD311FEA6C1100A72D3E /* MatchDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchDetailTableViewCell.h; sourceTree = "<group>"; };
@@ -129,26 +149,6 @@
 		D1B8FD3C1FEA6C1200A72D3E /* ClassificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassificationTableViewCell.m; sourceTree = "<group>"; };
 		D1B8FD3D1FEA6C1200A72D3E /* CompetitionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompetitionTableViewCell.m; sourceTree = "<group>"; };
 		D1B8FD3E1FEA6C1200A72D3E /* TownsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TownsTableViewCell.h; sourceTree = "<group>"; };
-		D1B8FD461FEA6C2900A72D3E /* CompetitionEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompetitionEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D1B8FD471FEA6C2900A72D3E /* CompetitionEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompetitionEntity+CoreDataClass.h"; sourceTree = "<group>"; };
-		D1B8FD481FEA6C2900A72D3E /* CompetitionEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CompetitionEntity+CoreDataClass.m"; sourceTree = "<group>"; };
-		D1B8FD491FEA6C2900A72D3E /* CompetitionEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CompetitionEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		D1B8FD4A1FEA6C2900A72D3E /* ClassificationEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D1B8FD4B1FEA6C2900A72D3E /* ClassificationEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassificationEntity+CoreDataClass.h"; sourceTree = "<group>"; };
-		D1B8FD4C1FEA6C2900A72D3E /* ClassificationEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassificationEntity+CoreDataClass.m"; sourceTree = "<group>"; };
-		D1B8FD4D1FEA6C2900A72D3E /* ClassificationEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassificationEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		D1B8FD4E1FEA6C2900A72D3E /* SportCourtEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportCourtEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D1B8FD4F1FEA6C2900A72D3E /* SportCourtEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportCourtEntity+CoreDataClass.h"; sourceTree = "<group>"; };
-		D1B8FD501FEA6C2900A72D3E /* SportCourtEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SportCourtEntity+CoreDataClass.m"; sourceTree = "<group>"; };
-		D1B8FD511FEA6C2900A72D3E /* SportCourtEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SportCourtEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		D1B8FD521FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteTeamEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D1B8FD531FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteTeamEntity+CoreDataClass.h"; sourceTree = "<group>"; };
-		D1B8FD541FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteTeamEntity+CoreDataClass.m"; sourceTree = "<group>"; };
-		D1B8FD551FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteTeamEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		D1B8FD561FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MatchEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D1B8FD571FEA6C2900A72D3E /* MatchEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MatchEntity+CoreDataClass.h"; sourceTree = "<group>"; };
-		D1B8FD581FEA6C2900A72D3E /* MatchEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MatchEntity+CoreDataClass.m"; sourceTree = "<group>"; };
-		D1B8FD591FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MatchEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		D1B8FD641FEA714C00A72D3E /* FavoriteTeamTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteTeamTableViewCell.h; sourceTree = "<group>"; };
 		D1B8FD651FEA714C00A72D3E /* FavoriteTeamTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteTeamTableViewCell.m; sourceTree = "<group>"; };
 		D1B8FD681FEA806800A72D3E /* TeamMatchesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamMatchesTableViewController.h; sourceTree = "<group>"; };
@@ -291,26 +291,26 @@
 		D1C2CB351FCDC7D900922D86 /* database */ = {
 			isa = PBXGroup;
 			children = (
-				D1B8FD461FEA6C2900A72D3E /* CompetitionEntity+CoreDataProperties.h */,
-				D1B8FD471FEA6C2900A72D3E /* CompetitionEntity+CoreDataClass.h */,
-				D1B8FD481FEA6C2900A72D3E /* CompetitionEntity+CoreDataClass.m */,
-				D1B8FD491FEA6C2900A72D3E /* CompetitionEntity+CoreDataProperties.m */,
-				D1B8FD4A1FEA6C2900A72D3E /* ClassificationEntity+CoreDataProperties.h */,
-				D1B8FD4B1FEA6C2900A72D3E /* ClassificationEntity+CoreDataClass.h */,
-				D1B8FD4C1FEA6C2900A72D3E /* ClassificationEntity+CoreDataClass.m */,
-				D1B8FD4D1FEA6C2900A72D3E /* ClassificationEntity+CoreDataProperties.m */,
-				D1B8FD4E1FEA6C2900A72D3E /* SportCourtEntity+CoreDataProperties.h */,
-				D1B8FD4F1FEA6C2900A72D3E /* SportCourtEntity+CoreDataClass.h */,
-				D1B8FD501FEA6C2900A72D3E /* SportCourtEntity+CoreDataClass.m */,
-				D1B8FD511FEA6C2900A72D3E /* SportCourtEntity+CoreDataProperties.m */,
-				D1B8FD521FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataProperties.h */,
-				D1B8FD531FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataClass.h */,
-				D1B8FD541FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataClass.m */,
-				D1B8FD551FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataProperties.m */,
-				D1B8FD561FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.h */,
-				D1B8FD571FEA6C2900A72D3E /* MatchEntity+CoreDataClass.h */,
-				D1B8FD581FEA6C2900A72D3E /* MatchEntity+CoreDataClass.m */,
-				D1B8FD591FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.m */,
+				D181B1C320223D9400A52CFE /* SportCourtEntity+CoreDataProperties.h */,
+				D181B1C420223D9400A52CFE /* SportCourtEntity+CoreDataClass.h */,
+				D181B1C520223D9400A52CFE /* SportCourtEntity+CoreDataClass.m */,
+				D181B1C620223D9400A52CFE /* SportCourtEntity+CoreDataProperties.m */,
+				D181B1C720223D9400A52CFE /* CompetitionEntity+CoreDataProperties.h */,
+				D181B1C820223D9400A52CFE /* CompetitionEntity+CoreDataClass.h */,
+				D181B1C920223D9400A52CFE /* CompetitionEntity+CoreDataClass.m */,
+				D181B1CA20223D9400A52CFE /* CompetitionEntity+CoreDataProperties.m */,
+				D181B1CB20223D9400A52CFE /* FavoriteTeamEntity+CoreDataProperties.h */,
+				D181B1CC20223D9400A52CFE /* FavoriteTeamEntity+CoreDataClass.h */,
+				D181B1CD20223D9400A52CFE /* FavoriteTeamEntity+CoreDataClass.m */,
+				D181B1CE20223D9400A52CFE /* FavoriteTeamEntity+CoreDataProperties.m */,
+				D181B1CF20223D9400A52CFE /* MatchEntity+CoreDataProperties.h */,
+				D181B1D020223D9400A52CFE /* MatchEntity+CoreDataClass.h */,
+				D181B1D120223D9400A52CFE /* MatchEntity+CoreDataClass.m */,
+				D181B1D220223D9400A52CFE /* MatchEntity+CoreDataProperties.m */,
+				D181B1D320223D9400A52CFE /* ClassificationEntity+CoreDataProperties.h */,
+				D181B1D420223D9400A52CFE /* ClassificationEntity+CoreDataClass.h */,
+				D181B1D520223D9400A52CFE /* ClassificationEntity+CoreDataClass.m */,
+				D181B1D620223D9400A52CFE /* ClassificationEntity+CoreDataProperties.m */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -505,13 +505,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D181B1DD20223D9400A52CFE /* MatchEntity+CoreDataClass.m in Sources */,
 				D1B8FD421FEA6C1300A72D3E /* TeamMatchTableViewCell.m in Sources */,
 				D13FE3411FD1DC5800067C5B /* Reachability.m in Sources */,
 				D1B8FD6D1FEADA4D00A72D3E /* FavoriteTeamMatchTableViewCell.m in Sources */,
 				090123C21FD16E8B00973DD5 /* MatchSendIssueViewController.m in Sources */,
-				D1B8FD5D1FEA6C2900A72D3E /* ClassificationEntity+CoreDataProperties.m in Sources */,
 				D1D3A62D1FD299AF003CA8E7 /* UtilsDataBase.m in Sources */,
-				D1B8FD611FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataProperties.m in Sources */,
+				D181B1DC20223D9400A52CFE /* FavoriteTeamEntity+CoreDataProperties.m in Sources */,
 				D1532CAA1FE9851A00896DC1 /* FavoritesTableViewController.m in Sources */,
 				D1B8FD661FEA714C00A72D3E /* FavoriteTeamTableViewCell.m in Sources */,
 				098179091FCED5CD0011F4FD /* CompetitionTabBarController.m in Sources */,
@@ -521,29 +521,29 @@
 				D1B8FD6A1FEA806800A72D3E /* TeamMatchesTableViewController.m in Sources */,
 				D1055DCE1FF4D8C600C4F98D /* SportCollectionViewCell.m in Sources */,
 				094C1D601FC83A3F003685DD /* LocalSports.xcdatamodeld in Sources */,
-				D1B8FD5F1FEA6C2900A72D3E /* SportCourtEntity+CoreDataProperties.m in Sources */,
+				D181B1E020223D9400A52CFE /* ClassificationEntity+CoreDataProperties.m in Sources */,
+				D181B1D720223D9400A52CFE /* SportCourtEntity+CoreDataClass.m in Sources */,
 				D11DBAF61FD9C3F300894683 /* CalendarViewController.m in Sources */,
+				D181B1DA20223D9400A52CFE /* CompetitionEntity+CoreDataProperties.m in Sources */,
 				098179061FCED01F0011F4FD /* ClassificationTableViewController.m in Sources */,
-				D1B8FD5E1FEA6C2900A72D3E /* SportCourtEntity+CoreDataClass.m in Sources */,
 				D12A07F11FE5404B0025351A /* SideMenuTableController.m in Sources */,
-				D1B8FD601FEA6C2900A72D3E /* FavoriteTeamEntity+CoreDataClass.m in Sources */,
-				D1B8FD631FEA6C2900A72D3E /* MatchEntity+CoreDataProperties.m in Sources */,
-				D1B8FD5A1FEA6C2900A72D3E /* CompetitionEntity+CoreDataClass.m in Sources */,
 				D14397071FD0788100AEF92B /* MatchMapViewController.m in Sources */,
-				D1B8FD5B1FEA6C2900A72D3E /* CompetitionEntity+CoreDataProperties.m in Sources */,
 				D1C2CB831FCDDEC600922D86 /* CompetitionsTableViewController.m in Sources */,
+				D181B1DF20223D9400A52CFE /* ClassificationEntity+CoreDataClass.m in Sources */,
 				094C1D5A1FC83A3F003685DD /* HomeViewController.m in Sources */,
 				094C1D681FC83A3F003685DD /* main.m in Sources */,
 				095BA4831FD02486005C7214 /* MatchAddEventViewController.m in Sources */,
 				D12A07EE1FE537B80025351A /* SideMenuController.m in Sources */,
 				D1B8FD401FEA6C1300A72D3E /* TeamHeadingTableViewCell.m in Sources */,
 				D11829451FC8992600805590 /* SportsViewController.m in Sources */,
+				D181B1DB20223D9400A52CFE /* FavoriteTeamEntity+CoreDataClass.m in Sources */,
 				D1B8FD3F1FEA6C1300A72D3E /* TownsTableViewCell.m in Sources */,
-				D1B8FD621FEA6C2900A72D3E /* MatchEntity+CoreDataClass.m in Sources */,
 				D1B8FD431FEA6C1300A72D3E /* MatchDetailTableViewCell.m in Sources */,
+				D181B1DE20223D9400A52CFE /* MatchEntity+CoreDataProperties.m in Sources */,
 				0926246D1FCD8FA1008F2280 /* Utils.m in Sources */,
-				D1B8FD5C1FEA6C2900A72D3E /* ClassificationEntity+CoreDataClass.m in Sources */,
+				D181B1D820223D9400A52CFE /* SportCourtEntity+CoreDataProperties.m in Sources */,
 				D1B8FD411FEA6C1300A72D3E /* CalendarHeadingTableViewCell.m in Sources */,
+				D181B1D920223D9400A52CFE /* CompetitionEntity+CoreDataClass.m in Sources */,
 				094C1D571FC83A3F003685DD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

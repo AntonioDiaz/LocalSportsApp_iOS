@@ -38,7 +38,7 @@
 }
 
 /** insert match entry in DB. */
-+(void) insertMatch:(NSDictionary *) dictionaryMatch withEntity:(CompetitionEntity *) competition {
++(void) insertMatch:(NSDictionary *) dictionaryMatch withEntity:(CompetitionEntity *) competition withWeeksNames:(NSArray *)weeksNames {
     NSManagedObjectContext *context = [self getContext];
     MatchEntity *matchEntity =  [NSEntityDescription
                                  insertNewObjectForEntityForName:MATCH_ENTITY
@@ -56,6 +56,7 @@
         matchEntity.teamVisitor = [dictionaryTeamVisitor objectForKey:@"name"];
     }
     matchEntity.week = (int)[[dictionaryMatch objectForKey:@"week"] integerValue];
+    matchEntity.weekName = [weeksNames objectAtIndex:matchEntity.week - 1];
     if ([dictionaryMatch objectForKey:@"date"] != (id)[NSNull null]) {
         matchEntity.date = [[dictionaryMatch objectForKey:@"date"] doubleValue];
     }
