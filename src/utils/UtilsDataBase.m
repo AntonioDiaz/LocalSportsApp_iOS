@@ -46,17 +46,20 @@
     NSDictionary* dictionaryTeamLocal = [dictionaryMatch objectForKey:@"teamLocalEntity"];
     NSDictionary* dictionaryTeamVisitor = [dictionaryMatch objectForKey:@"teamVisitorEntity"];
     NSDictionary* dictionarySportCenterCourt = [dictionaryMatch objectForKey:@"sportCenterCourt"];
-
     matchEntity.lastUpdate = (int)[[dictionaryMatch objectForKey:@"lastUpdate"] integerValue];
     matchEntity.scoreLocal = (int)[[dictionaryMatch objectForKey:@"scoreLocal"] integerValue];
     matchEntity.scoreVisitor = (int)[[dictionaryMatch objectForKey:@"scoreVisitor"] integerValue];
     matchEntity.state = (int)[[dictionaryMatch objectForKey:@"state"] integerValue];
-    matchEntity.teamLocal = [dictionaryTeamLocal objectForKey:@"name"];
+    if (dictionaryTeamLocal != (id)[NSNull null]) {
+        matchEntity.teamLocal = [dictionaryTeamLocal objectForKey:@"name"];
+    }
     if (dictionaryTeamVisitor != (id)[NSNull null]) {
         matchEntity.teamVisitor = [dictionaryTeamVisitor objectForKey:@"name"];
     }
     matchEntity.week = (int)[[dictionaryMatch objectForKey:@"week"] integerValue];
-    matchEntity.weekName = [weeksNames objectAtIndex:matchEntity.week - 1];
+    if (weeksNames.count>matchEntity.week -1) {
+        matchEntity.weekName = [weeksNames objectAtIndex:matchEntity.week - 1];
+    }
     if ([dictionaryMatch objectForKey:@"date"] != (id)[NSNull null]) {
         matchEntity.date = [[dictionaryMatch objectForKey:@"date"] doubleValue];
     }

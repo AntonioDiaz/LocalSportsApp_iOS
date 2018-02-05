@@ -41,7 +41,7 @@
         NSString* labelTitle = [NSString stringWithFormat:NSLocalizedString(@"CALENDAR_WEEK", nil), (int)indexPath.section + 1];
         int indexInArray = (int)indexPath.section * numMatchesEachWeek;
         MatchEntity *matchEntity = [arrayMatches objectAtIndex:indexInArray];
-        if(matchEntity!=nil) {
+        if(matchEntity.weekName.length>0) {
             labelTitle = [NSString stringWithFormat:@"%@ (%@)", labelTitle, matchEntity.weekName];
         }
         cell.labelTitle.text = labelTitle;

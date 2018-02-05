@@ -125,7 +125,7 @@
     arrayTeamMatches = [[NSMutableArray alloc] init];
     NSArray *arrayMatches = [UtilsDataBase queryMatches:competition];
     for (MatchEntity *matchEntity in arrayMatches) {
-        if ([arrayTeams indexOfObject:matchEntity.teamLocal]==NSNotFound) {
+        if (matchEntity.teamLocal!=nil && [arrayTeams indexOfObject:matchEntity.teamLocal]==NSNotFound) {
             [arrayTeams addObject:matchEntity.teamLocal];
             [arrayTeamMatches addObject:[[NSMutableArray alloc] init]];
         }
