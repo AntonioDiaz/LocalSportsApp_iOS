@@ -61,6 +61,8 @@
             scoreText = @"-";
         } else if (matchEntity.state == CANCELED) {
             scoreText = @"CANC";
+        } else if (matchEntity.state == RESTING) {
+            scoreText = @"DESC";
         }
         cell.labelResult.text = scoreText;
         cell.separatorInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, CGFLOAT_MAX);
@@ -125,8 +127,12 @@
     arrayTeamMatches = [[NSMutableArray alloc] init];
     NSArray *arrayMatches = [UtilsDataBase queryMatches:competition];
     for (MatchEntity *matchEntity in arrayMatches) {
-        if (matchEntity.teamLocal!=nil && [arrayTeams indexOfObject:matchEntity.teamLocal]==NSNotFound) {
+        if (matchEntity.teamLocal!=nil && [arrayTeams containsObject:matchEntity.teamLocal]!=1) {
             [arrayTeams addObject:matchEntity.teamLocal];
+            [arrayTeamMatches addObject:[[NSMutableArray alloc] init]];
+        }
+        if (matchEntity.teamVisitor!=nil && [arrayTeams containsObject:matchEntity.teamVisitor]!=1) {
+            [arrayTeams addObject:matchEntity.teamVisitor];
             [arrayTeamMatches addObject:[[NSMutableArray alloc] init]];
         }
     }
@@ -138,9 +144,11 @@
             [teamAsLocalMatches addObject:matchEntity];
         }
         if (matchEntity.teamVisitor!=NULL) {
-            NSUInteger teamVisitorPosition = [arrayTeams indexOfObject:matchEntity.teamVisitor];
-            NSMutableArray *teamAsVisitorMatches = [arrayTeamMatches objectAtIndex:teamVisitorPosition];
-            [teamAsVisitorMatches addObject:matchEntity];
+            if ([arrayTeams containsObject:matchEntity.teamVisitor]) {
+                NSUInteger teamVisitorPosition = [arrayTeams indexOfObject:matchEntity.teamVisitor];
+                NSMutableArray *teamAsVisitorMatches = [arrayTeamMatches objectAtIndex:teamVisitorPosition];
+                [teamAsVisitorMatches addObject:matchEntity];
+            }
         }
     }
     [self.tableViewTeams reloadData];

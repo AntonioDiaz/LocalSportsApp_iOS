@@ -12,20 +12,20 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>fuenlabrada</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>fuenlabrada</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<true/>
-			</dict>
 			<key>alcorcon</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>alcorcon</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
+			<key>fuenlabrada</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>fuenlabrada</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<true/>
@@ -68,9 +68,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.07</string>
+	<string>1.09</string>
 	<key>CFBundleVersion</key>
-	<string>7</string>
+	<string>9.0</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
