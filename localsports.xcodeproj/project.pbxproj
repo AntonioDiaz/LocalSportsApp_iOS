@@ -21,6 +21,7 @@
 		D1055DCE1FF4D8C600C4F98D /* SportCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1055DCD1FF4D8C600C4F98D /* SportCollectionViewCell.m */; };
 		D11829451FC8992600805590 /* SportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11829441FC8992600805590 /* SportsViewController.m */; };
 		D11DBAF61FD9C3F300894683 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11DBAF51FD9C3F300894683 /* CalendarViewController.m */; };
+		D124DB1D202C341B00E332BB /* fuenlabrada@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D124DB1C202C341B00E332BB /* fuenlabrada@2x.png */; };
 		D12A07EE1FE537B80025351A /* SideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07ED1FE537B80025351A /* SideMenuController.m */; };
 		D12A07F11FE5404B0025351A /* SideMenuTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12A07F01FE5404B0025351A /* SideMenuTableController.m */; };
 		D13CAD881FF249D1002CD751 /* getafe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D13CAD7F1FF249D0002CD751 /* getafe@3x.png */; };
@@ -37,7 +38,6 @@
 		D14397071FD0788100AEF92B /* MatchMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D14397061FD0788100AEF92B /* MatchMapViewController.m */; };
 		D1532CAA1FE9851A00896DC1 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1532CA91FE9851A00896DC1 /* FavoritesTableViewController.m */; };
 		D1758591202870DA00003E33 /* fuenlabrada@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D175858E202870D800003E33 /* fuenlabrada@3x.png */; };
-		D1758592202870DA00003E33 /* fuenlabrada@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D175858F202870D900003E33 /* fuenlabrada@2x.png */; };
 		D1758593202870DA00003E33 /* fuenlabrada.png in Resources */ = {isa = PBXBuildFile; fileRef = D1758590202870D900003E33 /* fuenlabrada.png */; };
 		D181B1D720223D9400A52CFE /* SportCourtEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1C520223D9400A52CFE /* SportCourtEntity+CoreDataClass.m */; };
 		D181B1D820223D9400A52CFE /* SportCourtEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D181B1C620223D9400A52CFE /* SportCourtEntity+CoreDataProperties.m */; };
@@ -96,6 +96,7 @@
 		D11829441FC8992600805590 /* SportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportsViewController.m; sourceTree = "<group>"; };
 		D11DBAF41FD9C3F300894683 /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		D11DBAF51FD9C3F300894683 /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		D124DB1C202C341B00E332BB /* fuenlabrada@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fuenlabrada@2x.png"; sourceTree = "<group>"; };
 		D12A07EC1FE537B80025351A /* SideMenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuController.h; sourceTree = "<group>"; };
 		D12A07ED1FE537B80025351A /* SideMenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuController.m; sourceTree = "<group>"; };
 		D12A07EF1FE5404B0025351A /* SideMenuTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuTableController.h; sourceTree = "<group>"; };
@@ -117,7 +118,6 @@
 		D1532CA81FE9851A00896DC1 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		D1532CA91FE9851A00896DC1 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
 		D175858E202870D800003E33 /* fuenlabrada@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fuenlabrada@3x.png"; sourceTree = "<group>"; };
-		D175858F202870D900003E33 /* fuenlabrada@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fuenlabrada@2x.png"; sourceTree = "<group>"; };
 		D1758590202870D900003E33 /* fuenlabrada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fuenlabrada.png; sourceTree = "<group>"; };
 		D181B1C320223D9400A52CFE /* SportCourtEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportCourtEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
 		D181B1C420223D9400A52CFE /* SportCourtEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportCourtEntity+CoreDataClass.h"; sourceTree = "<group>"; };
@@ -281,8 +281,8 @@
 		D14097461FC9D42B00EAE6DA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D124DB1C202C341B00E332BB /* fuenlabrada@2x.png */,
 				D1758590202870D900003E33 /* fuenlabrada.png */,
-				D175858F202870D900003E33 /* fuenlabrada@2x.png */,
 				D175858E202870D800003E33 /* fuenlabrada@3x.png */,
 				D13CAD831FF249D0002CD751 /* alcorcon.png */,
 				D13CAD811FF249D0002CD751 /* alcorcon@2x.png */,
@@ -437,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D124DB1D202C341B00E332BB /* fuenlabrada@2x.png in Resources */,
 				D13CAD8C1FF249D1002CD751 /* alcorcon.png in Resources */,
 				D191D2CB1FD4608A00A40804 /* Localizable.strings in Resources */,
 				D13CAD8E1FF249D1002CD751 /* leganes@3x.png in Resources */,
@@ -450,7 +451,6 @@
 				094C1D5D1FC83A3F003685DD /* Main.storyboard in Resources */,
 				D13CAD881FF249D1002CD751 /* getafe@3x.png in Resources */,
 				D13CAD8B1FF249D1002CD751 /* leganes@2x.png in Resources */,
-				D1758592202870DA00003E33 /* fuenlabrada@2x.png in Resources */,
 				D13CAD8F1FF249D1002CD751 /* getafe@2x.png in Resources */,
 				D13CAD901FF249D1002CD751 /* getafe.png in Resources */,
 			);
